@@ -107,7 +107,12 @@ function Index() {
             </div>
           </div>
           <div className="rise-in col-span-4 hidden [animation-delay:300ms] md:block">
-            <img src={heroImage} alt="Crimson stained-glass panel glowing against a black background" width={1080} height={1600} className="h-full min-h-[440px] w-full border border-paper/15 object-cover" />
+            <div className="flex h-full min-h-[440px] flex-col items-center justify-center border border-paper/15 bg-panel px-6 text-center">
+              <span className="font-mono text-[11px] text-signal">HEADSHOT</span>
+              <p className="mt-3 max-w-[24ch] text-sm leading-relaxed text-paper/55">
+                Upload your portrait and I will place it here, keeping the same bordered editorial panel.
+              </p>
+            </div>
           </div>
         </section>
 
