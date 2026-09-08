@@ -42,9 +42,10 @@ function Index() {
             NITHIN PRANAV — PRODUCT
           </a>
           <nav aria-label="Portfolio sections" className="hidden items-center gap-6 font-mono text-[11px] sm:flex">
-            <a href="#work" className="text-paper/60 transition-colors hover:text-signal">
-              WORK
-            </a>
+            <Link to="/case-studies" className="text-paper/60 transition-colors hover:text-signal">
+              CASE STUDIES
+            </Link>
+
             <a href="#principles" className="text-paper/60 transition-colors hover:text-signal">
               PRINCIPLES
             </a>
