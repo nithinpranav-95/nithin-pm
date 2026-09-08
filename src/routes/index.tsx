@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CanvaEmbed } from "@/components/CanvaEmbed";
 import atlasImage from "@/assets/atlas-cobalt.jpg";
-import heroImage from "@/assets/crimson-folio.jpg";
 import halyardImage from "@/assets/halyard-amber.jpg";
 import northwindImage from "@/assets/northwind-forest.jpg";
 
