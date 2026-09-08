@@ -8,7 +8,7 @@ import headshot from "@/assets/headshot.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nithin Praav — Product Manager" },
+      { title: "Nithin Pranav — Product Manager" },
       {
         name: "description",
         content: "Product manager for complex, trust-critical systems. Selected work, principles, and experience.",
@@ -90,7 +90,7 @@ function Index() {
       <header className="sticky top-0 z-20 border-b border-paper/10 bg-ink/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-6">
           <a href="#top" className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal">
-            MARA VOSS — PRODUCT
+            NITHIN PRANAV — PRODUCT
           </a>
           <nav aria-label="Portfolio sections" className="hidden items-center gap-6 font-mono text-[11px] sm:flex">
             <a href="#work" className="text-paper/60 transition-colors hover:text-signal">
