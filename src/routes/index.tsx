@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import headshot from "@/assets/headshot.jpg.asset.json";
-import { projects } from "@/lib/projects";
+import { CaseStudyGrid } from "@/components/CaseStudyGrid";
 
 export const Route = createFileRoute("/")({
   head: () => ({
