@@ -3,6 +3,7 @@ import { CanvaEmbed } from "@/components/CanvaEmbed";
 import atlasImage from "@/assets/atlas-cobalt.jpg";
 import halyardImage from "@/assets/halyard-amber.jpg";
 import northwindImage from "@/assets/northwind-forest.jpg";
+import headshot from "@/assets/headshot.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -110,13 +111,18 @@ function Index() {
               </div>
             </div>
           </div>
-          <div className="rise-in col-span-4 hidden [animation-delay:300ms] md:block">
-            <div className="flex h-full min-h-[440px] flex-col items-center justify-center border border-paper/15 bg-panel px-6 text-center">
-              <span className="font-mono text-[11px] text-signal">HEADSHOT</span>
-              <p className="mt-3 max-w-[24ch] text-sm leading-relaxed text-paper/55">
-                Upload your portrait and I will place it here, keeping the same bordered editorial panel.
-              </p>
-            </div>
+          <div className="rise-in col-span-12 [animation-delay:300ms] md:col-span-4">
+            <figure className="h-full border border-paper/15 bg-panel p-2">
+              <img
+                src={headshot.url}
+                alt="Portrait of Mara Voss"
+                width={1080}
+                height={1620}
+                loading="lazy"
+                className="h-full min-h-[300px] w-full object-cover md:min-h-[440px]"
+              />
+              <figcaption className="px-1 pb-1 pt-3 font-mono text-[10px] text-paper/40">PORTRAIT — 2026</figcaption>
+            </figure>
           </div>
         </section>
 
