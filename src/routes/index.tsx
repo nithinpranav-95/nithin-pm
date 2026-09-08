@@ -26,7 +26,7 @@ const projects = [
   {
     number: "01",
     title: "Youtube",
-    year: "2024",
+    year: "2026",
     description: "Rebuilt the onboarding ledger for a fintech — cut activation drop-off by 38% in one quarter.",
     role: "LEAD PM",
     outcome: "−38% DROP",
