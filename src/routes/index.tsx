@@ -106,35 +106,34 @@ function Index() {
             <h2 className="text-balance font-display text-3xl font-medium">Selected work</h2>
             <span className="font-mono text-[11px] text-paper/40">(a) — 04 PLATES</span>
           </div>
-          <div className="grid grid-cols-12 gap-6">
+          <div className="divide-y divide-paper/10 border-t border-paper/15">
             {projects.map((project) => (
-              <article key={project.number} className={`group col-span-12 ${project.dimensions}`}>
-                <div className={`${project.ratio} overflow-hidden border border-paper/15 bg-panel`}>
-                  <img
-                    src={project.image}
-                    alt={project.alt}
-                    loading="lazy"
-                    width={project.width}
-                    height={project.height}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.015]"
-                  />
-                </div>
-                <div className="mt-5 flex flex-wrap items-baseline gap-x-4 gap-y-2">
+              <article key={project.number} className="group py-8">
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
                   <span className="font-mono text-[11px] text-signal">{project.number}</span>
-                  <h3 className="font-display text-2xl font-medium leading-none transition-colors group-hover:text-signal">
-                    {project.title}
+                  <h3 className="font-display text-3xl font-medium leading-none md:text-4xl">
+                    <Link
+                      to="/work/$slug"
+                      params={{ slug: project.slug }}
+                      className="transition-colors hover:text-signal focus-visible:text-signal"
+                    >
+                      {project.title}
+                    </Link>
                   </h3>
                   <span className="font-mono text-[11px] text-paper/40">{project.year}</span>
+                  <span className="ml-auto font-mono text-[10px] text-paper/40 transition-colors group-hover:text-signal">
+                    READ →
+                  </span>
                 </div>
-                <p className="mt-2 max-w-[46ch] text-sm leading-relaxed text-paper/65">{project.description}</p>
+                <p className="mt-3 max-w-[62ch] text-sm leading-relaxed text-paper/65">{project.description}</p>
                 <div className="mt-3 flex flex-wrap gap-x-6 gap-y-1 font-mono text-[10px] text-paper/40">
                   <span>ROLE — {project.role}</span>
                   <span>OUTCOME — {project.outcome}</span>
                 </div>
-                {project.canvaUrl && <CanvaEmbed url={project.canvaUrl} title={`${project.title} deck`} />}
               </article>
             ))}
           </div>
+
         </section>
 
         <div className="border-t border-paper/10" />
