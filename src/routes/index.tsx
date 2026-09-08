@@ -80,7 +80,7 @@ function Index() {
                 and leave the room with fewer, clearer questions.
               </p>
               <div className="rise-in col-span-12 flex flex-col justify-center gap-2 border-paper/15 font-mono text-[10px] text-paper/45 [animation-delay:360ms] md:col-span-5 md:border-l md:border-dashed md:py-4 md:pl-4">
-                <span>BASED — COPENHAGEN</span>
+                <span>BASED — BERLIN</span>
                 <span>FOCUS — COMPLEX SYSTEMS</span>
                 <span className="text-signal">AVAILABLE Q3 — 2026</span>
               </div>
@@ -119,7 +119,7 @@ function Index() {
         <div className="border-t border-paper/10" />
         <section id="principles" className="grid scroll-mt-16 grid-cols-12 gap-8 py-16">
           <div className="col-span-12 md:col-span-4">
-            <span className="font-mono text-[11px] text-paper/40">(b) — METHOD</span>
+            <span className="font-mono text-[11px] text-paper/40"></span>
             <h2 className="mt-4 text-balance font-display text-4xl font-medium leading-none">Operating principles</h2>
             <p className="mt-5 max-w-[30ch] text-sm leading-relaxed text-paper/60">
               Four rules I hold to on every engagement. They are the constraints that make the work faster, not slower.
@@ -141,7 +141,7 @@ function Index() {
         <div className="border-t border-paper/10" />
         <section id="record" className="grid scroll-mt-16 grid-cols-12 gap-8 py-16">
           <div className="col-span-12 md:col-span-4">
-            <span className="font-mono text-[11px] text-paper/40">(c) — RECORD</span>
+            <span className="font-mono text-[11px] text-paper/40"></span>
             <h2 className="mt-4 font-display text-4xl font-medium leading-none">Experience</h2>
           </div>
           <div className="col-span-12 md:col-span-8">
@@ -152,7 +152,7 @@ function Index() {
         <div className="border-t border-paper/10" />
         <section id="contact" className="grid scroll-mt-16 grid-cols-12 items-end gap-8 py-20">
           <div className="col-span-12 md:col-span-7">
-            <span className="font-mono text-[11px] text-signal">(d) — WRITE</span>
+            <span className="font-mono text-[11px] text-signal"></span>
             <h2 className="mt-5 text-balance font-display text-5xl font-medium leading-[0.95] md:text-6xl">
               Let's build the next thing.
             </h2>
