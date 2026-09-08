@@ -68,7 +68,6 @@ function Index() {
       <main id="top" className="mx-auto max-w-[1440px] px-5 sm:px-6">
         <section className="grid grid-cols-12 items-stretch gap-6 pb-16 pt-14">
           <div className="col-span-12 flex flex-col justify-center md:col-span-8">
-            <p className="rise-in font-mono text-[11px] text-signal">A PRODUCT MONOGRAPH</p>
             <h1 className="rise-in mt-5 text-balance font-display text-[25vw] font-semibold leading-[0.82] [animation-delay:120ms] sm:text-[20vw] md:text-[11rem]">
               Nithin
               <br />
