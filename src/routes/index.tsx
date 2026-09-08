@@ -162,18 +162,51 @@ function Index() {
               Let's build the next thing.
             </h2>
             <a
-              href="mailto:mara@voss.pm"
+              href="mailto:nithin.pranav@gmail.com"
               className="mt-7 inline-flex max-w-full break-all border-b border-signal pb-1 font-mono text-lg text-paper transition-colors hover:text-signal md:text-2xl"
             >
-              mara@voss.pm
+              nithin.pranav@gmail.com
             </a>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="https://calendly.com/nithin-pranav/95"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-signal px-5 py-3 font-mono text-[11px] text-signal transition-colors hover:bg-signal hover:text-ink"
+              >
+                SCHEDULE A CALL →
+              </a>
+              <a
+                href="https://www.linkedin.com/in/nithinpranav/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-paper/25 px-5 py-3 font-mono text-[11px] text-paper/70 transition-colors hover:border-signal hover:text-signal"
+              >
+                LINKEDIN →
+              </a>
+            </div>
           </div>
           <div className="col-span-12 flex flex-col gap-2 border-paper/15 font-mono text-[10px] text-paper/45 md:col-span-5 md:border-l md:border-dashed md:pl-6">
-            <span>LINKEDIN — /IN/MARAVOSS</span>
-            <span>READING — /NOTES</span>
+            <a
+              href="https://www.linkedin.com/in/nithinpranav/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-signal"
+            >
+              LINKEDIN — /IN/NITHINPRANAV
+            </a>
+            <a
+              href="https://calendly.com/nithin-pranav/95"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-signal"
+            >
+              CALENDLY — BOOK 15 MIN
+            </a>
             <span>REPLIES — WITHIN 48H</span>
           </div>
         </section>
+
       </main>
 
       <footer className="border-t border-paper/10">
