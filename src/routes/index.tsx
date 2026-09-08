@@ -8,7 +8,7 @@ import headshot from "@/assets/headshot.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nithin Praav — Product Manager" },
+      { title: "Nithin Pranav — Product Manager" },
       {
         name: "description",
         content: "Product manager for complex, trust-critical systems. Selected work, principles, and experience.",
