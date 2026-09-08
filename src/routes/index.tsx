@@ -96,7 +96,7 @@ function Index() {
                 loading="lazy"
                 className="h-full min-h-[300px] w-full object-cover md:min-h-[440px]"
               />
-              <figcaption className="px-1 pb-1 pt-3 font-mono text-[10px] text-paper/40">PORTRAIT — 2026</figcaption>
+              <figcaption className="px-1 pb-1 pt-3 font-mono text-[10px] text-paper/40">PORTRAIT — Taken in 2024</figcaption>
             </figure>
           </div>
         </section>
