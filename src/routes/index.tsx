@@ -42,7 +42,7 @@ const projects = [
   {
     number: "02",
     title: "N26",
-    year: "2023",
+    year: "2026",
     description: "Shipped a rules engine that halved support tickets on routing edge cases.",
     role: "PRODUCT MANAGER",
     outcome: "−52% TICKETS",
