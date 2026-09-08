@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import headshot from "@/assets/headshot.jpg.asset.json";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
+import { ExperienceList } from "@/components/ExperienceList";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 
@@ -148,16 +149,8 @@ function Index() {
             <span className="font-mono text-[11px] text-paper/40">(c) — RECORD</span>
             <h2 className="mt-4 font-display text-4xl font-medium leading-none">Experience</h2>
           </div>
-          <div className="col-span-12 divide-y divide-paper/10 md:col-span-8">
-            {experience.map(([date, title, copy]) => (
-              <div key={date} className="grid grid-cols-12 items-baseline gap-4 py-5">
-                <span className="col-span-4 font-mono text-[11px] text-paper/40 sm:col-span-3">{date}</span>
-                <div className="col-span-8 sm:col-span-9">
-                  <h3 className="font-display text-lg font-medium">{title}</h3>
-                  <p className="mt-1 text-sm text-paper/55">{copy}</p>
-                </div>
-              </div>
-            ))}
+          <div className="col-span-12 md:col-span-8">
+            <ExperienceList />
           </div>
         </section>
 
