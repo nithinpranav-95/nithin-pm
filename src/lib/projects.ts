@@ -24,6 +24,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "youtube",
+    image: caseYoutube,
     number: "01",
     title: "Youtube",
     year: "2026",
@@ -53,6 +54,7 @@ export const projects: Project[] = [
   },
   {
     slug: "n26",
+    image: caseN26,
     number: "02",
     title: "N26",
     year: "2026",
@@ -82,6 +84,7 @@ export const projects: Project[] = [
   },
   {
     slug: "duolingo",
+    image: caseDuolingo,
     number: "03",
     title: "Duolingo",
     year: "2026",
@@ -111,6 +114,7 @@ export const projects: Project[] = [
   },
   {
     slug: "doctolib",
+    image: caseDoctolib,
     number: "04",
     title: "Doctolib",
     year: "2026",
