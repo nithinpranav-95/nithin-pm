@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { CanvaEmbed } from "@/components/CanvaEmbed";
+import { ModalPortal } from "@/components/ModalPortal";
+
 import { projects, type Project } from "@/lib/projects";
 
 export function CaseStudyGrid() {
@@ -50,7 +52,9 @@ export function CaseStudyGrid() {
       </section>
 
       {active ? (
+        <ModalPortal>
         <div
+
           role="dialog"
           aria-modal="true"
           aria-label={`${active.title} case study`}
@@ -99,7 +103,9 @@ export function CaseStudyGrid() {
             </Link>
           </div>
         </div>
+        </ModalPortal>
       ) : null}
+
     </>
   );
 }

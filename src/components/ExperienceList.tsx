@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { ModalPortal } from "@/components/ModalPortal";
+
 
 type Role = {
   date: string;
@@ -78,7 +80,9 @@ export function ExperienceList() {
       </div>
 
       {active ? (
+        <ModalPortal>
         <div
+
           role="dialog"
           aria-modal="true"
           aria-label={`${active.title} at ${active.company}`}
@@ -115,7 +119,9 @@ export function ExperienceList() {
             </ul>
           </div>
         </div>
+        </ModalPortal>
       ) : null}
+
     </>
   );
 }
