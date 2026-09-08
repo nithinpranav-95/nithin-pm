@@ -32,6 +32,8 @@ const projects = [
     ratio: "aspect-[16/10]",
     width: 1400,
     height: 900,
+    // Paste a Canva "Share → Embed" link here to render the deck inside this case study.
+    canvaUrl: undefined as string | undefined,
   },
   {
     number: "02",
@@ -46,6 +48,7 @@ const projects = [
     ratio: "aspect-[4/3]",
     width: 1200,
     height: 900,
+    canvaUrl: undefined as string | undefined,
   },
   {
     number: "03",
@@ -60,6 +63,7 @@ const projects = [
     ratio: "aspect-[4/3]",
     width: 1200,
     height: 900,
+    canvaUrl: undefined as string | undefined,
   },
 ];
 
