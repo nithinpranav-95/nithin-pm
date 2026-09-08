@@ -140,6 +140,9 @@ function Index() {
                 </div>
                 <p className="mt-2 max-w-[46ch] text-sm leading-relaxed text-paper/65">{project.description}</p>
                 <div className="mt-3 flex flex-wrap gap-x-6 gap-y-1 font-mono text-[10px] text-paper/40"><span>ROLE — {project.role}</span><span>OUTCOME — {project.outcome}</span></div>
+                {project.canvaUrl && (
+                  <CanvaEmbed url={project.canvaUrl} title={`${project.title} deck`} />
+                )}
               </article>
             ))}
           </div>
