@@ -170,7 +170,7 @@ function Index() {
         <section id="work" className="scroll-mt-16 py-16">
           <div className="mb-10 flex items-baseline justify-between">
             <h2 className="text-balance font-display text-3xl font-medium">Selected work</h2>
-            <span className="font-mono text-[11px] text-paper/40">(a) — 03 PLATES</span>
+            <span className="font-mono text-[11px] text-paper/40">(a) — 04 PLATES</span>
           </div>
           <div className="grid grid-cols-12 gap-6">
             {projects.map((project) => (
@@ -268,7 +268,7 @@ function Index() {
 
       <footer className="border-t border-paper/10">
         <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-2 px-5 py-6 font-mono text-[10px] text-paper/35 sm:flex-row sm:px-6">
-          <span>MARA VOSS — PRODUCT MONOGRAPH / 2026</span>
+          <span>NITHIN PRANAV — PRODUCT MONOGRAPH / 2026</span>
           <span>SPACE GROTESK · DM SANS · JETBRAINS MONO</span>
         </div>
       </footer>
