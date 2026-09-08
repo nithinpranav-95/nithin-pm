@@ -1,10 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { CanvaEmbed } from "@/components/CanvaEmbed";
-import atlasImage from "@/assets/atlas-cobalt.jpg";
-import crimsonImage from "@/assets/crimson-folio.jpg";
-import halyardImage from "@/assets/halyard-amber.jpg";
-import northwindImage from "@/assets/northwind-forest.jpg";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import headshot from "@/assets/headshot.jpg.asset.json";
+import { projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,69 +19,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const projects = [
-  {
-    number: "01",
-    title: "Youtube",
-    year: "2026",
-    description: "Rebuilt the onboarding ledger for a fintech — cut activation drop-off by 38% in one quarter.",
-    role: "LEAD PM",
-    outcome: "−38% DROP",
-    image: atlasImage,
-    alt: "Abstract cobalt stained-glass grid representing the Youtube case study",
-    dimensions: "md:col-span-7",
-    ratio: "aspect-[16/10]",
-    width: 1400,
-    height: 900,
-    canvaUrl: "https://www.canva.com/design/DAHRh_cv6CA/eUG7EeDvL48z4Y2ku9kXMA/view",
-  },
-  {
-    number: "02",
-    title: "N26",
-    year: "2026",
-    description: "Shipped a rules engine that halved support tickets on routing edge cases.",
-    role: "PRODUCT MANAGER",
-    outcome: "−52% TICKETS",
-    image: northwindImage,
-    alt: "Abstract forest-green stained-glass grid representing the N26 case study",
-    dimensions: "md:col-span-5 md:mt-10",
-    ratio: "aspect-[4/3]",
-    width: 1200,
-    height: 900,
-    canvaUrl: "https://www.canva.com/design/DAHRmt8gpMs/pjv762svfq6p3VILJA8vDA/view",
-  },
-  {
-    number: "03",
-    title: "Duolingo",
-    year: "2026",
-    description: "Product case study — open the Canva deck below for the full walkthrough.",
-    role: "PRODUCT MANAGER",
-    outcome: "CASE STUDY",
-    image: halyardImage,
-    alt: "Abstract amber stained-glass grid representing the Duolingo case study",
-    dimensions: "md:col-span-5 md:mt-4",
-    ratio: "aspect-[4/3]",
-    width: 1200,
-    height: 900,
-    canvaUrl: "https://www.canva.com/design/DAHSV92aUo4/8MtMkKE8lbNtcT1mk6IGRA/view",
-  },
-  {
-    number: "04",
-    title: "Doctolib",
-    year: "2026",
-    description: "Product case study — open the Canva deck below for the full walkthrough.",
-    role: "PRODUCT MANAGER",
-    outcome: "CASE STUDY",
-    image: crimsonImage,
-    alt: "Abstract crimson stained-glass grid representing the Doctolib case study",
-    dimensions: "md:col-span-7 md:mt-6",
-    ratio: "aspect-[16/10]",
-    width: 1400,
-    height: 900,
-    canvaUrl: "https://www.canva.com/design/DAHSS0_o3LI/pFIaYKtaLX7_jCwA4UCyPg/view",
-  },
-];
-
 const principles = [
   ["P1", "Decide on evidence, not seniority", "Every contested call gets a number, a user, or a test behind it."],
   ["P2", "Ship the reversible thing first", "Small, cheap, and undoable beats grand and permanent."],
@@ -98,6 +31,7 @@ const experience = [
   ["2020 — 2023", "Product Manager — Northwind", "Growth and routing across three markets."],
   ["2017 — 2020", "Associate PM — Halyard", "First product hire; built the founding operations console."],
 ];
+
 
 function Index() {
   return (
