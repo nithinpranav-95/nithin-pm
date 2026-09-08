@@ -27,7 +27,7 @@ export function CaseStudyGrid() {
             key={project.slug}
             type="button"
             onClick={() => setActive(project)}
-            className="group border border-paper/15 bg-panel p-3 text-left transition-colors hover:border-signal focus-visible:border-signal"
+            className="group border border-paper/15 bg-panel p-3 text-left transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-signal hover:shadow-[0_18px_40px_-24px_rgba(0,0,0,0.85)] focus-visible:-translate-y-1.5 focus-visible:border-signal"
           >
             <img
               src={project.image}

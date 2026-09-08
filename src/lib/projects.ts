@@ -2,6 +2,8 @@ import caseYoutube from "@/assets/case-youtube.jpg";
 import caseN26 from "@/assets/case-n26.jpg";
 import caseDuolingo from "@/assets/case-duolingo.jpg";
 import caseDoctolib from "@/assets/case-doctolib.jpg";
+import caseSynthflow from "@/assets/case-synthflow.jpg";
+
 
 export interface ProjectSection {
   heading: string;
@@ -142,7 +144,38 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    slug: "synthflow-voice-agent",
+    image: caseSynthflow,
+    number: "05",
+    title: "Synthflow — Voice Agent",
+    year: "2026",
+    description:
+      "A case study on building a reliable AI voice agent: call flows, hand-off to humans, and the quality bar that makes people trust it.",
+    role: "PRODUCT MANAGER",
+    outcome: "CASE STUDY",
+    canvaUrl: "https://www.canva.com/design/DAHRsrWpv88/qLt9f6H8TKZo9mfNJLF06A/view",
+    sections: [
+      {
+        heading: "Context",
+        body: "Voice agents fail quietly: callers hang up, intents get misread, and the business never sees why. I started from the call itself and what a caller expects within the first ten seconds.",
+      },
+      {
+        heading: "Approach",
+        body: "I mapped the conversation flows end to end, separated model failures from product failures, and defined where the agent must hand off to a human instead of guessing.",
+      },
+      {
+        heading: "What I proposed",
+        body: "A containment-versus-satisfaction framing, guardrails on high-risk intents, and an evaluation loop that scores real calls rather than scripted demos.",
+      },
+      {
+        heading: "How to read the deck",
+        body: "The deck above walks through the caller problems, the flow design, the quality metrics, and the risks of over-automation.",
+      },
+    ],
+  },
 ];
+
 
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);
