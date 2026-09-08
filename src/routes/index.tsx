@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import headshot from "@/assets/headshot.jpg.asset.json";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
+import { ThemeToggle } from "@/components/ThemeToggle";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,10 +57,15 @@ function Index() {
             <a href="#contact" className="text-signal transition-colors hover:text-paper">
               CONTACT
             </a>
+            <ThemeToggle />
           </nav>
-          <a href="#work" className="font-mono text-[11px] text-signal sm:hidden">
-            INDEX ↓
-          </a>
+          <div className="flex items-center gap-3 sm:hidden">
+            <a href="#work" className="font-mono text-[11px] text-signal">
+              INDEX ↓
+            </a>
+            <ThemeToggle />
+          </div>
+
         </div>
       </header>
 

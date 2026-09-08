@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
+import { ThemeToggle } from "@/components/ThemeToggle";
+
 import { projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/case-studies")({
@@ -31,9 +33,13 @@ function CaseStudies() {
           <Link to="/" className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal">
             NITHIN PRANAV — PRODUCT
           </Link>
-          <Link to="/" className="font-mono text-[11px] text-signal transition-colors hover:text-paper">
-            ← HOME
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link to="/" className="font-mono text-[11px] text-signal transition-colors hover:text-paper">
+              ← HOME
+            </Link>
+            <ThemeToggle />
+          </div>
+
         </div>
       </header>
 
