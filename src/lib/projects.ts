@@ -1,3 +1,8 @@
+import caseYoutube from "@/assets/case-youtube.jpg";
+import caseN26 from "@/assets/case-n26.jpg";
+import caseDuolingo from "@/assets/case-duolingo.jpg";
+import caseDoctolib from "@/assets/case-doctolib.jpg";
+
 export interface ProjectSection {
   heading: string;
   body: string;
@@ -8,6 +13,7 @@ export interface Project {
   number: string;
   title: string;
   year: string;
+  image: string;
   description: string;
   role: string;
   outcome: string;
@@ -18,6 +24,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "youtube",
+    image: caseYoutube,
     number: "01",
     title: "Youtube",
     year: "2026",
@@ -47,6 +54,7 @@ export const projects: Project[] = [
   },
   {
     slug: "n26",
+    image: caseN26,
     number: "02",
     title: "N26",
     year: "2026",
@@ -76,6 +84,7 @@ export const projects: Project[] = [
   },
   {
     slug: "duolingo",
+    image: caseDuolingo,
     number: "03",
     title: "Duolingo",
     year: "2026",
@@ -105,6 +114,7 @@ export const projects: Project[] = [
   },
   {
     slug: "doctolib",
+    image: caseDoctolib,
     number: "04",
     title: "Doctolib",
     year: "2026",

@@ -42,9 +42,10 @@ function Index() {
             NITHIN PRANAV — PRODUCT
           </a>
           <nav aria-label="Portfolio sections" className="hidden items-center gap-6 font-mono text-[11px] sm:flex">
-            <a href="#work" className="text-paper/60 transition-colors hover:text-signal">
-              WORK
-            </a>
+            <Link to="/case-studies" className="text-paper/60 transition-colors hover:text-signal">
+              CASE STUDIES
+            </Link>
+
             <a href="#principles" className="text-paper/60 transition-colors hover:text-signal">
               PRINCIPLES
             </a>
@@ -103,9 +104,12 @@ function Index() {
 
         <section id="work" className="scroll-mt-16 py-16">
           <div className="mb-10 flex items-baseline justify-between">
-            <h2 className="text-balance font-display text-3xl font-medium">Selected work</h2>
-            <span className="font-mono text-[11px] text-paper/40">(a) — 04 PLATES</span>
+            <h2 className="text-balance font-display text-3xl font-medium">Case studies</h2>
+            <Link to="/case-studies" className="font-mono text-[11px] text-signal hover:text-paper">
+              ALL CASE STUDIES →
+            </Link>
           </div>
+
           <div className="divide-y divide-paper/10 border-t border-paper/15">
             {projects.map((project) => (
               <article key={project.number} className="group py-8">
