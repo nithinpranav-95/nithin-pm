@@ -110,34 +110,7 @@ function Index() {
             </Link>
           </div>
 
-          <div className="divide-y divide-paper/10 border-t border-paper/15">
-            {projects.map((project) => (
-              <article key={project.number} className="group py-8">
-                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-                  <span className="font-mono text-[11px] text-signal">{project.number}</span>
-                  <h3 className="font-display text-3xl font-medium leading-none md:text-4xl">
-                    <Link
-                      to="/work/$slug"
-                      params={{ slug: project.slug }}
-                      className="transition-colors hover:text-signal focus-visible:text-signal"
-                    >
-                      {project.title}
-                    </Link>
-                  </h3>
-                  <span className="font-mono text-[11px] text-paper/40">{project.year}</span>
-                  <span className="ml-auto font-mono text-[10px] text-paper/40 transition-colors group-hover:text-signal">
-                    READ →
-                  </span>
-                </div>
-                <p className="mt-3 max-w-[62ch] text-sm leading-relaxed text-paper/65">{project.description}</p>
-                <div className="mt-3 flex flex-wrap gap-x-6 gap-y-1 font-mono text-[10px] text-paper/40">
-                  <span>ROLE — {project.role}</span>
-                  <span>OUTCOME — {project.outcome}</span>
-                </div>
-              </article>
-            ))}
-          </div>
-
+          <CaseStudyGrid />
         </section>
 
         <div className="border-t border-paper/10" />
