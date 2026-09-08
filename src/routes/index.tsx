@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CanvaEmbed } from "@/components/CanvaEmbed";
 import atlasImage from "@/assets/atlas-cobalt.jpg";
-import heroImage from "@/assets/crimson-folio.jpg";
 import halyardImage from "@/assets/halyard-amber.jpg";
 import northwindImage from "@/assets/northwind-forest.jpg";
 
@@ -32,6 +32,8 @@ const projects = [
     ratio: "aspect-[16/10]",
     width: 1400,
     height: 900,
+    // Paste a Canva "Share → Embed" link here to render the deck inside this case study.
+    canvaUrl: undefined as string | undefined,
   },
   {
     number: "02",
@@ -46,6 +48,7 @@ const projects = [
     ratio: "aspect-[4/3]",
     width: 1200,
     height: 900,
+    canvaUrl: undefined as string | undefined,
   },
   {
     number: "03",
@@ -60,6 +63,7 @@ const projects = [
     ratio: "aspect-[4/3]",
     width: 1200,
     height: 900,
+    canvaUrl: undefined as string | undefined,
   },
 ];
 
@@ -107,7 +111,12 @@ function Index() {
             </div>
           </div>
           <div className="rise-in col-span-4 hidden [animation-delay:300ms] md:block">
-            <img src={heroImage} alt="Crimson stained-glass panel glowing against a black background" width={1080} height={1600} className="h-full min-h-[440px] w-full border border-paper/15 object-cover" />
+            <div className="flex h-full min-h-[440px] flex-col items-center justify-center border border-paper/15 bg-panel px-6 text-center">
+              <span className="font-mono text-[11px] text-signal">HEADSHOT</span>
+              <p className="mt-3 max-w-[24ch] text-sm leading-relaxed text-paper/55">
+                Upload your portrait and I will place it here, keeping the same bordered editorial panel.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -131,6 +140,9 @@ function Index() {
                 </div>
                 <p className="mt-2 max-w-[46ch] text-sm leading-relaxed text-paper/65">{project.description}</p>
                 <div className="mt-3 flex flex-wrap gap-x-6 gap-y-1 font-mono text-[10px] text-paper/40"><span>ROLE — {project.role}</span><span>OUTCOME — {project.outcome}</span></div>
+                {project.canvaUrl && (
+                  <CanvaEmbed url={project.canvaUrl} title={`${project.title} deck`} />
+                )}
               </article>
             ))}
           </div>
