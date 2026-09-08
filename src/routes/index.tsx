@@ -117,9 +117,9 @@ function Index() {
           <div className="col-span-12 flex flex-col justify-center md:col-span-8">
             <p className="rise-in font-mono text-[11px] text-signal">A PRODUCT MONOGRAPH</p>
             <h1 className="rise-in mt-5 text-balance font-display text-[25vw] font-semibold leading-[0.82] [animation-delay:120ms] sm:text-[20vw] md:text-[11rem]">
-              Mara
+              Nithin
               <br />
-              Voss
+              Pranav
             </h1>
             <div className="mt-9 grid grid-cols-12 gap-6">
               <p className="rise-in col-span-12 max-w-[34ch] text-pretty text-lg font-light leading-snug text-paper/75 [animation-delay:240ms] md:col-span-7 md:text-xl">
@@ -137,7 +137,7 @@ function Index() {
             <figure className="h-full border border-paper/15 bg-panel p-2">
               <img
                 src={headshot.url}
-                alt="Portrait of Mara Voss"
+                alt="Portrait of Nithin Pranav"
                 width={1080}
                 height={1620}
                 loading="lazy"

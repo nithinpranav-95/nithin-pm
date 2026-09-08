@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Product Manager Portfolio" },
       { name: "description", content: "A product manager portfolio of selected work, principles, and experience." },
-      { name: "author", content: "Mara Voss" },
+      { name: "author", content: "Nithin Pranav" },
       { property: "og:title", content: "Product Manager Portfolio" },
       { property: "og:description", content: "Selected product work, operating principles, and experience." },
       { property: "og:type", content: "website" },
