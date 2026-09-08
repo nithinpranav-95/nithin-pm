@@ -29,11 +29,6 @@ const principles = [
   ["P4", "Protect the team's attention", "Fewer meetings, sharper artifacts, more building."],
 ];
 
-const experience = [
-  ["2023 — NOW", "Lead Product Manager — Ledgerline", "Owns the payments core and a team of six."],
-  ["2020 — 2023", "Product Manager — Northwind", "Growth and routing across three markets."],
-  ["2017 — 2020", "Associate PM — Halyard", "First product hire; built the founding operations console."],
-];
 
 
 function Index() {
