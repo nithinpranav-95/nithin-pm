@@ -1,3 +1,8 @@
+import caseYoutube from "@/assets/case-youtube.jpg";
+import caseN26 from "@/assets/case-n26.jpg";
+import caseDuolingo from "@/assets/case-duolingo.jpg";
+import caseDoctolib from "@/assets/case-doctolib.jpg";
+
 export interface ProjectSection {
   heading: string;
   body: string;
@@ -8,6 +13,7 @@ export interface Project {
   number: string;
   title: string;
   year: string;
+  image: string;
   description: string;
   role: string;
   outcome: string;
