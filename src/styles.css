@@ -111,11 +111,24 @@
 html.light {
   --ink: oklch(0.965 0.018 88);
   --panel: oklch(0.935 0.022 88);
-  --paper: oklch(0.235 0.012 60);
-  --signal: oklch(0.575 0.175 40.6);
-  --muted-foreground: oklch(0.45 0.01 60);
-  --border: oklch(0.235 0.012 60 / 18%);
-  --input: oklch(0.235 0.012 60 / 22%);
+  --paper: oklch(0.14 0.012 60);
+  --signal: oklch(0.5 0.19 40.6);
+  --muted-foreground: oklch(0.3 0.01 60);
+  --border: oklch(0.14 0.012 60 / 26%);
+  --input: oklch(0.14 0.012 60 / 30%);
+}
+
+/* Low-opacity text stays readable on the cream theme */
+html.light .text-paper\/35,
+html.light .text-paper\/40,
+html.light .text-paper\/45,
+html.light .text-paper\/50,
+html.light .text-paper\/55,
+html.light .text-paper\/60,
+html.light .text-paper\/65,
+html.light .text-paper\/70,
+html.light .text-paper\/75 {
+  color: color-mix(in oklab, var(--paper) 88%, transparent);
 }
 
 .dark {
