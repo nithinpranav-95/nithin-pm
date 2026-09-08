@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CanvaEmbed } from "@/components/CanvaEmbed";
 import atlasImage from "@/assets/atlas-cobalt.jpg";
+import crimsonImage from "@/assets/crimson-folio.jpg";
 import halyardImage from "@/assets/halyard-amber.jpg";
 import northwindImage from "@/assets/northwind-forest.jpg";
 import headshot from "@/assets/headshot.jpg.asset.json";
@@ -31,13 +32,12 @@ const projects = [
     role: "LEAD PM",
     outcome: "−38% DROP",
     image: atlasImage,
-    alt: "Abstract cobalt stained-glass grid representing the Atlas Ledger product system",
+    alt: "Abstract cobalt stained-glass grid representing the Youtube case study",
     dimensions: "md:col-span-7",
     ratio: "aspect-[16/10]",
     width: 1400,
     height: 900,
-    // Paste a Canva "Share → Embed" link here to render the deck inside this case study.
-    canvaUrl: undefined as string | undefined,
+    canvaUrl: "https://www.canva.com/design/DAHRh_cv6CA/eUG7EeDvL48z4Y2ku9kXMA/view",
   },
   {
     number: "02",
@@ -47,27 +47,42 @@ const projects = [
     role: "PRODUCT MANAGER",
     outcome: "−52% TICKETS",
     image: northwindImage,
-    alt: "Abstract forest-green stained-glass grid representing the Northwind routing engine",
+    alt: "Abstract forest-green stained-glass grid representing the N26 case study",
     dimensions: "md:col-span-5 md:mt-10",
     ratio: "aspect-[4/3]",
     width: 1200,
     height: 900,
-    canvaUrl: undefined as string | undefined,
+    canvaUrl: "https://www.canva.com/design/DAHRmt8gpMs/pjv762svfq6p3VILJA8vDA/view",
   },
   {
     number: "03",
-    title: "Halyard Console",
-    year: "2022",
-    description: "Designed an operations console used daily by 400 engineers; NPS 61 at launch.",
-    role: "FOUNDER PM",
-    outcome: "NPS 61",
+    title: "Duolingo",
+    year: "2026",
+    description: "Product case study — open the Canva deck below for the full walkthrough.",
+    role: "PRODUCT MANAGER",
+    outcome: "CASE STUDY",
     image: halyardImage,
-    alt: "Abstract amber stained-glass lattice representing the Halyard operations console",
+    alt: "Abstract amber stained-glass grid representing the Duolingo case study",
     dimensions: "md:col-span-5 md:mt-4",
     ratio: "aspect-[4/3]",
     width: 1200,
     height: 900,
-    canvaUrl: undefined as string | undefined,
+    canvaUrl: "https://www.canva.com/design/DAHSV92aUo4/8MtMkKE8lbNtcT1mk6IGRA/view",
+  },
+  {
+    number: "04",
+    title: "Doctolib",
+    year: "2026",
+    description: "Product case study — open the Canva deck below for the full walkthrough.",
+    role: "PRODUCT MANAGER",
+    outcome: "CASE STUDY",
+    image: crimsonImage,
+    alt: "Abstract crimson stained-glass grid representing the Doctolib case study",
+    dimensions: "md:col-span-7 md:mt-6",
+    ratio: "aspect-[16/10]",
+    width: 1400,
+    height: 900,
+    canvaUrl: "https://www.canva.com/design/DAHSS0_o3LI/pFIaYKtaLX7_jCwA4UCyPg/view",
   },
 ];
 
@@ -155,7 +170,7 @@ function Index() {
         <section id="work" className="scroll-mt-16 py-16">
           <div className="mb-10 flex items-baseline justify-between">
             <h2 className="text-balance font-display text-3xl font-medium">Selected work</h2>
-            <span className="font-mono text-[11px] text-paper/40">(a) — 03 PLATES</span>
+            <span className="font-mono text-[11px] text-paper/40">(a) — 04 PLATES</span>
           </div>
           <div className="grid grid-cols-12 gap-6">
             {projects.map((project) => (
@@ -253,7 +268,7 @@ function Index() {
 
       <footer className="border-t border-paper/10">
         <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-2 px-5 py-6 font-mono text-[10px] text-paper/35 sm:flex-row sm:px-6">
-          <span>MARA VOSS — PRODUCT MONOGRAPH / 2026</span>
+          <span>NITHIN PRANAV — PRODUCT MONOGRAPH / 2026</span>
           <span>SPACE GROTESK · DM SANS · JETBRAINS MONO</span>
         </div>
       </footer>
