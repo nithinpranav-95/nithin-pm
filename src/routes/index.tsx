@@ -1,10 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { CanvaEmbed } from "@/components/CanvaEmbed";
-import atlasImage from "@/assets/atlas-cobalt.jpg";
-import crimsonImage from "@/assets/crimson-folio.jpg";
-import halyardImage from "@/assets/halyard-amber.jpg";
-import northwindImage from "@/assets/northwind-forest.jpg";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import headshot from "@/assets/headshot.jpg.asset.json";
+import { projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,69 +19,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const projects = [
-  {
-    number: "01",
-    title: "Youtube",
-    year: "2026",
-    description: "Rebuilt the onboarding ledger for a fintech — cut activation drop-off by 38% in one quarter.",
-    role: "LEAD PM",
-    outcome: "−38% DROP",
-    image: atlasImage,
-    alt: "Abstract cobalt stained-glass grid representing the Youtube case study",
-    dimensions: "md:col-span-7",
-    ratio: "aspect-[16/10]",
-    width: 1400,
-    height: 900,
-    canvaUrl: "https://www.canva.com/design/DAHRh_cv6CA/eUG7EeDvL48z4Y2ku9kXMA/view",
-  },
-  {
-    number: "02",
-    title: "N26",
-    year: "2026",
-    description: "Shipped a rules engine that halved support tickets on routing edge cases.",
-    role: "PRODUCT MANAGER",
-    outcome: "−52% TICKETS",
-    image: northwindImage,
-    alt: "Abstract forest-green stained-glass grid representing the N26 case study",
-    dimensions: "md:col-span-5 md:mt-10",
-    ratio: "aspect-[4/3]",
-    width: 1200,
-    height: 900,
-    canvaUrl: "https://www.canva.com/design/DAHRmt8gpMs/pjv762svfq6p3VILJA8vDA/view",
-  },
-  {
-    number: "03",
-    title: "Duolingo",
-    year: "2026",
-    description: "Product case study — open the Canva deck below for the full walkthrough.",
-    role: "PRODUCT MANAGER",
-    outcome: "CASE STUDY",
-    image: halyardImage,
-    alt: "Abstract amber stained-glass grid representing the Duolingo case study",
-    dimensions: "md:col-span-5 md:mt-4",
-    ratio: "aspect-[4/3]",
-    width: 1200,
-    height: 900,
-    canvaUrl: "https://www.canva.com/design/DAHSV92aUo4/8MtMkKE8lbNtcT1mk6IGRA/view",
-  },
-  {
-    number: "04",
-    title: "Doctolib",
-    year: "2026",
-    description: "Product case study — open the Canva deck below for the full walkthrough.",
-    role: "PRODUCT MANAGER",
-    outcome: "CASE STUDY",
-    image: crimsonImage,
-    alt: "Abstract crimson stained-glass grid representing the Doctolib case study",
-    dimensions: "md:col-span-7 md:mt-6",
-    ratio: "aspect-[16/10]",
-    width: 1400,
-    height: 900,
-    canvaUrl: "https://www.canva.com/design/DAHSS0_o3LI/pFIaYKtaLX7_jCwA4UCyPg/view",
-  },
-];
-
 const principles = [
   ["P1", "Decide on evidence, not seniority", "Every contested call gets a number, a user, or a test behind it."],
   ["P2", "Ship the reversible thing first", "Small, cheap, and undoable beats grand and permanent."],
@@ -98,6 +31,7 @@ const experience = [
   ["2020 — 2023", "Product Manager — Northwind", "Growth and routing across three markets."],
   ["2017 — 2020", "Associate PM — Halyard", "First product hire; built the founding operations console."],
 ];
+
 
 function Index() {
   return (
@@ -172,35 +106,34 @@ function Index() {
             <h2 className="text-balance font-display text-3xl font-medium">Selected work</h2>
             <span className="font-mono text-[11px] text-paper/40">(a) — 04 PLATES</span>
           </div>
-          <div className="grid grid-cols-12 gap-6">
+          <div className="divide-y divide-paper/10 border-t border-paper/15">
             {projects.map((project) => (
-              <article key={project.number} className={`group col-span-12 ${project.dimensions}`}>
-                <div className={`${project.ratio} overflow-hidden border border-paper/15 bg-panel`}>
-                  <img
-                    src={project.image}
-                    alt={project.alt}
-                    loading="lazy"
-                    width={project.width}
-                    height={project.height}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.015]"
-                  />
-                </div>
-                <div className="mt-5 flex flex-wrap items-baseline gap-x-4 gap-y-2">
+              <article key={project.number} className="group py-8">
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
                   <span className="font-mono text-[11px] text-signal">{project.number}</span>
-                  <h3 className="font-display text-2xl font-medium leading-none transition-colors group-hover:text-signal">
-                    {project.title}
+                  <h3 className="font-display text-3xl font-medium leading-none md:text-4xl">
+                    <Link
+                      to="/work/$slug"
+                      params={{ slug: project.slug }}
+                      className="transition-colors hover:text-signal focus-visible:text-signal"
+                    >
+                      {project.title}
+                    </Link>
                   </h3>
                   <span className="font-mono text-[11px] text-paper/40">{project.year}</span>
+                  <span className="ml-auto font-mono text-[10px] text-paper/40 transition-colors group-hover:text-signal">
+                    READ →
+                  </span>
                 </div>
-                <p className="mt-2 max-w-[46ch] text-sm leading-relaxed text-paper/65">{project.description}</p>
+                <p className="mt-3 max-w-[62ch] text-sm leading-relaxed text-paper/65">{project.description}</p>
                 <div className="mt-3 flex flex-wrap gap-x-6 gap-y-1 font-mono text-[10px] text-paper/40">
                   <span>ROLE — {project.role}</span>
                   <span>OUTCOME — {project.outcome}</span>
                 </div>
-                {project.canvaUrl && <CanvaEmbed url={project.canvaUrl} title={`${project.title} deck`} />}
               </article>
             ))}
           </div>
+
         </section>
 
         <div className="border-t border-paper/10" />
