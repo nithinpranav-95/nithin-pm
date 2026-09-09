@@ -214,7 +214,7 @@ function Index() {
         </div>
       </footer>
 
-      <AskAssistant />
+      
     </div>
   );
 }
