@@ -12,10 +12,10 @@ export const Route = createFileRoute("/")({
       { title: "Nithin Pranav — Product Manager" },
       {
         name: "description",
-        content: "Product manager for complex, trust-critical systems. Selected work, principles, and experience.",
+        content: "Berlin-based product builder working on AI-driven products. Case studies, projects, and experience.",
       },
       { property: "og:title", content: "Nithin Pranav — Product Manager" },
-      { property: "og:description", content: "Selected product work, operating principles, and experience." },
+      { property: "og:description", content: "Product case studies, AI projects in build, and experience." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
