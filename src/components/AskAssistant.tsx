@@ -110,15 +110,15 @@ export function AskAssistant() {
                   return (
                     <div key={message.id} className={isUser ? "text-right" : "text-left"}>
                       <p className="font-mono text-[10px] text-paper/40">{isUser ? "YOU" : "ASSISTANT"}</p>
-                      <p
-                        className={`mt-1 inline-block max-w-full whitespace-pre-wrap border px-3 py-2 text-sm leading-relaxed ${
+                      <div
+                        className={`mt-1 inline-block max-w-full space-y-2 border px-3 py-2 text-left text-sm leading-relaxed [&_li]:ml-4 [&_li]:list-disc [&_strong]:font-semibold [&_strong]:text-paper ${
                           isUser
                             ? "border-signal/50 text-paper"
                             : "border-paper/15 bg-panel text-paper/80"
                         }`}
                       >
-                        {text}
-                      </p>
+                        <ReactMarkdown>{text}</ReactMarkdown>
+                      </div>
                     </div>
                   );
                 })}
