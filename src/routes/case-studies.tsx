@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { AskAssistant } from "@/components/AskAssistant";
 
 import { projects } from "@/lib/projects";
 

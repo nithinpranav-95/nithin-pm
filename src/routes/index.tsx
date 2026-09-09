@@ -210,6 +210,8 @@ function Index() {
           <span>SPACE GROTESK · DM SANS · JETBRAINS MONO</span>
         </div>
       </footer>
+
+      <AskAssistant />
     </div>
   );
 }
