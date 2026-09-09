@@ -23,13 +23,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const principles = [
-  ["P1", " Evidence-based decisions", "Every decision gets a number, a user, or a test behind it—intuition comes second"],
-  ["P2", "Pragmatic problem-solving", "I pick the problems worth solving and ship the undo-able thing fast."],
-  ["P3", "Cross-functional execution", " I build alignment across teams, remove friction, and enable builders to move fast."],
-  ["P4", " User-obsessed rigor", " I validate assumptions with users first; that's how we avoid building the wrong thing beautifully."],
-];
-
 
 
 function Index() {
