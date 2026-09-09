@@ -71,6 +71,8 @@ function CaseStudies() {
           <span>SPACE GROTESK · DM SANS · JETBRAINS MONO</span>
         </div>
       </footer>
+
+      <AskAssistant />
     </div>
   );
 }
