@@ -3,6 +3,7 @@ import caseN26 from "@/assets/case-n26.jpg";
 import caseDuolingo from "@/assets/case-duolingo.jpg";
 import caseDoctolib from "@/assets/case-doctolib.jpg";
 import caseSynthflow from "@/assets/case-synthflow.jpg";
+import caseMaritime from "@/assets/case-maritime.jpg";
 
 
 export interface ProjectSection {
@@ -171,6 +172,36 @@ export const projects: Project[] = [
       {
         heading: "How to read the deck",
         body: "The deck above walks through the caller problems, the flow design, the quality metrics, and the risks of over-automation.",
+      },
+    ],
+  },
+  {
+    slug: "maritime-ai-agent",
+    image: caseMaritime,
+    number: "06",
+    title: "AI Agent for Ship Companies",
+    year: "2026",
+    description:
+      "A case study on bringing an AI agent into maritime operations — where it can take work off the crew and shore teams, and where it must not.",
+    role: "PRODUCT MANAGER",
+    outcome: "CASE STUDY",
+    canvaUrl: "https://www.canva.com/design/DAHSKlPBLSY/kbRvv4ZoBHQiOgROjNf8Pw/view",
+    sections: [
+      {
+        heading: "Context",
+        body: "Shipping runs on documents, schedules, and exception handling spread across email, spreadsheets, and legacy systems. I looked at where operators lose hours to coordination rather than judgement.",
+      },
+      {
+        heading: "Approach",
+        body: "I mapped the operational workflows end to end, separated the tasks that are rule-bound from the ones that need human accountability, and scoped the agent to the first group only.",
+      },
+      {
+        heading: "What I proposed",
+        body: "An agent that handles routine coordination and document work with a clear escalation path, plus the guardrails and audit trail a safety- and compliance-heavy industry needs before it will trust automation.",
+      },
+      {
+        heading: "How to read the deck",
+        body: "The deck above covers the operational context, the workflow analysis, the agent scope, the guardrails, and the risks.",
       },
     ],
   },
