@@ -62,7 +62,6 @@ export function AskAssistant({ variant = "floating" }: { variant?: "floating" | 
           <input
             value={barInput}
             onChange={(event) => setBarInput(event.target.value)}
-            onFocus={() => setOpen(true)}
             placeholder="Ask anything about Nithin's work…"
             aria-label="Ask anything about Nithin's work"
             className="flex-1 bg-transparent px-1 py-2 text-sm text-paper placeholder:text-paper/40 focus:outline-none"

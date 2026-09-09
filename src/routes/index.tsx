@@ -12,23 +12,16 @@ export const Route = createFileRoute("/")({
       { title: "Nithin Pranav — Product Manager" },
       {
         name: "description",
-        content: "Product manager for complex, trust-critical systems. Selected work, principles, and experience.",
+        content: "Berlin-based product builder working on AI-driven products. Case studies, projects, and experience.",
       },
       { property: "og:title", content: "Nithin Pranav — Product Manager" },
-      { property: "og:description", content: "Selected product work, operating principles, and experience." },
+      { property: "og:description", content: "Product case studies, AI projects in build, and experience." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
 });
-
-const principles = [
-  ["P1", " Evidence-based decisions", "Every decision gets a number, a user, or a test behind it—intuition comes second"],
-  ["P2", "Pragmatic problem-solving", "I pick the problems worth solving and ship the undo-able thing fast."],
-  ["P3", "Cross-functional execution", " I build alignment across teams, remove friction, and enable builders to move fast."],
-  ["P4", " User-obsessed rigor", " I validate assumptions with users first; that's how we avoid building the wrong thing beautifully."],
-];
 
 
 
@@ -45,11 +38,11 @@ function Index() {
               CASE STUDIES
             </Link>
 
-            <a href="#principles" className="text-paper/60 transition-colors hover:text-signal">
-              PRINCIPLES
-            </a>
-            <a href="#record" className="text-paper/60 transition-colors hover:text-signal">
-              RECORD
+            <Link to="/projects" className="text-paper/60 transition-colors hover:text-signal">
+              PROJECTS
+            </Link>
+            <a href="#experience" className="text-paper/60 transition-colors hover:text-signal">
+              EXPERIENCE
             </a>
             <a href="#contact" className="text-signal transition-colors hover:text-paper">
               CONTACT
@@ -119,29 +112,7 @@ function Index() {
         </section>
 
         <div className="border-t border-paper/10" />
-        <section id="principles" className="grid scroll-mt-16 grid-cols-12 gap-8 py-16">
-          <div className="col-span-12 md:col-span-4">
-            <span className="font-mono text-[11px] text-paper/40"></span>
-            <h2 className="mt-4 text-balance font-display text-4xl font-medium leading-none">My PM approach</h2>
-            <p className="mt-5 max-w-[30ch] text-sm leading-relaxed text-paper/60">
-              Four rules I hold to on every engagement. They are the constraints that make the work faster, not slower.
-            </p>
-          </div>
-          <div className="col-span-12 grid grid-cols-1 md:col-span-8 sm:grid-cols-2">
-            {principles.map(([number, title, copy]) => (
-              <div key={number} className="border-t border-paper/15 py-6 pr-6">
-                <div className="flex items-baseline gap-3">
-                  <span className="font-mono text-[11px] text-signal">{number}</span>
-                  <h3 className="font-display text-lg font-medium">{title}</h3>
-                </div>
-                <p className="mt-2 text-sm leading-relaxed text-paper/60">{copy}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <div className="border-t border-paper/10" />
-        <section id="record" className="grid scroll-mt-16 grid-cols-12 gap-8 py-16">
+        <section id="experience" className="grid scroll-mt-16 grid-cols-12 gap-8 py-16">
           <div className="col-span-12 md:col-span-4">
             <span className="font-mono text-[11px] text-paper/40"></span>
             <h2 className="mt-4 font-display text-4xl font-medium leading-none">Experience</h2>

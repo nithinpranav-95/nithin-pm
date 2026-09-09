@@ -20,11 +20,24 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
+      role="switch"
+      aria-checked={light}
       onClick={toggle}
       aria-label={light ? "Switch to dark mode" : "Switch to light mode"}
-      className="border border-paper/20 px-2 py-1 font-mono text-[10px] text-paper/60 transition-colors hover:border-signal hover:text-signal"
+      className="group inline-flex items-center gap-2 font-mono text-[10px] text-paper/50 transition-colors hover:text-signal"
     >
-      {light ? "DARK ☾" : "LIGHT ☀"}
+      <span
+        className={`relative block h-5 w-9 border transition-colors duration-300 ${
+          light ? "border-signal bg-signal/20" : "border-paper/25 bg-transparent"
+        }`}
+      >
+        <span
+          className={`absolute top-[2px] block h-[14px] w-[14px] transition-all duration-300 ${
+            light ? "left-[20px] bg-signal" : "left-[2px] bg-paper/60"
+          }`}
+        />
+      </span>
+      <span className="hidden sm:inline">{light ? "ON" : "OFF"}</span>
     </button>
   );
 }
