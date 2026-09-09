@@ -12,9 +12,10 @@ const starters = [
   "What did he do at TeamViewer?",
 ];
 
-export function AskAssistant() {
+export function AskAssistant({ variant = "floating" }: { variant?: "floating" | "bar" }) {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [barInput, setBarInput] = useState("");
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const { messages, sendMessage, status, error } = useChat({
