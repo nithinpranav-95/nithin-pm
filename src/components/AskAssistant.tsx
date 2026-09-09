@@ -46,13 +46,44 @@ export function AskAssistant({ variant = "floating" }: { variant?: "floating" | 
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className="fixed bottom-5 right-5 z-40 border border-signal bg-ink px-4 py-3 font-mono text-[11px] text-signal shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-signal hover:text-ink"
-      >
-        ASK ABOUT NITHIN →
-      </button>
+      {variant === "bar" ? (
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            const value = barInput.trim();
+            if (!value) return;
+            setBarInput("");
+            setOpen(true);
+            ask(value);
+          }}
+          className="flex w-full items-center gap-2 border border-paper/20 bg-panel/40 p-2 transition-colors focus-within:border-signal"
+        >
+          <span className="pl-2 font-mono text-[10px] text-signal">ASK</span>
+          <input
+            value={barInput}
+            onChange={(event) => setBarInput(event.target.value)}
+            onFocus={() => setOpen(true)}
+            placeholder="Ask anything about Nithin's work…"
+            aria-label="Ask anything about Nithin's work"
+            className="flex-1 bg-transparent px-1 py-2 text-sm text-paper placeholder:text-paper/40 focus:outline-none"
+          />
+          <button
+            type="submit"
+            className="border border-signal px-3 py-2 font-mono text-[11px] text-signal transition-colors hover:bg-signal hover:text-ink"
+          >
+            →
+          </button>
+        </form>
+      ) : (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="fixed bottom-5 right-5 z-40 border border-signal bg-ink px-4 py-3 font-mono text-[11px] text-signal shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-signal hover:text-ink"
+        >
+          ASK ABOUT NITHIN →
+        </button>
+      )}
+
 
       {open ? (
         <ModalPortal>
