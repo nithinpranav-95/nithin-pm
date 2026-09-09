@@ -3,6 +3,7 @@ import headshot from "@/assets/headshot.jpg.asset.json";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
 import { ExperienceList } from "@/components/ExperienceList";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { AskAssistant } from "@/components/AskAssistant";
 
 
 export const Route = createFileRoute("/")({
@@ -209,6 +210,8 @@ function Index() {
           <span>SPACE GROTESK · DM SANS · JETBRAINS MONO</span>
         </div>
       </footer>
+
+      <AskAssistant />
     </div>
   );
 }
