@@ -85,6 +85,9 @@ function Index() {
                 <span className="text-signal">AVAILABLE Q3 — 2026</span>
               </div>
             </div>
+            <div className="rise-in mt-8 max-w-[46ch] [animation-delay:420ms]">
+              <AskAssistant variant="bar" />
+            </div>
           </div>
           <div className="rise-in col-span-12 [animation-delay:300ms] md:col-span-4">
             <figure className="h-full border border-paper/15 bg-panel p-2">
