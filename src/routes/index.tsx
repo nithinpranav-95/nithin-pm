@@ -24,10 +24,10 @@ export const Route = createFileRoute("/")({
 });
 
 const principles = [
-  ["P1", "Decide on evidence, not seniority", "Every contested call gets a number, a user, or a test behind it."],
-  ["P2", "Ship the reversible thing first", "Small, cheap, and undoable beats grand and permanent."],
-  ["P3", "Write the decision down", "If it isn't documented, it wasn't decided."],
-  ["P4", "Protect the team's attention", "Fewer meetings, sharper artifacts, more building."],
+  ["P1", " Evidence-based decisions", "Every decision gets a number, a user, or a test behind it—intuition comes second"],
+  ["P2", "Pragmatic problem-solving", "I pick the problems worth solving and ship the undo-able thing fast."],
+  ["P3", "Cross-functional execution", " I build alignment across teams, remove friction, and enable builders to move fast."],
+  ["P4", " User-obsessed rigor", " I validate assumptions with users first; that's how we avoid building the wrong thing beautifully."],
 ];
 
 
@@ -76,8 +76,7 @@ function Index() {
             </h1>
             <div className="mt-9 grid grid-cols-12 gap-6">
               <p className="rise-in col-span-12 max-w-[34ch] text-pretty text-lg font-light leading-snug text-paper/75 [animation-delay:240ms] md:col-span-7 md:text-xl">
-                Product manager for complex, trust-critical systems. I turn ambiguous problems into shipped decisions —
-                and leave the room with fewer, clearer questions.
+                Berlin-based product builder with a background in sales and business operations — now focused on building AI-driven products to solve real user problems. I love digging into customer pain points, validate ideas fast, and partner with engineering, design, and business teams to ship things that create real value
               </p>
               <div className="rise-in col-span-12 flex flex-col justify-center gap-2 border-paper/15 font-mono text-[10px] text-paper/45 [animation-delay:360ms] md:col-span-5 md:border-l md:border-dashed md:py-4 md:pl-4">
                 <span>BASED — BERLIN</span>
@@ -123,7 +122,7 @@ function Index() {
         <section id="principles" className="grid scroll-mt-16 grid-cols-12 gap-8 py-16">
           <div className="col-span-12 md:col-span-4">
             <span className="font-mono text-[11px] text-paper/40"></span>
-            <h2 className="mt-4 text-balance font-display text-4xl font-medium leading-none">Operating principles</h2>
+            <h2 className="mt-4 text-balance font-display text-4xl font-medium leading-none">My PM approach</h2>
             <p className="mt-5 max-w-[30ch] text-sm leading-relaxed text-paper/60">
               Four rules I hold to on every engagement. They are the constraints that make the work faster, not slower.
             </p>
