@@ -5,7 +5,6 @@ import caseDoctolib from "@/assets/case-doctolib.jpg";
 import caseSynthflow from "@/assets/case-synthflow.jpg";
 import caseMaritime from "@/assets/case-maritime.jpg";
 
-
 export interface ProjectSection {
   heading: string;
   body: string;
@@ -15,6 +14,7 @@ export interface Project {
   slug: string;
   number: string;
   title: string;
+  company: string;
   year: string;
   image: string;
   description: string;
@@ -30,6 +30,7 @@ export const projects: Project[] = [
     image: caseYoutube,
     number: "01",
     title: "Youtube",
+    company: "YouTube",
     year: "2026",
     description:
       "A product teardown and growth case study on how discovery and creator retention shape the viewing experience.",
@@ -60,6 +61,7 @@ export const projects: Project[] = [
     image: caseN26,
     number: "02",
     title: "N26",
+    company: "N26",
     year: "2026",
     description:
       "A case study on trust, onboarding friction, and support load in a mobile-first bank.",
@@ -90,6 +92,7 @@ export const projects: Project[] = [
     image: caseDuolingo,
     number: "03",
     title: "Duolingo",
+    company: "Duolingo",
     year: "2026",
     description:
       "A case study on habit formation, streak mechanics, and where gamification stops helping learners.",
@@ -120,6 +123,7 @@ export const projects: Project[] = [
     image: caseDoctolib,
     number: "04",
     title: "Doctolib",
+    company: "Doctolib",
     year: "2026",
     description:
       "A case study on booking reliability, no-shows, and the two-sided balance between patients and practitioners.",
@@ -150,6 +154,7 @@ export const projects: Project[] = [
     image: caseSynthflow,
     number: "05",
     title: "Synthflow — Voice Agent",
+    company: "Synthflow",
     year: "2026",
     description:
       "A case study on building a reliable AI voice agent: call flows, hand-off to humans, and the quality bar that makes people trust it.",
@@ -180,6 +185,7 @@ export const projects: Project[] = [
     image: caseMaritime,
     number: "06",
     title: "AI Agent for Ship Companies",
+    company: "Maritime Operations",
     year: "2026",
     description:
       "A case study on bringing an AI agent into maritime operations — where it can take work off the crew and shore teams, and where it must not.",
@@ -206,7 +212,6 @@ export const projects: Project[] = [
     ],
   },
 ];
-
 
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);

@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { CanvaEmbed } from "@/components/CanvaEmbed";
+import { CompanyLogo } from "@/components/CompanyLogos";
 import { getProject, projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/work/$slug")({
@@ -36,7 +37,10 @@ function CaseStudyNotFound() {
     <div className="flex min-h-screen items-center justify-center bg-ink px-5 text-paper">
       <div className="text-center">
         <h1 className="font-display text-3xl font-medium">Case study not found</h1>
-        <Link to="/" className="mt-6 inline-block border-b border-signal pb-1 font-mono text-[11px] text-signal">
+        <Link
+          to="/"
+          className="mt-6 inline-block border-b border-signal pb-1 font-mono text-[11px] text-signal"
+        >
           ← BACK TO WORK
         </Link>
       </div>
@@ -52,10 +56,17 @@ function CaseStudy() {
     <div className="min-h-screen overflow-x-hidden bg-ink text-paper antialiased">
       <header className="sticky top-0 z-20 border-b border-paper/10 bg-ink/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-6">
-          <Link to="/" className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal">
+          <Link
+            to="/"
+            className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal"
+          >
             NITHIN PRANAV — PRODUCT
           </Link>
-          <Link to="/" hash="work" className="font-mono text-[11px] text-signal transition-colors hover:text-paper">
+          <Link
+            to="/"
+            hash="work"
+            className="font-mono text-[11px] text-signal transition-colors hover:text-paper"
+          >
             ← ALL WORK
           </Link>
         </div>
@@ -67,14 +78,20 @@ function CaseStudy() {
             <p className="font-mono text-[11px] text-signal">
               {project.number} — CASE STUDY / {project.year}
             </p>
-            <h1 className="mt-4 text-balance font-display text-5xl font-semibold leading-[0.9] md:text-7xl">
-              {project.title}
-            </h1>
+            <div className="mt-4 flex items-center gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-paper/20 bg-panel text-signal">
+                <CompanyLogo slug={project.slug} className="h-6 w-6" />
+              </div>
+              <h1 className="text-balance font-display text-5xl font-semibold leading-[0.9] md:text-7xl">
+                {project.title}
+              </h1>
+            </div>
             <p className="mt-6 max-w-[52ch] text-pretty text-lg font-light leading-snug text-paper/75">
               {project.description}
             </p>
           </div>
           <div className="col-span-12 flex flex-col justify-end gap-2 border-paper/15 font-mono text-[10px] text-paper/45 md:col-span-4 md:border-l md:border-dashed md:pl-6">
+            <span>COMPANY — {project.company}</span>
             <span>ROLE — {project.role}</span>
             <span>OUTCOME — {project.outcome}</span>
             <span className="text-signal">DECK — CANVA</span>
@@ -89,13 +106,17 @@ function CaseStudy() {
         <section className="grid grid-cols-12 gap-8 py-14">
           <div className="col-span-12 md:col-span-4">
             <span className="font-mono text-[11px] text-paper/40">(a) — WALKTHROUGH</span>
-            <h2 className="mt-4 font-display text-4xl font-medium leading-none">How this study was done</h2>
+            <h2 className="mt-4 font-display text-4xl font-medium leading-none">
+              How this study was done
+            </h2>
           </div>
           <div className="col-span-12 md:col-span-8">
             {project.sections.map((section) => (
               <div key={section.heading} className="border-t border-paper/15 py-6">
                 <h3 className="font-display text-lg font-medium">{section.heading}</h3>
-                <p className="mt-2 max-w-[68ch] text-sm leading-relaxed text-paper/65">{section.body}</p>
+                <p className="mt-2 max-w-[68ch] text-sm leading-relaxed text-paper/65">
+                  {section.body}
+                </p>
               </div>
             ))}
           </div>
@@ -110,9 +131,13 @@ function CaseStudy() {
                 key={item.slug}
                 to="/work/$slug"
                 params={{ slug: item.slug }}
-                className="group flex items-baseline gap-4 py-5"
+                className="group flex items-center gap-4 py-5"
               >
                 <span className="font-mono text-[11px] text-signal">{item.number}</span>
+                <CompanyLogo
+                  slug={item.slug}
+                  className="h-4 w-4 shrink-0 text-paper/50 transition-colors group-hover:text-signal"
+                />
                 <span className="font-display text-2xl font-medium transition-colors group-hover:text-signal">
                   {item.title}
                 </span>
