@@ -87,6 +87,20 @@ export function MaritimeLogo({ className, ...props }: ComponentProps<"svg">) {
   return <Ship className={className} aria-hidden="true" strokeWidth={1.75} {...props} />;
 }
 
+export function ZauberLogo({ className, ...props }: ComponentProps<"svg">) {
+  return (
+    <svg
+      viewBox="0 0 185 235"
+      fill="currentColor"
+      aria-hidden="true"
+      className={className}
+      {...props}
+    >
+      <path d="M87.1051 215.181L111.858 215.181C122.198 215.181 132.851 213.923 140.684 212.664C151.651 210.777 156.977 204.799 161.99 198.507C167.63 191.586 174.21 179.003 182.67 163.588C183.297 167.992 183.923 173.026 183.923 181.834C183.923 198.508 181.103 216.754 177.344 230.91C165.124 229.967 139.744 229.967 126.898 229.967L55.459 229.967C41.3593 229.967 14.0998 229.967 4.03737e-05 230.911L134.731 25.7965C119.691 24.5381 105.591 24.2236 92.4317 24.2236L78.9586 24.2236C63.9189 24.2236 59.5323 24.8528 51.6991 26.4257C44.8059 27.6841 37.9127 31.1446 31.6461 37.751C25.0662 44.672 18.4863 53.7952 10.6532 66.0643C10.0265 61.9746 9.71317 59.4579 9.71317 52.2223C9.71317 39.324 11.9065 22.9652 14.7264 8.80857C26.6329 9.75233 36.9727 9.75233 49.8191 9.75233L125.958 9.75231C140.057 9.75231 167.944 9.75231 182.043 8.80854L52.0124 212.664C64.5455 214.552 72.6921 215.181 87.1051 215.181Z" />
+    </svg>
+  );
+}
+
 export function CompanyLogo({ slug, className = "h-4 w-4", ...props }: CompanyLogoProps) {
   switch (slug) {
     case "youtube":
@@ -100,7 +114,8 @@ export function CompanyLogo({ slug, className = "h-4 w-4", ...props }: CompanyLo
     case "synthflow-voice-agent":
       return <SynthflowLogo className={className} {...props} />;
     case "maritime-ai-agent":
-      return <MaritimeLogo className={className} {...props} />;
+    case "zauber":
+      return <ZauberLogo className={className} {...props} />;
     default:
       return null;
   }
