@@ -47,32 +47,54 @@ export function AskAssistant({ variant = "floating" }: { variant?: "floating" | 
   return (
     <>
       {variant === "bar" ? (
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-            const value = barInput.trim();
-            if (!value) return;
-            setBarInput("");
-            setOpen(true);
-            ask(value);
-          }}
-          className="flex w-full items-center gap-2 border border-paper/20 bg-panel/40 p-2 transition-colors focus-within:border-signal"
-        >
-          <span className="pl-2 font-mono text-[10px] text-signal">ASK</span>
-          <input
-            value={barInput}
-            onChange={(event) => setBarInput(event.target.value)}
-            placeholder="Ask anything about Nithin's work…"
-            aria-label="Ask anything about Nithin's work"
-            className="flex-1 bg-transparent px-1 py-2 text-sm text-paper placeholder:text-paper/40 focus:outline-none"
-          />
-          <button
-            type="submit"
-            className="border border-signal px-3 py-2 font-mono text-[11px] text-signal transition-colors hover:bg-signal hover:text-ink"
+        <div className="w-full">
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+              const value = barInput.trim();
+              if (!value) return;
+              setBarInput("");
+              setOpen(true);
+              ask(value);
+            }}
+            className="group flex w-full items-center gap-2 border-2 border-signal bg-panel p-2 shadow-[0_0_24px_-4px_rgba(235,94,40,0.25)] transition-all duration-300 hover:border-signal hover:shadow-[0_0_32px_-2px_rgba(235,94,40,0.35)] focus-within:border-signal focus-within:shadow-[0_0_36px_-2px_rgba(235,94,40,0.45)]"
           >
-            →
-          </button>
-        </form>
+            <span className="flex items-center gap-1.5 bg-signal px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-ink">
+              ASK AI
+            </span>
+            <input
+              value={barInput}
+              onChange={(event) => setBarInput(event.target.value)}
+              placeholder="Ask anything about Nithin's work…"
+              aria-label="Ask anything about Nithin's work"
+              className="flex-1 bg-transparent px-2 py-2 text-sm font-medium text-paper placeholder:text-paper/60 focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="flex items-center gap-1.5 bg-signal px-3.5 py-2 font-mono text-[11px] font-semibold text-ink transition-all duration-200 hover:scale-[1.03] hover:bg-signal/90 active:scale-[0.97]"
+              aria-label="Submit question"
+            >
+              <span>SEND</span>
+              <span>→</span>
+            </button>
+          </form>
+          <div className="mt-2.5 flex flex-wrap items-center gap-1.5 font-mono text-[10px] text-paper/50">
+            <span className="text-paper/40">TRY:</span>
+            {starters.slice(0, 2).map((starter) => (
+              <button
+                key={starter}
+                type="button"
+                onClick={() => {
+                  setOpen(true);
+                  ask(starter);
+                }}
+                className="border border-paper/15 bg-panel/70 px-2 py-0.5 text-paper/70 transition-colors hover:border-signal hover:text-signal"
+              >
+                "{starter}"
+              </button>
+            ))}
+          </div>
+        </div>
       ) : (
         <button
           type="button"

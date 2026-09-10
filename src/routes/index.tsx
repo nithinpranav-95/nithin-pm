@@ -77,7 +77,7 @@ function Index() {
                 <span className="text-signal">AVAILABLE Q3 — 2026</span>
               </div>
             </div>
-            <div className="rise-in mt-8 max-w-[46ch] [animation-delay:420ms]">
+            <div className="rise-in mt-8 max-w-[54ch] [animation-delay:420ms]">
               <AskAssistant variant="bar" />
             </div>
           </div>
