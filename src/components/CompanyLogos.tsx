@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import { Ship } from "lucide-react";
+import { Ship, FlaskConical } from "lucide-react";
 
 export interface CompanyLogoProps extends ComponentProps<"svg"> {
   slug?: string;
@@ -101,6 +101,10 @@ export function ZauberLogo({ className, ...props }: ComponentProps<"svg">) {
   );
 }
 
+export function AuxiliusLogo({ className, ...props }: ComponentProps<"svg">) {
+  return <FlaskConical className={className} aria-hidden="true" strokeWidth={1.75} {...props} />;
+}
+
 export function CompanyLogo({ slug, className = "h-4 w-4", ...props }: CompanyLogoProps) {
   switch (slug) {
     case "youtube":
@@ -113,6 +117,8 @@ export function CompanyLogo({ slug, className = "h-4 w-4", ...props }: CompanyLo
       return <DoctolibLogo className={className} {...props} />;
     case "synthflow-voice-agent":
       return <SynthflowLogo className={className} {...props} />;
+    case "auxilius":
+      return <AuxiliusLogo className={className} {...props} />;
     case "maritime-ai-agent":
     case "zauber":
       return <ZauberLogo className={className} {...props} />;

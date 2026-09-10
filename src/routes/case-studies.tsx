@@ -62,7 +62,7 @@ function CaseStudies() {
           </div>
         </section>
 
-        <CaseStudyGrid />
+        <CaseStudyGrid includeHidden />
       </main>
 
       <footer className="border-t border-paper/10">

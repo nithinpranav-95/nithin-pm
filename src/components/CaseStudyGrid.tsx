@@ -6,8 +6,9 @@ import { CompanyLogo } from "@/components/CompanyLogos";
 
 import { projects, type Project } from "@/lib/projects";
 
-export function CaseStudyGrid() {
+export function CaseStudyGrid({ includeHidden = false }: { includeHidden?: boolean }) {
   const [active, setActive] = useState<Project | null>(null);
+  const visible = includeHidden ? projects : projects.filter((project) => !project.hideOnHome);
 
   useEffect(() => {
     if (!active) return;
@@ -25,7 +26,7 @@ export function CaseStudyGrid() {
   return (
     <>
       <section className="grid grid-cols-1 gap-6 pb-20 pt-10 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
+        {visible.map((project) => (
           <button
             key={project.slug}
             type="button"
