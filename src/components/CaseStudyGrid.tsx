@@ -1,37 +1,20 @@
-import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { CanvaEmbed } from "@/components/CanvaEmbed";
-import { ModalPortal } from "@/components/ModalPortal";
 import { CompanyLogo } from "@/components/CompanyLogos";
 
-import { projects, type Project } from "@/lib/projects";
+import { projects } from "@/lib/projects";
 
 export function CaseStudyGrid({ includeHidden = false }: { includeHidden?: boolean }) {
-  const [active, setActive] = useState<Project | null>(null);
   const visible = includeHidden ? projects : projects.filter((project) => !project.hideOnHome);
-
-  useEffect(() => {
-    if (!active) return;
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setActive(null);
-    };
-    document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [active]);
 
   return (
     <>
       <section className="grid grid-cols-1 gap-6 pb-20 pt-10 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((project) => (
-          <button
+          <Link
             key={project.slug}
-            type="button"
-            onClick={() => setActive(project)}
-            className="group border border-paper/15 bg-panel p-3 text-left transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-signal hover:shadow-[0_18px_40px_-24px_rgba(0,0,0,0.85)] focus-visible:-translate-y-1.5 focus-visible:border-signal"
+            to="/work/$slug"
+            params={{ slug: project.slug }}
+            className="group block border border-paper/15 bg-panel p-3 text-left transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-signal hover:shadow-[0_18px_40px_-24px_rgba(0,0,0,0.85)] focus-visible:-translate-y-1.5 focus-visible:border-signal"
           >
             <div className="relative flex aspect-[4/3] w-full flex-col items-center justify-center overflow-hidden border border-paper/10 bg-ink/70 p-6 transition-all duration-300 group-hover:border-signal/40 group-hover:bg-ink">
               {/* Monograph editorial background grid */}
