@@ -21,6 +21,7 @@ export interface Project {
   role: string;
   outcome: string;
   canvaUrl: string;
+  hideOnHome?: boolean;
   sections: ProjectSection[];
 }
 
@@ -208,6 +209,38 @@ export const projects: Project[] = [
       {
         heading: "How to read the deck",
         body: "The deck above covers the operational context, the workflow analysis, the agent scope, the guardrails, and the risks.",
+      },
+    ],
+  },
+  {
+    slug: "auxilius",
+    image: caseMaritime,
+    number: "07",
+    title: "Auxilius",
+    company: "Auxilius",
+    year: "2026",
+    description:
+      "A case study on clinical trial financial operations — where manual spend tracking breaks down and what a product can do about it.",
+    role: "PRODUCT MANAGER",
+    outcome: "CASE STUDY",
+    canvaUrl: "https://www.canva.com/design/DAHTaVvRdhY/_8x6TIP7OlJSskxjvEgJ6A/view",
+    hideOnHome: true,
+    sections: [
+      {
+        heading: "Context",
+        body: "Trial finance teams reconcile budgets, vendor invoices, and accruals across spreadsheets and systems that were never designed to talk to each other.",
+      },
+      {
+        heading: "Approach",
+        body: "I mapped the end-to-end spend workflow, separated the steps that are rule-bound from the ones that need finance judgement, and looked for where errors compound.",
+      },
+      {
+        heading: "What I proposed",
+        body: "A workflow that keeps a single source of truth for trial spend, automates the repeatable reconciliation work, and keeps an audit trail finance and compliance can defend.",
+      },
+      {
+        heading: "How to read the deck",
+        body: "The deck above walks through the context, the workflow analysis, the proposed product, the metrics, and the risks.",
       },
     ],
   },
