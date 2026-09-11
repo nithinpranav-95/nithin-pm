@@ -89,47 +89,47 @@ function Index() {
                 <span className="text-signal">AVAILABLE Q3 — 2026</span>
               </div>
             </div>
-            <div className="rise-in mt-7 flex flex-wrap items-center gap-3 [animation-delay:380ms]">
-              <a
-                href="https://calendly.com/nithin-pranav/95"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-signal bg-signal/10 px-4 py-2.5 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
-              >
-                <Calendar className="h-3.5 w-3.5" />
-                <span>SCHEDULE A CALL</span>
-                <span aria-hidden="true">→</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/nithinpranav/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-paper/25 bg-panel/60 px-4 py-2.5 font-mono text-[11px] tracking-wide text-paper/80 transition-colors hover:border-signal hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
-              >
-                <Linkedin className="h-3.5 w-3.5" />
-                <span>LINKEDIN</span>
-                <span aria-hidden="true">→</span>
-              </a>
+              <div className="rise-in mt-6 max-w-[54ch] [animation-delay:440ms]">
+                <AskAssistant variant="bar" />
+              </div>
             </div>
-            <div className="rise-in mt-6 max-w-[54ch] [animation-delay:440ms]">
-              <AskAssistant variant="bar" />
+            <div className="rise-in col-span-12 flex flex-col gap-6 [animation-delay:300ms] md:col-span-4">
+              <figure className="h-full border border-paper/15 bg-panel p-2">
+                <img
+                  src={headshot.url}
+                  alt="Portrait of Nithin Pranav"
+                  width={1080}
+                  height={1620}
+                  loading="lazy"
+                  className="h-full min-h-[300px] w-full object-cover md:min-h-[440px]"
+                />
+                <figcaption className="px-1 pb-1 pt-3 font-mono text-[10px] text-paper/40">
+                  PORTRAIT — Taken in 2024
+                </figcaption>
+              </figure>
+              <div className="flex flex-wrap items-center gap-3 [animation-delay:380ms]">
+                <a
+                  href="https://calendly.com/nithin-pranav/95"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex flex-1 items-center justify-center gap-2 border border-signal bg-signal/10 px-4 py-2.5 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+                >
+                  <Calendar className="h-3.5 w-3.5" />
+                  <span>SCHEDULE A CALL</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/nithinpranav/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex flex-1 items-center justify-center gap-2 border border-paper/25 bg-panel/60 px-4 py-2.5 font-mono text-[11px] tracking-wide text-paper/80 transition-colors hover:border-signal hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+                >
+                  <Linkedin className="h-3.5 w-3.5" />
+                  <span>LINKEDIN</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="rise-in col-span-12 [animation-delay:300ms] md:col-span-4">
-            <figure className="h-full border border-paper/15 bg-panel p-2">
-              <img
-                src={headshot.url}
-                alt="Portrait of Nithin Pranav"
-                width={1080}
-                height={1620}
-                loading="lazy"
-                className="h-full min-h-[300px] w-full object-cover md:min-h-[440px]"
-              />
-              <figcaption className="px-1 pb-1 pt-3 font-mono text-[10px] text-paper/40">
-                PORTRAIT — Taken in 2024
-              </figcaption>
-            </figure>
-          </div>
         </section>
 
         <div className="relative border-t border-paper/10">
