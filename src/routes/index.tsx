@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Calendar, Linkedin } from "lucide-react";
 import headshot from "@/assets/headshot.jpg.asset.json";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
 import { ExperienceList } from "@/components/ExperienceList";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { AskAssistant } from "@/components/AskAssistant";
-
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -12,10 +12,14 @@ export const Route = createFileRoute("/")({
       { title: "Nithin Pranav — Product Manager" },
       {
         name: "description",
-        content: "Berlin-based product builder working on AI-driven products. Case studies, projects, and experience.",
+        content:
+          "Berlin-based product builder working on AI-driven products. Case studies, projects, and experience.",
       },
       { property: "og:title", content: "Nithin Pranav — Product Manager" },
-      { property: "og:description", content: "Product case studies, AI projects in build, and experience." },
+      {
+        property: "og:description",
+        content: "Product case studies, AI projects in build, and experience.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -23,17 +27,21 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-
-
 function Index() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-ink text-paper antialiased">
       <header className="sticky top-0 z-20 border-b border-paper/10 bg-ink/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-6">
-          <a href="#top" className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal">
+          <a
+            href="#top"
+            className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal"
+          >
             NITHIN PRANAV — PRODUCT
           </a>
-          <nav aria-label="Portfolio sections" className="hidden items-center gap-6 font-mono text-[11px] sm:flex">
+          <nav
+            aria-label="Portfolio sections"
+            className="hidden items-center gap-6 font-mono text-[11px] sm:flex"
+          >
             <Link to="/case-studies" className="text-paper/60 transition-colors hover:text-signal">
               CASE STUDIES
             </Link>
@@ -55,7 +63,6 @@ function Index() {
             </a>
             <ThemeToggle />
           </div>
-
         </div>
       </header>
 
@@ -69,7 +76,10 @@ function Index() {
             </h1>
             <div className="mt-9 grid grid-cols-12 gap-6">
               <p className="rise-in col-span-12 max-w-[34ch] text-pretty text-lg font-light leading-snug text-paper/75 [animation-delay:240ms] md:col-span-7 md:text-xl">
-                Berlin-based product builder with a background in sales and business operations — now focused on building AI-driven products to solve real user problems. I love digging into customer pain points, validate ideas fast, and partner with engineering, design, and business teams to ship things that create real value
+                Berlin-based product builder with a background in sales and business operations —
+                now focused on building AI-driven products to solve real user problems. I love
+                digging into customer pain points, validate ideas fast, and partner with
+                engineering, design, and business teams to ship things that create real value
               </p>
               <div className="rise-in col-span-12 flex flex-col justify-center gap-2 border-paper/15 font-mono text-[10px] text-paper/45 [animation-delay:360ms] md:col-span-5 md:border-l md:border-dashed md:py-4 md:pl-4">
                 <span>BASED — BERLIN</span>
@@ -77,7 +87,29 @@ function Index() {
                 <span className="text-signal">AVAILABLE Q3 — 2026</span>
               </div>
             </div>
-            <div className="rise-in mt-8 max-w-[54ch] [animation-delay:420ms]">
+            <div className="rise-in mt-7 flex flex-wrap items-center gap-3 [animation-delay:380ms]">
+              <a
+                href="https://calendly.com/nithin-pranav/95"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-signal bg-signal/10 px-4 py-2.5 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+              >
+                <Calendar className="h-3.5 w-3.5" />
+                <span>SCHEDULE A CALL</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/nithinpranav/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-paper/25 bg-panel/60 px-4 py-2.5 font-mono text-[11px] tracking-wide text-paper/80 transition-colors hover:border-signal hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+              >
+                <Linkedin className="h-3.5 w-3.5" />
+                <span>LINKEDIN</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div className="rise-in mt-6 max-w-[54ch] [animation-delay:440ms]">
               <AskAssistant variant="bar" />
             </div>
           </div>
@@ -91,7 +123,9 @@ function Index() {
                 loading="lazy"
                 className="h-full min-h-[300px] w-full object-cover md:min-h-[440px]"
               />
-              <figcaption className="px-1 pb-1 pt-3 font-mono text-[10px] text-paper/40">PORTRAIT — Taken in 2024</figcaption>
+              <figcaption className="px-1 pb-1 pt-3 font-mono text-[10px] text-paper/40">
+                PORTRAIT — Taken in 2024
+              </figcaption>
             </figure>
           </div>
         </section>
@@ -174,7 +208,6 @@ function Index() {
             <span>REPLIES — WITHIN 48H</span>
           </div>
         </section>
-
       </main>
 
       <footer className="border-t border-paper/10">
@@ -183,8 +216,6 @@ function Index() {
           <span>SPACE GROTESK · DM SANS · JETBRAINS MONO</span>
         </div>
       </footer>
-
-      
     </div>
   );
 }
