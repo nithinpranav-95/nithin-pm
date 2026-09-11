@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import { Ship, FlaskConical } from "lucide-react";
+import { Ship, FlaskConical, Landmark, SunMedium } from "lucide-react";
 
 export interface CompanyLogoProps extends ComponentProps<"svg"> {
   slug?: string;
@@ -105,6 +105,14 @@ export function AuxiliusLogo({ className, ...props }: ComponentProps<"svg">) {
   return <FlaskConical className={className} aria-hidden="true" strokeWidth={1.75} {...props} />;
 }
 
+export function NomerraLogo({ className, ...props }: ComponentProps<"svg">) {
+  return <Landmark className={className} aria-hidden="true" strokeWidth={1.75} {...props} />;
+}
+
+export function ReonicLogo({ className, ...props }: ComponentProps<"svg">) {
+  return <SunMedium className={className} aria-hidden="true" strokeWidth={1.75} {...props} />;
+}
+
 export function CompanyLogo({ slug, className = "h-4 w-4", ...props }: CompanyLogoProps) {
   switch (slug) {
     case "youtube":
@@ -117,6 +125,10 @@ export function CompanyLogo({ slug, className = "h-4 w-4", ...props }: CompanyLo
       return <DoctolibLogo className={className} {...props} />;
     case "synthflow-voice-agent":
       return <SynthflowLogo className={className} {...props} />;
+    case "nomerra":
+      return <NomerraLogo className={className} {...props} />;
+    case "reonic":
+      return <ReonicLogo className={className} {...props} />;
     case "auxilius":
       return <AuxiliusLogo className={className} {...props} />;
     case "maritime-ai-agent":

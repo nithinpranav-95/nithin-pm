@@ -4,6 +4,8 @@ import caseDuolingo from "@/assets/case-duolingo.jpg";
 import caseDoctolib from "@/assets/case-doctolib.jpg";
 import caseSynthflow from "@/assets/case-synthflow.jpg";
 import caseMaritime from "@/assets/case-maritime.jpg";
+import caseNomerra from "@/assets/case-nomerra.jpg";
+import caseReonic from "@/assets/case-reonic.jpg";
 
 export interface ProjectSection {
   heading: string;
@@ -241,6 +243,68 @@ export const projects: Project[] = [
       {
         heading: "How to read the deck",
         body: "The deck above walks through the context, the workflow analysis, the proposed product, the metrics, and the risks.",
+      },
+    ],
+  },
+  {
+    slug: "nomerra",
+    image: caseNomerra,
+    number: "08",
+    title: "Nomerra — Agent for Private Market Operations",
+    company: "Nomerra",
+    year: "2026",
+    description:
+      "A case study on an AI agent for private market operations — where deal, fund, and investor workflows can be automated, and where they cannot.",
+    role: "PRODUCT MANAGER",
+    outcome: "CASE STUDY",
+    canvaUrl: "https://www.canva.com/design/DAHU58crEic/LFVSxn8f9Gzl7UOg2eScaA/view",
+    sections: [
+      {
+        heading: "Context",
+        body: "Private market teams run on documents, data rooms, and manual reconciliation across funds, deals, and LPs. Most of the effort goes into moving information rather than judging it.",
+      },
+      {
+        heading: "Approach",
+        body: "I mapped the operating workflows end to end, split the rule-bound steps from the ones that carry fiduciary weight, and scoped the agent to the first group with a clear escalation path.",
+      },
+      {
+        heading: "What I proposed",
+        body: "An agent that handles document extraction, reconciliation, and routine reporting, with an audit trail and review gates that a compliance-heavy industry can defend.",
+      },
+      {
+        heading: "How to read the deck",
+        body: "The deck above covers the operating context, the workflow analysis, the agent scope, the guardrails, and the risks.",
+      },
+    ],
+  },
+  {
+    slug: "reonic",
+    image: caseReonic,
+    number: "09",
+    title: "Reonic — AI Operating System for Renewable Installers",
+    company: "Reonic",
+    year: "2026",
+    description:
+      "A case study on an AI operating system for renewable installers — from quoting and site design to scheduling and handover.",
+    role: "PRODUCT MANAGER",
+    outcome: "CASE STUDY",
+    canvaUrl: "https://www.canva.com/design/DAHSYRbFKUo/ADmwSOR_03_whW59XySSmQ/view",
+    sections: [
+      {
+        heading: "Context",
+        body: "Installers lose margin between the first customer enquiry and the finished installation: quoting is slow, site data is inconsistent, and scheduling collapses when reality shifts.",
+      },
+      {
+        heading: "Approach",
+        body: "I walked the installer journey from lead to commissioning, measured where hours and rework accumulate, and separated the steps that need field judgement from the ones software should own.",
+      },
+      {
+        heading: "What I proposed",
+        body: "An operating layer that turns site input into an accurate quote and design fast, keeps scheduling honest as jobs change, and hands crews a single source of truth on site.",
+      },
+      {
+        heading: "How to read the deck",
+        body: "The deck above walks through the market context, the workflow analysis, the proposed product, the metrics, and the risks.",
       },
     ],
   },
