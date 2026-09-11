@@ -76,10 +76,12 @@ function Index() {
             </h1>
             <div className="mt-9 grid grid-cols-12 gap-6">
               <p className="rise-in col-span-12 max-w-[34ch] text-pretty text-lg font-light leading-snug text-paper/75 [animation-delay:240ms] md:col-span-7 md:text-xl">
-                Berlin-based product builder with a background in sales and business operations —
-                now focused on building AI-driven products to solve real user problems. I love
-                digging into customer pain points, validate ideas fast, and partner with
-                engineering, design, and business teams to ship things that create real value
+                Berlin-based Product Manager with a background in sales and business operations, now
+                focused on building AI-driven products that solve real user problems. I’m passionate
+                about understanding customer pain points, validating ideas quickly, and turning
+                insights into products that create meaningful value. I enjoy working
+                cross-functionally with engineering, design, and business teams to turn ideas into
+                impactful products and ship solutions that people actually want to use.
               </p>
               <div className="rise-in col-span-12 flex flex-col justify-center gap-2 border-paper/15 font-mono text-[10px] text-paper/45 [animation-delay:360ms] md:col-span-5 md:border-l md:border-dashed md:py-4 md:pl-4">
                 <span>BASED — BERLIN</span>
