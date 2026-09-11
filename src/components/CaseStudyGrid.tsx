@@ -43,8 +43,8 @@ export function CaseStudyGrid({ includeHidden = false }: { includeHidden?: boole
 
               {/* Center Company Logo Plate */}
               <div className="relative flex flex-col items-center justify-center text-center">
-                <div className="flex h-20 w-20 items-center justify-center border border-paper/15 bg-panel/90 p-4 text-paper/85 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:scale-105 group-hover:border-signal/60 group-hover:text-signal group-hover:shadow-[0_0_30px_-5px_rgba(235,94,40,0.25)]">
-                  <CompanyLogo slug={project.slug} className="h-10 w-10" />
+                <div className="flex h-24 w-24 items-center justify-center border border-paper/15 bg-panel/90 p-4 text-paper/85 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:scale-105 group-hover:border-signal/60 group-hover:text-signal group-hover:shadow-[0_0_30px_-5px_rgba(235,94,40,0.25)]">
+                  <CompanyLogo slug={project.slug} className="h-14 w-14" />
                 </div>
                 <span className="mt-3 font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-paper/55 transition-colors group-hover:text-signal">
                   {project.company}
