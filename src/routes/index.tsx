@@ -80,54 +80,19 @@ function Index() {
               <br />
               Pranav
             </h1>
-            <div className="mt-9 grid grid-cols-12 gap-6">
-              <p className="rise-in col-span-12 max-w-[34ch] text-pretty text-lg font-light leading-snug text-paper/75 [animation-delay:240ms] md:col-span-7 md:text-xl">
-                Berlin-based Product Manager with a background in sales and business operations, now
-                focused on building AI-driven products that solve real user problems. I’m passionate
-                about understanding customer pain points, validating ideas quickly, and turning
-                insights into products that create meaningful value. I enjoy working
-                cross-functionally with engineering, design, and business teams to turn ideas into
-                impactful products and ship solutions that people actually want to use.
-              </p>
-              <div className="rise-in col-span-12 flex flex-col justify-center gap-2 border-paper/15 font-mono text-[10px] text-paper/45 [animation-delay:360ms] md:col-span-5 md:border-l md:border-dashed md:py-4 md:pl-4">
-                <span>BASED — BERLIN</span>
-                <span>FOCUS — COMPLEX SYSTEMS</span>
-                <span className="text-signal">AVAILABLE Q3 — 2026</span>
-                <Link
-                  to="/certifications"
-                  className="text-paper/70 transition-colors hover:text-signal"
-                >
-                  CREDENTIALS — DATA SCIENCE & AI ↗
-                </Link>
-              </div>
-            </div>
-            <div className="rise-in mt-7 flex flex-wrap items-center gap-3 [animation-delay:380ms]">
-              <a
-                href="https://calendly.com/nithin-pranav/95"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-signal bg-signal/10 px-4 py-2.5 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
-              >
-                <Calendar className="h-3.5 w-3.5" />
-                <span>SCHEDULE A CALL</span>
-                <span aria-hidden="true">→</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/nithinpranav/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-paper/25 bg-panel/60 px-4 py-2.5 font-mono text-[11px] tracking-wide text-paper/80 transition-colors hover:border-signal hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
-              >
-                <Linkedin className="h-3.5 w-3.5" />
-                <span>LINKEDIN</span>
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
+            <p className="rise-in mt-9 text-justify text-pretty text-lg font-light leading-snug text-paper/75 [animation-delay:240ms] md:text-xl">
+              Berlin-based Product Manager with a background in sales and business operations, now
+              focused on building AI-driven products that solve real user problems. I’m passionate
+              about understanding customer pain points, validating ideas quickly, and turning
+              insights into products that create meaningful value. I enjoy working
+              cross-functionally with engineering, design, and business teams to turn ideas into
+              impactful products and ship solutions that people actually want to use.
+            </p>
             <div className="rise-in mt-6 max-w-[54ch] [animation-delay:440ms]">
               <AskAssistant variant="bar" />
             </div>
           </div>
-          <div className="rise-in col-span-12 [animation-delay:300ms] md:col-span-4">
+          <div className="rise-in col-span-12 flex flex-col gap-6 [animation-delay:300ms] md:col-span-4">
             <figure className="h-full border border-paper/15 bg-panel p-2">
               <img
                 src={headshot.url}
@@ -138,9 +103,31 @@ function Index() {
                 className="h-full min-h-[300px] w-full object-cover md:min-h-[440px]"
               />
               <figcaption className="px-1 pb-1 pt-3 font-mono text-[10px] text-paper/40">
-                PORTRAIT — Taken in 2024
+                         MOSELLE VALLEY - 2024
               </figcaption>
             </figure>
+            <div className="flex flex-wrap items-center gap-3 [animation-delay:380ms]">
+              <a
+                href="https://calendly.com/nithin-pranav/95"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-1 items-center justify-center gap-2 border border-signal bg-signal/10 px-4 py-2.5 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+              >
+                <Calendar className="h-3.5 w-3.5" />
+                <span>SCHEDULE A CALL</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/nithinpranav/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-1 items-center justify-center gap-2 border border-paper/25 bg-panel/60 px-4 py-2.5 font-mono text-[11px] tracking-wide text-paper/80 transition-colors hover:border-signal hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+              >
+                <Linkedin className="h-3.5 w-3.5" />
+                <span>LINKEDIN</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
           </div>
         </section>
 
