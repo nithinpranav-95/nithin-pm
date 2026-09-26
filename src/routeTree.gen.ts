@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as CertificationsRouteImport } from './routes/certifications'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as WorkSlugRouteImport } from './routes/work.$slug'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const CaseStudiesRoute = CaseStudiesRouteImport.update({
   id: '/case-studies',
   path: '/case-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CertificationsRoute = CertificationsRouteImport.update({
+  id: '/certifications',
+  path: '/certifications',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsRoute = ProjectsRouteImport.update({
@@ -44,6 +50,7 @@ const WorkSlugRoute = WorkSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/certifications': typeof CertificationsRoute
   '/projects': typeof ProjectsRoute
   '/api/chat': typeof ApiChatRoute
   '/work/$slug': typeof WorkSlugRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/certifications': typeof CertificationsRoute
   '/projects': typeof ProjectsRoute
   '/api/chat': typeof ApiChatRoute
   '/work/$slug': typeof WorkSlugRoute
@@ -59,19 +67,33 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/certifications': typeof CertificationsRoute
   '/projects': typeof ProjectsRoute
   '/api/chat': typeof ApiChatRoute
   '/work/$slug': typeof WorkSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/case-studies' | '/projects' | '/api/chat' | '/work/$slug'
+  fullPaths:
+    | '/'
+    | '/case-studies'
+    | '/certifications'
+    | '/projects'
+    | '/api/chat'
+    | '/work/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/case-studies' | '/projects' | '/api/chat' | '/work/$slug'
+  to:
+    | '/'
+    | '/case-studies'
+    | '/certifications'
+    | '/projects'
+    | '/api/chat'
+    | '/work/$slug'
   id:
     | '__root__'
     | '/'
     | '/case-studies'
+    | '/certifications'
     | '/projects'
     | '/api/chat'
     | '/work/$slug'
@@ -80,6 +102,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CaseStudiesRoute: typeof CaseStudiesRoute
+  CertificationsRoute: typeof CertificationsRoute
   ProjectsRoute: typeof ProjectsRoute
   ApiChatRoute: typeof ApiChatRoute
   WorkSlugRoute: typeof WorkSlugRoute
@@ -99,6 +122,13 @@ declare module '@tanstack/react-router' {
       path: '/case-studies'
       fullPath: '/case-studies'
       preLoaderRoute: typeof CaseStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/certifications': {
+      id: '/certifications'
+      path: '/certifications'
+      fullPath: '/certifications'
+      preLoaderRoute: typeof CertificationsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects': {
@@ -128,6 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CaseStudiesRoute: CaseStudiesRoute,
+  CertificationsRoute: CertificationsRoute,
   ProjectsRoute: ProjectsRoute,
   ApiChatRoute: ApiChatRoute,
   WorkSlugRoute: WorkSlugRoute,

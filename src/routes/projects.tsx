@@ -39,13 +39,25 @@ function ProjectCard({ project }: { project: SideProject }) {
       <p className="mt-3 flex-1 text-sm leading-relaxed text-paper/65">{project.summary}</p>
       <div className="mt-5 flex items-center justify-between border-t border-paper/10 pt-3 font-mono text-[10px] text-paper/45">
         <span>{project.stack}</span>
-        <span className="text-signal transition-transform duration-300 group-hover:translate-x-1">GITHUB →</span>
+        <span className="text-signal transition-transform duration-300 group-hover:translate-x-1">
+          GITHUB →
+        </span>
       </div>
     </a>
   );
 }
 
-function Section({ label, title, blurb, items }: { label: string; title: string; blurb: string; items: SideProject[] }) {
+function Section({
+  label,
+  title,
+  blurb,
+  items,
+}: {
+  label: string;
+  title: string;
+  blurb: string;
+  items: SideProject[];
+}) {
   return (
     <section className="border-t border-paper/10 py-14">
       <div className="grid grid-cols-12 gap-8">
@@ -69,14 +81,29 @@ function Projects() {
     <div className="min-h-screen overflow-x-hidden bg-ink text-paper antialiased">
       <header className="sticky top-0 z-20 border-b border-paper/10 bg-ink/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-6">
-          <Link to="/" className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal">
+          <Link
+            to="/"
+            className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal"
+          >
             NITHIN PRANAV — PRODUCT
           </Link>
           <div className="flex items-center gap-4">
-            <Link to="/case-studies" className="font-mono text-[11px] text-paper/60 transition-colors hover:text-signal">
+            <Link
+              to="/case-studies"
+              className="font-mono text-[11px] text-paper/60 transition-colors hover:text-signal"
+            >
               CASE STUDIES
             </Link>
-            <Link to="/" className="font-mono text-[11px] text-signal transition-colors hover:text-paper">
+            <Link
+              to="/certifications"
+              className="font-mono text-[11px] text-paper/60 transition-colors hover:text-signal"
+            >
+              CERTIFICATIONS
+            </Link>
+            <Link
+              to="/"
+              className="font-mono text-[11px] text-signal transition-colors hover:text-paper"
+            >
               ← HOME
             </Link>
             <ThemeToggle />
@@ -88,14 +115,18 @@ function Projects() {
         <section className="grid grid-cols-12 gap-6 pb-12 pt-14">
           <div className="col-span-12 md:col-span-8">
             <p className="font-mono text-[11px] text-signal">(a) — BUILD LOG</p>
-            <h1 className="mt-4 text-balance font-display text-6xl font-semibold leading-[0.9] md:text-8xl">Projects</h1>
+            <h1 className="mt-4 text-balance font-display text-6xl font-semibold leading-[0.9] md:text-8xl">
+              Projects
+            </h1>
             <p className="mt-6 max-w-[52ch] text-pretty text-lg font-light leading-snug text-paper/75">
-              What I'm building right now — agents that do real work, and ML/AI products that turn messy data into
-              decisions. Every project links to its repository.
+              What I'm building right now — agents that do real work, and ML/AI products that turn
+              messy data into decisions. Every project links to its repository.
             </p>
           </div>
           <div className="col-span-12 flex flex-col justify-end gap-2 border-paper/15 font-mono text-[10px] text-paper/45 md:col-span-4 md:border-l md:border-dashed md:pl-6">
-            <span>COUNT — {String(agentProjects.length + mlProjects.length).padStart(2, "0")} PROJECTS</span>
+            <span>
+              COUNT — {String(agentProjects.length + mlProjects.length).padStart(2, "0")} PROJECTS
+            </span>
             <a
               href={githubProfile}
               target="_blank"

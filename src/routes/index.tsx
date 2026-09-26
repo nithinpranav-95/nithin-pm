@@ -49,6 +49,12 @@ function Index() {
             <Link to="/projects" className="text-paper/60 transition-colors hover:text-signal">
               PROJECTS
             </Link>
+            <Link
+              to="/certifications"
+              className="text-paper/60 transition-colors hover:text-signal"
+            >
+              CERTIFICATIONS
+            </Link>
             <a href="#experience" className="text-paper/60 transition-colors hover:text-signal">
               EXPERIENCE
             </a>
@@ -87,6 +93,12 @@ function Index() {
                 <span>BASED — BERLIN</span>
                 <span>FOCUS — COMPLEX SYSTEMS</span>
                 <span className="text-signal">AVAILABLE Q3 — 2026</span>
+                <Link
+                  to="/certifications"
+                  className="text-paper/70 transition-colors hover:text-signal"
+                >
+                  CREDENTIALS — DATA SCIENCE & AI ↗
+                </Link>
               </div>
             </div>
             <div className="rise-in mt-7 flex flex-wrap items-center gap-3 [animation-delay:380ms]">

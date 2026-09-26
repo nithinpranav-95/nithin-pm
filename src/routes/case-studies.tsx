@@ -31,16 +31,33 @@ function CaseStudies() {
     <div className="min-h-screen overflow-x-hidden bg-ink text-paper antialiased">
       <header className="sticky top-0 z-20 border-b border-paper/10 bg-ink/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-6">
-          <Link to="/" className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal">
+          <Link
+            to="/"
+            className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal"
+          >
             NITHIN PRANAV — PRODUCT
           </Link>
-          <div className="flex items-center gap-3">
-            <Link to="/" className="font-mono text-[11px] text-signal transition-colors hover:text-paper">
+          <div className="flex items-center gap-4">
+            <Link
+              to="/projects"
+              className="font-mono text-[11px] text-paper/60 transition-colors hover:text-signal"
+            >
+              PROJECTS
+            </Link>
+            <Link
+              to="/certifications"
+              className="font-mono text-[11px] text-paper/60 transition-colors hover:text-signal"
+            >
+              CERTIFICATIONS
+            </Link>
+            <Link
+              to="/"
+              className="font-mono text-[11px] text-signal transition-colors hover:text-paper"
+            >
               ← HOME
             </Link>
             <ThemeToggle />
           </div>
-
         </div>
       </header>
 
@@ -52,8 +69,8 @@ function CaseStudies() {
               Case studies
             </h1>
             <p className="mt-6 max-w-[52ch] text-pretty text-lg font-light leading-snug text-paper/75">
-              Product teardowns and structured studies. Open any one to read the deck and the walkthrough without
-              leaving the page.
+              Product teardowns and structured studies. Open any one to read the deck and the
+              walkthrough without leaving the page.
             </p>
           </div>
           <div className="col-span-12 flex flex-col justify-end gap-2 border-paper/15 font-mono text-[10px] text-paper/45 md:col-span-4 md:border-l md:border-dashed md:pl-6">
