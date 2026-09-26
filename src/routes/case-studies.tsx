@@ -83,9 +83,33 @@ function CaseStudies() {
       </main>
 
       <footer className="border-t border-paper/10">
-        <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-2 px-5 py-6 font-mono text-[10px] text-paper/35 sm:flex-row sm:px-6">
-          <span>NITHIN PRANAV — PRODUCT MONOGRAPH / 2026</span>
-          <span>SPACE GROTESK · DM SANS · JETBRAINS MONO</span>
+        <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-4 px-5 py-6 font-mono text-[10px] sm:flex-row sm:items-center sm:px-6">
+          <div className="flex flex-wrap items-center gap-4 text-paper/60">
+            <Link to="/certifications" className="transition-colors hover:text-signal">
+              CERTIFICATIONS
+            </Link>
+            <span className="text-paper/20">·</span>
+            <Link to="/projects" className="transition-colors hover:text-signal">
+              PROJECTS
+            </Link>
+            <span className="text-paper/20">·</span>
+            <Link to="/" className="transition-colors hover:text-signal">
+              HOME
+            </Link>
+            <span className="text-paper/20">·</span>
+            <a
+              href="https://calendly.com/nithin-pranav/95"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-signal"
+            >
+              BOOK 15 MIN →
+            </a>
+          </div>
+          <div className="flex flex-col gap-1 text-paper/35 sm:text-right">
+            <span>NITHIN PRANAV — PRODUCT MONOGRAPH / 2026</span>
+            <span>SPACE GROTESK · DM SANS · JETBRAINS MONO</span>
+          </div>
         </div>
       </footer>
 

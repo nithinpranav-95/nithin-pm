@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Calendar, Linkedin } from "lucide-react";
+import { Calendar, Linkedin, Download, Award } from "lucide-react";
 import headshot from "@/assets/headshot.jpg.asset.json";
+import certIhkPage1 from "@/assets/cert-ihk-page-1.jpg";
+import certHfAgents from "@/assets/cert-huggingface-agents.png";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
 import { ExperienceList } from "@/components/ExperienceList";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -63,10 +65,19 @@ function Index() {
             </a>
             <ThemeToggle />
           </nav>
-          <div className="flex items-center gap-3 sm:hidden">
-            <a href="#work" className="font-mono text-[11px] text-signal">
-              INDEX ↓
-            </a>
+          <div className="flex items-center gap-2 sm:hidden font-mono text-[10px]">
+            <Link
+              to="/certifications"
+              className="border border-signal bg-signal/15 px-2 py-1 font-medium text-signal transition-colors hover:bg-signal hover:text-ink"
+            >
+              CERTS
+            </Link>
+            <Link
+              to="/case-studies"
+              className="border border-paper/20 bg-panel px-2 py-1 text-paper/70 transition-colors hover:text-signal"
+            >
+              WORK
+            </Link>
             <ThemeToggle />
           </div>
         </div>
@@ -128,6 +139,16 @@ function Index() {
                 <span aria-hidden="true">→</span>
               </a>
             </div>
+            <Link
+              to="/certifications"
+              className="inline-flex items-center justify-between border border-paper/15 bg-panel/70 px-3.5 py-2 font-mono text-[11px] text-paper/75 transition-colors hover:border-signal hover:text-signal"
+            >
+              <span className="flex items-center gap-2">
+                <Award className="h-3.5 w-3.5 text-signal" />
+                <span>CERTIFIED: IHK DATA SCIENCE & AI · HF AGENTS</span>
+              </span>
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </section>
 
@@ -154,6 +175,153 @@ function Index() {
           </div>
           <div className="col-span-12 md:col-span-8">
             <ExperienceList />
+          </div>
+        </section>
+
+        <div className="border-t border-paper/10" />
+        <section id="certifications" className="grid scroll-mt-16 grid-cols-12 gap-8 py-16">
+          <div className="col-span-12 md:col-span-4">
+            <span className="font-mono text-[11px] text-signal">(c) — CREDENTIALS</span>
+            <h2 className="mt-4 font-display text-4xl font-medium leading-none">Certifications</h2>
+            <p className="mt-5 max-w-[32ch] text-sm leading-relaxed text-paper/60">
+              Verified certifications in Data Science, Machine Learning, and Autonomous AI Agents.
+            </p>
+            <div className="mt-6 flex flex-col items-start gap-3">
+              <Link
+                to="/certifications"
+                className="inline-flex items-center gap-2 border border-signal bg-signal/10 px-4 py-2.5 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+              >
+                <span>OPEN CERTIFICATIONS PAGE</span>
+                <span aria-hidden="true">→</span>
+              </Link>
+              <a
+                href="/ihk-data-science-ai-certificate.pdf"
+                download="ihk-data-science-ai-certificate.pdf"
+                className="inline-flex items-center gap-2 font-mono text-[11px] text-paper/60 transition-colors hover:text-signal"
+              >
+                <Download className="h-3.5 w-3.5" />
+                <span>DOWNLOAD IHK PDF (814 KB)</span>
+              </a>
+            </div>
+          </div>
+          <div className="col-span-12 md:col-span-8">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              {/* Card 1: IHK Data Science & AI */}
+              <div className="group flex flex-col justify-between border border-paper/15 bg-panel p-5 transition-all duration-300 hover:border-signal">
+                <div>
+                  <div className="flex items-center justify-between font-mono text-[10px]">
+                    <span className="border border-signal/30 bg-signal/10 px-2 py-0.5 text-signal">
+                      STATE ACCREDITED
+                    </span>
+                    <span className="text-paper/40">2026</span>
+                  </div>
+                  <h3 className="mt-3 font-display text-2xl font-medium leading-snug text-paper transition-colors group-hover:text-signal">
+                    Data Science & AI
+                  </h3>
+                  <p className="mt-1 font-mono text-[11px] text-signal/80">
+                    IHK / Hanseatische Zertifizierungsagentur · neue fische
+                  </p>
+                  <Link
+                    to="/certifications"
+                    className="mt-4 block overflow-hidden border border-paper/10 bg-ink/70"
+                    title="View full certificate"
+                  >
+                    <img
+                      src={certIhkPage1}
+                      alt="IHK Data Science & AI Certificate Preview"
+                      loading="lazy"
+                      className="aspect-[4/3] w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
+                  </Link>
+                  <p className="mt-3 text-xs leading-relaxed text-paper/70">
+                    960 hours of intensive programming practice covering machine learning, deep
+                    learning, AI agents, RAG, and production systems.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-1.5 font-mono text-[10px]">
+                    <span className="border border-paper/10 bg-ink/40 px-2 py-0.5 text-paper/80">
+                      AI Agents
+                    </span>
+                    <span className="border border-paper/10 bg-ink/40 px-2 py-0.5 text-paper/80">
+                      LLMs & RAG
+                    </span>
+                    <span className="border border-paper/10 bg-ink/40 px-2 py-0.5 text-paper/80">
+                      Python Stack
+                    </span>
+                    <span className="border border-paper/10 bg-ink/40 px-2 py-0.5 text-paper/80">
+                      Deep Learning
+                    </span>
+                  </div>
+                </div>
+                <div className="mt-5 flex items-center justify-between border-t border-paper/10 pt-3 font-mono text-[11px]">
+                  <span className="text-paper/45">960 HRS / 720 LESSONS</span>
+                  <Link
+                    to="/certifications"
+                    className="inline-flex items-center gap-1 text-signal transition-transform duration-200 group-hover:translate-x-1"
+                  >
+                    <span>VIEW CREDENTIAL</span>
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Card 2: Hugging Face AI Agents */}
+              <div className="group flex flex-col justify-between border border-paper/15 bg-panel p-5 transition-all duration-300 hover:border-signal">
+                <div>
+                  <div className="flex items-center justify-between font-mono text-[10px]">
+                    <span className="border border-paper/20 bg-panel px-2 py-0.5 text-paper/80">
+                      FOUNDATIONAL
+                    </span>
+                    <span className="text-paper/40">2026</span>
+                  </div>
+                  <h3 className="mt-3 font-display text-2xl font-medium leading-snug text-paper transition-colors group-hover:text-signal">
+                    AI Agents Course
+                  </h3>
+                  <p className="mt-1 font-mono text-[11px] text-signal/80">
+                    Hugging Face Hub (agents-course)
+                  </p>
+                  <Link
+                    to="/certifications"
+                    className="mt-4 block overflow-hidden border border-paper/10 bg-ink/70"
+                    title="View full certificate"
+                  >
+                    <img
+                      src={certHfAgents}
+                      alt="Hugging Face AI Agents Certificate Preview"
+                      loading="lazy"
+                      className="aspect-[4/3] w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
+                  </Link>
+                  <p className="mt-3 text-xs leading-relaxed text-paper/70">
+                    Certified coursework covering autonomous agents, function calling, smolagents
+                    framework, agentic RAG, and benchmark evaluations.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-1.5 font-mono text-[10px]">
+                    <span className="border border-paper/10 bg-ink/40 px-2 py-0.5 text-paper/80">
+                      Autonomous Agents
+                    </span>
+                    <span className="border border-paper/10 bg-ink/40 px-2 py-0.5 text-paper/80">
+                      smolagents
+                    </span>
+                    <span className="border border-paper/10 bg-ink/40 px-2 py-0.5 text-paper/80">
+                      Tool Calling
+                    </span>
+                    <span className="border border-paper/10 bg-ink/40 px-2 py-0.5 text-paper/80">
+                      Multi-Agent
+                    </span>
+                  </div>
+                </div>
+                <div className="mt-5 flex items-center justify-between border-t border-paper/10 pt-3 font-mono text-[11px]">
+                  <span className="text-paper/45">VERIFIED CREDENTIAL</span>
+                  <Link
+                    to="/certifications"
+                    className="inline-flex items-center gap-1 text-signal transition-transform duration-200 group-hover:translate-x-1"
+                  >
+                    <span>VIEW CREDENTIAL</span>
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -212,9 +380,33 @@ function Index() {
       </main>
 
       <footer className="border-t border-paper/10">
-        <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-2 px-5 py-6 font-mono text-[10px] text-paper/35 sm:flex-row sm:px-6">
-          <span>NITHIN PRANAV — PRODUCT MONOGRAPH / 2026</span>
-          <span>SPACE GROTESK · DM SANS · JETBRAINS MONO</span>
+        <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-4 px-5 py-6 font-mono text-[10px] sm:flex-row sm:items-center sm:px-6">
+          <div className="flex flex-wrap items-center gap-4 text-paper/60">
+            <Link to="/case-studies" className="transition-colors hover:text-signal">
+              CASE STUDIES
+            </Link>
+            <span className="text-paper/20">·</span>
+            <Link to="/projects" className="transition-colors hover:text-signal">
+              PROJECTS
+            </Link>
+            <span className="text-paper/20">·</span>
+            <Link to="/certifications" className="text-signal transition-colors hover:text-paper">
+              CERTIFICATIONS
+            </Link>
+            <span className="text-paper/20">·</span>
+            <a
+              href="https://calendly.com/nithin-pranav/95"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-signal"
+            >
+              BOOK 15 MIN →
+            </a>
+          </div>
+          <div className="flex flex-col gap-1 text-paper/35 sm:text-right">
+            <span>NITHIN PRANAV — PRODUCT MONOGRAPH / 2026</span>
+            <span>SPACE GROTESK · DM SANS · JETBRAINS MONO</span>
+          </div>
         </div>
       </footer>
     </div>

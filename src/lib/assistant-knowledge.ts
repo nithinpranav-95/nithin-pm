@@ -29,7 +29,19 @@ export function buildKnowledge() {
     )
     .join("\n\n");
 
-  return `PROFILE\nNithin Pranav — Product Manager for complex, trust-critical systems.\n\nCONTACT\n${contact}\n\n${principles}\n\nEXPERIENCE\n${experience}\n\nCASE STUDIES\n${caseStudies}`;
+  const certifications = `CERTIFICATIONS
+1. Data Science & AI — IHK / Hanseatische Zertifizierungsagentur (HZA) & neue fische | SPICED Academy (April 2026 – August 2026)
+- 960 hours of intensive programming practice (720 lessons). State accredited.
+- Topics: Data Science, Machine Learning algorithms, Deep Learning, AI Agents & Workflows, LLMs & Prompt Engineering, RAG architecture, Streamlit deployment, and a 4-week capstone project.
+- Credential verified under Nithin Balasubramanian.
+- Page: /certifications (includes downloadable official PDF and full curriculum breakdown)
+
+2. AI Agents Course — Fundamentals of Agents — Hugging Face (August 2026)
+- Comprehensive coursework and benchmark evaluations on autonomous AI agents, tool creation and function calling, multi-agent coordination, smolagents framework, and agentic RAG.
+- Credential verified under Hugging Face ID: Nithinpranav95.
+- Page: /certifications`;
+
+  return `PROFILE\nNithin Pranav — Product Manager for complex, trust-critical systems.\n\nCONTACT\n${contact}\n\n${principles}\n\nEXPERIENCE\n${experience}\n\nCASE STUDIES\n${caseStudies}\n\n${certifications}`;
 }
 
 export const systemPrompt = `You are the assistant on Nithin Pranav's product-manager portfolio. Recruiters and hiring managers ask you about his experience, achievements, case studies, and whether he fits a role.

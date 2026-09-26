@@ -6,9 +6,9 @@ import ReactMarkdown from "react-markdown";
 import { ModalPortal } from "@/components/ModalPortal";
 
 const starters = [
+  "What certifications does he hold?",
   "What's his strongest experience?",
-  "Has he worked with APIs?",
-  "Would he fit a senior PM role?",
+  "Has he worked with AI agents & APIs?",
   "What did he do at TeamViewer?",
 ];
 
@@ -105,7 +105,6 @@ export function AskAssistant({ variant = "floating" }: { variant?: "floating" | 
         </button>
       )}
 
-
       {open ? (
         <ModalPortal>
           <div
@@ -122,7 +121,9 @@ export function AskAssistant({ variant = "floating" }: { variant?: "floating" | 
               <div className="flex items-center justify-between border-b border-paper/15 px-4 py-3">
                 <div>
                   <p className="font-mono text-[11px] text-signal">ASK ABOUT NITHIN</p>
-                  <p className="mt-1 text-xs text-paper/50">Experience, case studies, and role fit.</p>
+                  <p className="mt-1 text-xs text-paper/50">
+                    Experience, case studies, and role fit.
+                  </p>
                 </div>
                 <button
                   type="button"
@@ -162,7 +163,9 @@ export function AskAssistant({ variant = "floating" }: { variant?: "floating" | 
                   const isUser = message.role === "user";
                   return (
                     <div key={message.id} className={isUser ? "text-right" : "text-left"}>
-                      <p className="font-mono text-[10px] text-paper/40">{isUser ? "YOU" : "ASSISTANT"}</p>
+                      <p className="font-mono text-[10px] text-paper/40">
+                        {isUser ? "YOU" : "ASSISTANT"}
+                      </p>
                       <div
                         className={`mt-1 inline-block max-w-full space-y-2 border px-3 py-2 text-left text-sm leading-relaxed [&_li]:ml-4 [&_li]:list-disc [&_strong]:font-semibold [&_strong]:text-paper ${
                           isUser

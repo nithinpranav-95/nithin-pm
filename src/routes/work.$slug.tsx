@@ -62,13 +62,21 @@ function CaseStudy() {
           >
             NITHIN PRANAV — PRODUCT
           </Link>
-          <Link
-            to="/"
-            hash="work"
-            className="font-mono text-[11px] text-signal transition-colors hover:text-paper"
-          >
-            ← ALL WORK
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              to="/certifications"
+              className="font-mono text-[11px] text-paper/60 transition-colors hover:text-signal"
+            >
+              CERTIFICATIONS
+            </Link>
+            <Link
+              to="/"
+              hash="work"
+              className="font-mono text-[11px] text-signal transition-colors hover:text-paper"
+            >
+              ← ALL WORK
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -149,9 +157,28 @@ function CaseStudy() {
       </main>
 
       <footer className="border-t border-paper/10">
-        <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-2 px-5 py-6 font-mono text-[10px] text-paper/35 sm:flex-row sm:px-6">
-          <span>NITHIN PRANAV — PRODUCT MONOGRAPH / 2026</span>
-          <span>SPACE GROTESK · DM SANS · JETBRAINS MONO</span>
+        <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-4 px-5 py-6 font-mono text-[10px] sm:flex-row sm:items-center sm:px-6">
+          <div className="flex flex-wrap items-center gap-4 text-paper/60">
+            <Link to="/certifications" className="transition-colors hover:text-signal">
+              CERTIFICATIONS
+            </Link>
+            <span className="text-paper/20">·</span>
+            <Link to="/case-studies" className="transition-colors hover:text-signal">
+              CASE STUDIES
+            </Link>
+            <span className="text-paper/20">·</span>
+            <Link to="/projects" className="transition-colors hover:text-signal">
+              PROJECTS
+            </Link>
+            <span className="text-paper/20">·</span>
+            <Link to="/" className="transition-colors hover:text-signal">
+              HOME
+            </Link>
+          </div>
+          <div className="flex flex-col gap-1 text-paper/35 sm:text-right">
+            <span>NITHIN PRANAV — PRODUCT MONOGRAPH / 2026</span>
+            <span>SPACE GROTESK · DM SANS · JETBRAINS MONO</span>
+          </div>
         </div>
       </footer>
     </div>
