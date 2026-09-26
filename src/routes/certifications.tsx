@@ -14,6 +14,9 @@ import { AskAssistant } from "@/components/AskAssistant";
 
 import certIhkPage1 from "@/assets/cert-ihk-page-1.jpg";
 import certIhkPage2 from "@/assets/cert-ihk-page-2.jpg";
+import certIhkFoundationsPage1 from "@/assets/cert-ihk-foundations-page-1.jpg";
+import certIhkFoundationsPage2 from "@/assets/cert-ihk-foundations-page-2.jpg";
+import certIhkFoundationsPage3 from "@/assets/cert-ihk-foundations-page-3.jpg";
 import certHfAgents from "@/assets/cert-huggingface-agents.png";
 
 export const Route = createFileRoute("/certifications")({
@@ -95,9 +98,54 @@ const certificationsData: CertItem[] = [
     ],
   },
   {
+    id: "ihk-data-ai-foundations",
+    badge: "STATE ACCREDITED (IHK)",
+    number: "02",
+    title: "Data & AI Foundations IHK / CCI",
+    issuer: "Handelskammer Hamburg (HKBiS Bildungs-Service)",
+    organization: "neue fische — School and Pool for Digital Talent",
+    date: "April 2026 – May 2026",
+    duration: "240 lessons (Unterrichtsstunden à 45 min)",
+    credentialId: "182468EECAF88-351D-4321-AFC3-4C0CF21DC040013",
+    description:
+      "Official IHK / CCI certification in Data & AI Foundations. Completed 240 lessons covering Python fundamentals, UNIX, data wrangling with Pandas and SQL, data extraction and cleaning, data ethics and responsible AI use, data visualization, and an exploratory data analysis project.",
+    skills: [
+      "Python Fundamentals",
+      "Pandas & SQL Wrangling",
+      "Exploratory Data Analysis (EDA)",
+      "Responsible AI & Data Ethics",
+      "Data Cleaning & Extraction",
+      "Visualization Techniques",
+      "Git & GitHub",
+      "UNIX Environment",
+      "AI Concepts & Applied Logic",
+    ],
+    pdfUrl: "/ihk-data-ai-foundations-certificate.pdf",
+    externalUrl: "https://hkbis.de/zertifikatscheck/182468EECAF88-351D-4321-AFC3-4C0CF21DC040013",
+    pages: [
+      {
+        label: "Certificate (Page 1)",
+        src: certIhkFoundationsPage1,
+        caption:
+          "Official IHK Completion Certificate — 240 lessons (signed by Philipp Fischbeck, HKBiS Handelskammer Hamburg)",
+      },
+      {
+        label: "Curriculum (Page 2)",
+        src: certIhkFoundationsPage2,
+        caption: "Covered Subjects — Python, Data Wrangling, SQL, Data Ethics & AI Concepts",
+      },
+      {
+        label: "Digital CCI (Page 3)",
+        src: certIhkFoundationsPage3,
+        caption:
+          "Digitales IHK-Zertifikat with QR Verification Code (Valid until December 31, 2032)",
+      },
+    ],
+  },
+  {
     id: "hugging-face-ai-agents",
     badge: "FOUNDATIONAL EXCELLENCE",
-    number: "02",
+    number: "03",
     title: "AI Agents Course — Fundamentals of Agents",
     issuer: "Hugging Face",
     organization: "Hugging Face Hub (agents-course)",
@@ -130,6 +178,7 @@ const certificationsData: CertItem[] = [
 function Certifications() {
   const [activePages, setActivePages] = useState<Record<string, number>>({
     "ihk-data-science-ai": 0,
+    "ihk-data-ai-foundations": 0,
     "hugging-face-ai-agents": 0,
   });
 
@@ -278,7 +327,7 @@ function Certifications() {
                       {cert.pdfUrl && (
                         <a
                           href={cert.pdfUrl}
-                          download="ihk-data-science-ai-certificate.pdf"
+                          download={cert.pdfUrl.split("/").pop()}
                           className="inline-flex items-center gap-2 border border-signal bg-signal/10 px-4 py-2.5 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
                         >
                           <Download className="h-3.5 w-3.5" />
@@ -306,7 +355,11 @@ function Certifications() {
                           className="inline-flex items-center gap-2 border border-signal bg-signal/10 px-4 py-2.5 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
                         >
                           <ExternalLink className="h-3.5 w-3.5" />
-                          <span>VIEW COURSE HUB</span>
+                          <span>
+                            {cert.externalUrl.includes("zertifikatscheck")
+                              ? "VERIFY ON IHK PORTAL"
+                              : "VIEW COURSE HUB"}
+                          </span>
                           <span aria-hidden="true">→</span>
                         </a>
                       )}
