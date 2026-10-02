@@ -211,10 +211,10 @@ function Certifications() {
             <Link to="/certifications" className="text-signal transition-colors hover:text-paper">
               CERTIFICATIONS
             </Link>
-            <Link to="/#experience" className="text-paper/60 transition-colors hover:text-signal">
+            <Link to="/" hash="experience" className="text-paper/60 transition-colors hover:text-signal">
               EXPERIENCE
             </Link>
-            <Link to="/#contact" className="text-paper/60 transition-colors hover:text-signal">
+            <Link to="/" hash="contact" className="text-paper/60 transition-colors hover:text-signal">
               CONTACT
             </Link>
             <ThemeToggle />
@@ -256,7 +256,7 @@ function Certifications() {
         <div className="divide-y divide-paper/10 pb-20">
           {certificationsData.map((cert) => {
             const activePageIdx = activePages[cert.id] ?? 0;
-            const activePage = cert.pages[activePageIdx];
+            const activePage = cert.pages[activePageIdx]!;
 
             return (
               <section key={cert.id} className="py-16">
