@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import { Ship } from "lucide-react";
+import { ReceiptText, Ship } from "lucide-react";
 
 export interface CompanyLogoProps extends ComponentProps<"svg"> {
   slug?: string;
@@ -181,6 +181,8 @@ export function CompanyLogo({ slug, className = "h-4 w-4", ...props }: CompanyLo
     case "maritime-ai-agent":
     case "zauber":
       return <ZauberLogo className={className} {...props} />;
+    case "taxfix-year-round":
+      return <ReceiptText className={className} aria-hidden="true" strokeWidth={1.75} {...props} />;
     default:
       return null;
   }

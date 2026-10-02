@@ -200,8 +200,8 @@ function Index() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {/* Card 1: IHK Data Science & AI */}
-            <div className="group flex flex-col justify-between border border-paper/15 bg-panel p-5 transition-all duration-300 hover:border-signal">
+            {/* Card 3: IHK Data Science & AI */}
+            <div className="group order-3 flex flex-col justify-between border border-paper/15 bg-panel p-5 transition-all duration-300 hover:border-signal">
               <div>
                 <div className="flex items-center justify-between font-mono text-[10px]">
                   <span className="border border-signal/30 bg-signal/10 px-2 py-0.5 text-signal">
@@ -253,8 +253,8 @@ function Index() {
               </div>
             </div>
 
-            {/* Card 2: IHK Data & AI Foundations */}
-            <div className="group flex flex-col justify-between border border-paper/15 bg-panel p-5 transition-all duration-300 hover:border-signal">
+            {/* Card 1: IHK Data & AI Foundations */}
+            <div className="group order-1 flex flex-col justify-between border border-paper/15 bg-panel p-5 transition-all duration-300 hover:border-signal">
               <div>
                 <div className="flex items-center justify-between font-mono text-[10px]">
                   <span className="border border-signal/30 bg-signal/10 px-2 py-0.5 text-signal">
@@ -308,8 +308,8 @@ function Index() {
               </div>
             </div>
 
-            {/* Card 3: Hugging Face AI Agents */}
-            <div className="group flex flex-col justify-between border border-paper/15 bg-panel p-5 transition-all duration-300 hover:border-signal">
+            {/* Card 2: Hugging Face AI Agents */}
+            <div className="group order-2 flex flex-col justify-between border border-paper/15 bg-panel p-5 transition-all duration-300 hover:border-signal">
               <div>
                 <div className="flex items-center justify-between font-mono text-[10px]">
                   <span className="border border-paper/20 bg-panel px-2 py-0.5 text-paper/80">
