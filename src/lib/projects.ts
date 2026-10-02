@@ -6,6 +6,7 @@ import caseSynthflow from "@/assets/case-synthflow.jpg";
 import caseMaritime from "@/assets/case-maritime.jpg";
 import caseNomerra from "@/assets/case-nomerra.jpg";
 import caseReonic from "@/assets/case-reonic.jpg";
+import caseTaxfix from "@/assets/case-taxfix.jpg";
 
 export interface ProjectSection {
   heading: string;
@@ -133,6 +134,7 @@ export const projects: Project[] = [
     role: "PRODUCT MANAGER",
     outcome: "CASE STUDY",
     canvaUrl: "https://www.canva.com/design/DAHSS0_o3LI/pFIaYKtaLX7_jCwA4UCyPg/view",
+    hideOnHome: true,
     sections: [
       {
         heading: "Context",
@@ -307,6 +309,37 @@ export const projects: Project[] = [
       {
         heading: "How to read the deck",
         body: "The deck above walks through the market context, the workflow analysis, the proposed product, the metrics, and the risks.",
+      },
+    ],
+  },
+  {
+    slug: "taxfix-year-round",
+    image: caseTaxfix,
+    number: "10",
+    title: "Taxfix — Make Taxes Year Round",
+    company: "Taxfix",
+    year: "2026",
+    description:
+      "A product case study on turning tax filing from a seasonal transaction into a useful year-round relationship.",
+    role: "PRODUCT MANAGER",
+    outcome: "CASE STUDY",
+    canvaUrl: "https://www.canva.com/design/DAHW3XsXrhI/3ZEYzbZqK3xdqzFbgXxUxg/view",
+    sections: [
+      {
+        heading: "Context",
+        body: "Tax products are often opened once a year and forgotten. This study examines how Taxfix could create recurring value between filing seasons without manufacturing engagement for its own sake.",
+      },
+      {
+        heading: "Approach",
+        body: "I mapped the annual tax journey, identified moments when timely guidance can reduce uncertainty or preserve useful information, and separated genuine user value from notification-driven activity.",
+      },
+      {
+        heading: "What I proposed",
+        body: "A set of year-round product initiatives that help people prepare gradually, respond to relevant life events, and reach filing season with less work and greater confidence.",
+      },
+      {
+        heading: "How to read the deck",
+        body: "The deck above covers the seasonal engagement problem, user opportunities across the year, proposed initiatives, success measures, and key risks.",
       },
     ],
   },
