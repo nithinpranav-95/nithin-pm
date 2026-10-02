@@ -60,44 +60,6 @@ interface CertItem {
 
 const certificationsData: CertItem[] = [
   {
-    id: "ihk-data-science-ai",
-    badge: "STATE ACCREDITED",
-    number: "01",
-    title: "Data Science & AI",
-    issuer: "IHK / Hanseatische Zertifizierungsagentur (HZA)",
-    organization: "neue fische | SPICED Academy",
-    date: "April 2026 – August 2026",
-    duration: "960 hours (720 intensive lessons)",
-    credentialId: "HZA Certified — Nithin Balasubramanian",
-    description:
-      "Full-time intensive program covering end-to-end data science, applied machine learning, deep learning, and generative AI systems with extensive hands-on programming and a 4-week capstone project.",
-    skills: [
-      "AI Agents & Workflows",
-      "LLMs & Prompt Engineering",
-      "RAG Architecture",
-      "Python & Data Science Stack",
-      "PyTorch / TensorFlow",
-      "Scikit-Learn & ML Algorithms",
-      "Exploratory Data Analysis (EDA)",
-      "Time Series & Predictive Modeling",
-      "SQL & Relational Databases",
-      "Streamlit App Deployment",
-    ],
-    pdfUrl: "/ihk-data-science-ai-certificate.pdf",
-    pages: [
-      {
-        label: "Certificate (Page 1)",
-        src: certIhkPage1,
-        caption: "Official Completion Certificate — 960 hours of programming practice",
-      },
-      {
-        label: "Curriculum (Page 2)",
-        src: certIhkPage2,
-        caption: "Curriculum Breakdown — Data Science, Machine Learning & AI Modules",
-      },
-    ],
-  },
-  {
     id: "ihk-data-ai-foundations",
     badge: "STATE ACCREDITED (IHK)",
     number: "02",
