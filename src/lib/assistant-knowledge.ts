@@ -30,20 +30,20 @@ export function buildKnowledge() {
     .join("\n\n");
 
   const certifications = `CERTIFICATIONS
-1. Data Science & AI — IHK / Hanseatische Zertifizierungsagentur (HZA) & neue fische | SPICED Academy (April 2026 – August 2026)
+3. Data Science & AI — IHK / Hanseatische Zertifizierungsagentur (HZA) & neue fische | SPICED Academy (April 2026 – August 2026)
 - 960 hours of intensive programming practice (720 lessons). State accredited.
 - Topics: Data Science, Machine Learning algorithms, Deep Learning, AI Agents & Workflows, LLMs & Prompt Engineering, RAG architecture, Streamlit deployment, and a 4-week capstone project.
 - Credential verified under Nithin Balasubramanian.
 - Page: /certifications (includes downloadable official PDF and full curriculum breakdown)
 
-2. Data & AI Foundations IHK / CCI — Handelskammer Hamburg (HKBiS Bildungs-Service) & neue fische (April 2026 – May 2026)
+1. Data & AI Foundations IHK / CCI — Handelskammer Hamburg (HKBiS Bildungs-Service) & neue fische (April 2026 – May 2026)
 - 240 lessons (Unterrichtsstunden à 45 Minuten). State accredited IHK certificate.
 - Topics: Python fundamentals, UNIX, data wrangling with Pandas and SQL, data extraction and cleaning, data ethics and responsible AI use, visualization techniques, and exploratory data analysis project.
 - Certificate ID: 182468EECAF88-351D-4321-AFC3-4C0CF21DC040013 (Valid till Dec 31, 2032).
 - Verification portal: https://hkbis.de/zertifikatscheck/182468EECAF88-351D-4321-AFC3-4C0CF21DC040013
 - Page: /certifications (includes downloadable official PDF and full curriculum breakdown)
 
-3. AI Agents Course — Fundamentals of Agents — Hugging Face (August 2026)
+2. AI Agents Course — Fundamentals of Agents — Hugging Face (August 2026)
 - Comprehensive coursework and benchmark evaluations on autonomous AI agents, tool creation and function calling, multi-agent coordination, smolagents framework, and agentic RAG.
 - Credential verified under Hugging Face ID: Nithinpranav95.
 - Page: /certifications`;
