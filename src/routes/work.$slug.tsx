@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { CanvaEmbed } from "@/components/CanvaEmbed";
 import { CompanyLogo } from "@/components/CompanyLogos";
+import { Navbar } from "@/components/Navbar";
 import { getProject, projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/work/$slug")({
@@ -54,43 +55,19 @@ function CaseStudy() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-ink text-paper antialiased">
-      <header className="sticky top-0 z-20 border-b border-paper/10 bg-ink/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-6">
-          <Link
-            to="/"
-            className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal"
-          >
-            NITHIN PRANAV — PRODUCT
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link
-              to="/certifications"
-              className="font-mono text-[11px] text-paper/60 transition-colors hover:text-signal"
-            >
-              CERTIFICATIONS
-            </Link>
-            <Link
-              to="/"
-              hash="work"
-              className="font-mono text-[11px] text-signal transition-colors hover:text-paper"
-            >
-              ← ALL WORK
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
-      <main className="mx-auto max-w-[1440px] px-5 sm:px-6">
-        <section className="grid grid-cols-12 gap-6 pb-10 pt-12">
+      <main className="mx-auto max-w-[1440px] px-4 sm:px-6">
+        <section className="grid grid-cols-12 gap-6 pb-10 pt-9 sm:pt-12">
           <div className="col-span-12 md:col-span-8">
             <p className="font-mono text-[11px] text-signal">
               {project.number} — CASE STUDY / {project.year}
             </p>
-            <div className="mt-4 flex items-center gap-4">
+            <div className="mt-4 grid grid-cols-[auto_minmax(0,1fr)] items-center gap-3 sm:gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-paper/20 bg-panel text-signal">
                 <CompanyLogo slug={project.slug} className="h-6 w-6" />
               </div>
-              <h1 className="text-balance font-display text-5xl font-semibold leading-[0.9] md:text-7xl">
+              <h1 className="min-w-0 text-balance font-display text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
                 {project.title}
               </h1>
             </div>
@@ -139,17 +116,17 @@ function CaseStudy() {
                 key={item.slug}
                 to="/work/$slug"
                 params={{ slug: item.slug }}
-                className="group flex items-center gap-4 py-5"
+                className="group grid min-h-14 grid-cols-[auto_auto_minmax(0,1fr)_auto] items-center gap-3 py-4 sm:gap-4 sm:py-5"
               >
                 <span className="font-mono text-[11px] text-signal">{item.number}</span>
                 <CompanyLogo
                   slug={item.slug}
                   className="h-4 w-4 shrink-0 text-paper/50 transition-colors group-hover:text-signal"
                 />
-                <span className="font-display text-2xl font-medium transition-colors group-hover:text-signal">
+                <span className="min-w-0 text-pretty font-display text-lg font-medium transition-colors group-hover:text-signal sm:text-2xl">
                   {item.title}
                 </span>
-                <span className="ml-auto font-mono text-[10px] text-paper/40">{item.year}</span>
+                <span className="shrink-0 font-mono text-[9px] text-paper/40 sm:text-[10px]">{item.year}</span>
               </Link>
             ))}
           </div>

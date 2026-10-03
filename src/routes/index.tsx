@@ -6,7 +6,7 @@ import certIhkFoundationsPage1 from "@/assets/cert-ihk-foundations-page-1.jpg";
 import certHfAgents from "@/assets/cert-huggingface-agents.png";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
 import { ExperienceList } from "@/components/ExperienceList";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { Navbar } from "@/components/Navbar";
 import { AskAssistant } from "@/components/AskAssistant";
 
 export const Route = createFileRoute("/")({
@@ -33,66 +33,17 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-ink text-paper antialiased">
-      <header className="sticky top-0 z-20 border-b border-paper/10 bg-ink/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-6">
-          <a
-            href="#top"
-            className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal"
-          >
-            NITHIN PRANAV — PRODUCT
-          </a>
-          <nav
-            aria-label="Portfolio sections"
-            className="hidden items-center gap-6 font-mono text-[11px] sm:flex"
-          >
-            <Link to="/case-studies" className="text-paper/60 transition-colors hover:text-signal">
-              CASE STUDIES
-            </Link>
+      <Navbar />
 
-            <Link to="/projects" className="text-paper/60 transition-colors hover:text-signal">
-              PROJECTS
-            </Link>
-            <Link
-              to="/certifications"
-              className="text-paper/60 transition-colors hover:text-signal"
-            >
-              CERTIFICATIONS
-            </Link>
-            <a href="#experience" className="text-paper/60 transition-colors hover:text-signal">
-              EXPERIENCE
-            </a>
-            <a href="#contact" className="text-signal transition-colors hover:text-paper">
-              CONTACT
-            </a>
-            <ThemeToggle />
-          </nav>
-          <div className="flex items-center gap-2 sm:hidden font-mono text-[10px]">
-            <Link
-              to="/certifications"
-              className="border border-signal bg-signal/15 px-2 py-1 font-medium text-signal transition-colors hover:bg-signal hover:text-ink"
-            >
-              CERTS
-            </Link>
-            <Link
-              to="/case-studies"
-              className="border border-paper/20 bg-panel px-2 py-1 text-paper/70 transition-colors hover:text-signal"
-            >
-              WORK
-            </Link>
-            <ThemeToggle />
-          </div>
-        </div>
-      </header>
-
-      <main id="top" className="mx-auto max-w-[1440px] px-5 sm:px-6">
-        <section className="grid grid-cols-12 items-stretch gap-6 pb-16 pt-14">
+      <main id="top" className="mx-auto max-w-[1440px] px-4 sm:px-6">
+        <section className="grid grid-cols-12 items-stretch gap-6 pb-12 pt-8 sm:pb-16 sm:pt-14">
           <div className="col-span-12 flex flex-col justify-center md:col-span-8">
-            <h1 className="rise-in mt-5 text-balance font-display text-[25vw] font-semibold leading-[0.82] [animation-delay:120ms] sm:text-[20vw] md:text-[11rem]">
+            <h1 className="rise-in mt-3 text-balance font-display text-[21vw] font-semibold leading-[0.84] [animation-delay:120ms] sm:mt-5 sm:text-[20vw] md:text-[11rem]">
               Nithin
               <br />
               Pranav
             </h1>
-            <p className="rise-in mt-9 text-justify text-pretty text-lg font-light leading-snug text-paper/75 [animation-delay:240ms] md:text-xl">
+            <p className="rise-in mt-7 text-pretty text-base font-light leading-relaxed text-paper/75 [animation-delay:240ms] sm:text-justify sm:text-lg md:mt-9 md:text-xl">
               Berlin-based Product Manager with a background in sales and business operations, now
               focused on building AI-driven products that solve real user problems. I’m passionate
               about understanding customer pain points, validating ideas quickly, and turning
@@ -104,7 +55,7 @@ function Index() {
               <AskAssistant variant="bar" />
             </div>
           </div>
-          <div className="rise-in col-span-12 flex flex-col gap-6 [animation-delay:300ms] md:col-span-4">
+            <div className="rise-in col-span-12 flex flex-col gap-4 [animation-delay:300ms] sm:gap-6 md:col-span-4">
             <figure className="h-full border border-paper/15 bg-panel p-2">
               <img
                 src={headshot.url}
@@ -142,11 +93,11 @@ function Index() {
             </div>
             <Link
               to="/certifications"
-              className="inline-flex items-center justify-between border border-paper/15 bg-panel/70 px-3.5 py-2 font-mono text-[11px] text-paper/75 transition-colors hover:border-signal hover:text-signal"
+              className="grid min-h-11 grid-cols-[minmax(0,1fr)_auto] items-center gap-2 border border-paper/15 bg-panel/70 px-3.5 py-2 font-mono text-[10px] text-paper/75 transition-colors hover:border-signal hover:text-signal sm:text-[11px]"
             >
-              <span className="flex items-center gap-2">
-                <Award className="h-3.5 w-3.5 text-signal" />
-                <span>CERTIFIED: IHK DATA SCIENCE & AI · FOUNDATIONS · HF AGENTS</span>
+              <span className="flex min-w-0 items-center gap-2">
+                <Award className="h-3.5 w-3.5 shrink-0 text-signal" />
+                <span className="min-w-0">CERTIFIED: IHK DATA SCIENCE & AI · FOUNDATIONS · HF AGENTS</span>
               </span>
               <span aria-hidden="true">→</span>
             </Link>
@@ -158,7 +109,7 @@ function Index() {
         </div>
 
         <section id="work" className="scroll-mt-16 py-16">
-          <div className="mb-10 flex items-baseline justify-between">
+          <div className="mb-8 grid grid-cols-[minmax(0,1fr)_auto] items-end gap-3 sm:mb-10">
             <h2 className="text-balance font-display text-3xl font-medium">Case studies</h2>
             <Link to="/case-studies" className="font-mono text-[11px] text-signal hover:text-paper">
               ALL CASE STUDIES →
@@ -369,7 +320,7 @@ function Index() {
         <section id="contact" className="grid scroll-mt-16 grid-cols-12 items-end gap-8 py-20">
           <div className="col-span-12 md:col-span-7">
             <span className="font-mono text-[11px] text-signal"></span>
-            <h2 className="mt-5 text-balance font-display text-5xl font-medium leading-[0.95] md:text-6xl">
+            <h2 className="mt-5 text-balance font-display text-4xl font-medium leading-[0.95] sm:text-5xl md:text-6xl">
               Let's build the next thing.
             </h2>
             <a
@@ -378,7 +329,7 @@ function Index() {
             >
               nithin.pranav@gmail.com
             </a>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 grid grid-cols-1 gap-3 min-[380px]:grid-cols-2 sm:flex sm:flex-wrap">
               <a
                 href="https://calendly.com/nithin-pranav/95"
                 target="_blank"

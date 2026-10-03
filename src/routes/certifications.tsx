@@ -9,7 +9,7 @@ import {
   ChevronRight,
   Eye,
 } from "lucide-react";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { Navbar } from "@/components/Navbar";
 import { AskAssistant } from "@/components/AskAssistant";
 
 import certIhkPage1 from "@/assets/cert-ihk-page-1.jpg";
@@ -190,50 +190,14 @@ function Certifications() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-ink text-paper antialiased">
-      <header className="sticky top-0 z-20 border-b border-paper/10 bg-ink/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-6">
-          <Link
-            to="/"
-            className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal"
-          >
-            NITHIN PRANAV — PRODUCT
-          </Link>
-          <nav
-            aria-label="Portfolio navigation"
-            className="hidden items-center gap-6 font-mono text-[11px] sm:flex"
-          >
-            <Link to="/case-studies" className="text-paper/60 transition-colors hover:text-signal">
-              CASE STUDIES
-            </Link>
-            <Link to="/projects" className="text-paper/60 transition-colors hover:text-signal">
-              PROJECTS
-            </Link>
-            <Link to="/certifications" className="text-signal transition-colors hover:text-paper">
-              CERTIFICATIONS
-            </Link>
-            <Link to="/" hash="experience" className="text-paper/60 transition-colors hover:text-signal">
-              EXPERIENCE
-            </Link>
-            <Link to="/" hash="contact" className="text-paper/60 transition-colors hover:text-signal">
-              CONTACT
-            </Link>
-            <ThemeToggle />
-          </nav>
-          <div className="flex items-center gap-3 sm:hidden">
-            <Link to="/" className="font-mono text-[11px] text-signal">
-              ← HOME
-            </Link>
-            <ThemeToggle />
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
-      <main className="mx-auto max-w-[1440px] px-5 sm:px-6">
+      <main className="mx-auto max-w-[1440px] px-4 sm:px-6">
         {/* Header Hero Section */}
-        <section className="grid grid-cols-12 gap-6 pb-12 pt-14">
+        <section className="grid grid-cols-12 gap-6 pb-10 pt-9 sm:pb-12 sm:pt-14">
           <div className="col-span-12 md:col-span-8">
             <p className="font-mono text-[11px] text-signal">(a) — CREDENTIALS</p>
-            <h1 className="mt-4 text-balance font-display text-6xl font-semibold leading-[0.9] md:text-8xl">
+            <h1 className="mt-4 text-balance font-display text-5xl font-semibold leading-[0.9] sm:text-6xl md:text-8xl">
               Certifications
             </h1>
             <p className="mt-6 max-w-[54ch] text-pretty text-lg font-light leading-snug text-paper/75">
@@ -256,7 +220,8 @@ function Certifications() {
         <div className="divide-y divide-paper/10 pb-20">
           {certificationsData.map((cert) => {
             const activePageIdx = activePages[cert.id] ?? 0;
-            const activePage = cert.pages[activePageIdx]!;
+            const activePage = cert.pages[activePageIdx] ?? cert.pages[0];
+            if (!activePage) return null;
 
             return (
               <section key={cert.id} className="py-16">
@@ -288,7 +253,7 @@ function Certifications() {
                       </p>
 
                       {/* Core Specs Grid */}
-                      <div className="mt-6 grid grid-cols-2 gap-4 border-y border-paper/10 py-4 font-mono text-[11px]">
+                      <div className="mt-6 grid grid-cols-1 gap-4 border-y border-paper/10 py-4 font-mono text-[11px] min-[420px]:grid-cols-2">
                         <div>
                           <span className="block text-[9px] uppercase tracking-wider text-paper/40">
                             PRACTICE & LESSONS
@@ -371,7 +336,7 @@ function Certifications() {
                     <div className="border border-paper/15 bg-panel p-3">
                       {/* Tab Selector if multi-page */}
                       {cert.pages.length > 1 && (
-                        <div className="mb-3 flex items-center gap-2 border-b border-paper/10 pb-3 font-mono text-[11px]">
+                        <div className="mb-3 flex flex-wrap items-center gap-2 border-b border-paper/10 pb-3 font-mono text-[10px] sm:text-[11px]">
                           {cert.pages.map((p, idx) => (
                             <button
                               key={p.label}
@@ -386,7 +351,7 @@ function Certifications() {
                               {p.label}
                             </button>
                           ))}
-                          <span className="ml-auto text-[10px] text-paper/40">
+                            <span className="w-full text-[9px] text-paper/40 sm:ml-auto sm:w-auto sm:text-[10px]">
                             CLICK IMAGE TO ENLARGE
                           </span>
                         </div>
@@ -414,9 +379,9 @@ function Certifications() {
                       </button>
 
                       {/* Caption */}
-                      <div className="mt-3 flex items-center justify-between px-1 font-mono text-[10px] text-paper/50">
-                        <span>{activePage.caption}</span>
-                        <span className="text-signal">FIG. {cert.number}</span>
+                      <div className="mt-3 grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3 px-1 font-mono text-[10px] text-paper/50">
+                        <span className="min-w-0">{activePage.caption}</span>
+                        <span className="shrink-0 text-signal">FIG. {cert.number}</span>
                       </div>
                     </div>
                   </div>
