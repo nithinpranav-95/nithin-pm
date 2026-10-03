@@ -7,26 +7,25 @@ import { projects } from "@/lib/projects";
 
 export function CaseStudyGrid({
   includeHidden = false,
-  initialCount,
+  mobileInitialCount,
 }: {
   includeHidden?: boolean;
-  initialCount?: number;
+  mobileInitialCount?: number;
 }) {
   const all = includeHidden ? projects : projects.filter((project) => !project.hideOnHome);
-  const limited = typeof initialCount === "number" && initialCount < all.length;
+  const limited = typeof mobileInitialCount === "number" && mobileInitialCount < all.length;
   const [showAll, setShowAll] = useState(false);
-  const visible = limited && !showAll ? all.slice(0, initialCount) : all;
-  const remaining = typeof initialCount === "number" ? all.length - initialCount : 0;
+  const remaining = typeof mobileInitialCount === "number" ? all.length - mobileInitialCount : 0;
 
   return (
     <>
       <section className="grid grid-cols-1 gap-5 pb-14 pt-6 sm:grid-cols-2 sm:gap-6 sm:pb-20 sm:pt-10 lg:grid-cols-3">
-        {visible.map((project) => (
+        {all.map((project, i) => (
         <Link
           key={project.slug}
           to="/work/$slug"
           params={{ slug: project.slug }}
-          className="group block border border-paper/15 bg-panel p-3 text-left transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-signal hover:shadow-[0_18px_40px_-24px_rgba(0,0,0,0.85)] focus-visible:-translate-y-1.5 focus-visible:border-signal"
+          className={`group block border border-paper/15 bg-panel p-3 text-left transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-signal hover:shadow-[0_18px_40px_-24px_rgba(0,0,0,0.85)] focus-visible:-translate-y-1.5 focus-visible:border-signal ${limited && !showAll && mobileInitialCount !== undefined && i >= mobileInitialCount ? "max-sm:hidden" : ""}`}
         >
             <div className="relative flex aspect-[4/3] w-full flex-col items-center justify-center overflow-hidden border border-paper/10 bg-ink/70 p-6 transition-all duration-300 group-hover:border-signal/40 group-hover:bg-ink">
               {/* Monograph editorial background grid */}
@@ -81,7 +80,7 @@ export function CaseStudyGrid({
           <button
             type="button"
             onClick={() => setShowAll((prev) => !prev)}
-            className="flex min-h-11 items-center gap-2 border border-paper/20 px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.2em] text-paper/70 transition-colors hover:border-signal hover:text-signal"
+            className="flex min-h-11 items-center gap-2 border border-paper/20 px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.2em] text-paper/70 transition-colors hover:border-signal hover:text-signal sm:hidden"
           >
             <span>
               {showAll ? "Show fewer" : `View ${remaining} more case studies`}
