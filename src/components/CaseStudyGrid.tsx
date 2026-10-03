@@ -1,29 +1,20 @@
-import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowDown } from "lucide-react";
 import { CompanyLogo } from "@/components/CompanyLogos";
 
 import { projects } from "@/lib/projects";
 
-const MOBILE_INITIAL_COUNT = 3;
-
 export function CaseStudyGrid({ includeHidden = false }: { includeHidden?: boolean }) {
-  const [showAll, setShowAll] = useState(false);
   const visible = includeHidden ? projects : projects.filter((project) => !project.hideOnHome);
-  const hiddenCount = visible.length - MOBILE_INITIAL_COUNT;
 
   return (
-    <>
-      <section className="grid grid-cols-1 gap-5 pb-14 pt-6 sm:grid-cols-2 sm:gap-6 sm:pb-20 sm:pt-10 lg:grid-cols-3">
-        {visible.map((project, index) => (
-          <Link
-            key={project.slug}
-            to="/work/$slug"
-            params={{ slug: project.slug }}
-            className={`group block border border-paper/15 bg-panel p-3 text-left transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-signal hover:shadow-[0_18px_40px_-24px_rgba(0,0,0,0.85)] focus-visible:-translate-y-1.5 focus-visible:border-signal ${
-              index >= MOBILE_INITIAL_COUNT && !showAll ? "max-sm:hidden" : ""
-            }`}
-          >
+    <section className="grid grid-cols-1 gap-5 pb-14 pt-6 sm:grid-cols-2 sm:gap-6 sm:pb-20 sm:pt-10 lg:grid-cols-3">
+      {visible.map((project) => (
+        <Link
+          key={project.slug}
+          to="/work/$slug"
+          params={{ slug: project.slug }}
+          className="group block border border-paper/15 bg-panel p-3 text-left transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-signal hover:shadow-[0_18px_40px_-24px_rgba(0,0,0,0.85)] focus-visible:-translate-y-1.5 focus-visible:border-signal"
+        >
             <div className="relative flex aspect-[4/3] w-full flex-col items-center justify-center overflow-hidden border border-paper/10 bg-ink/70 p-6 transition-all duration-300 group-hover:border-signal/40 group-hover:bg-ink">
               {/* Monograph editorial background grid */}
               <div
