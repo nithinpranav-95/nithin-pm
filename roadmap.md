@@ -6,4 +6,4 @@
 - [x] Verify the updated homepage and case-study page.
 - [x] Add one full mobile navigation menu across every public page.
 - [x] Improve mobile spacing, wrapping, tap targets, cards, forms, and detail views.
-- [ ] Verify mobile and desktop layouts end to end.
+- [x] Verify mobile and desktop layouts end to end.
