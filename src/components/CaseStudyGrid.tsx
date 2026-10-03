@@ -16,7 +16,7 @@ export function CaseStudyGrid({
   const limited = typeof initialCount === "number" && initialCount < all.length;
   const [showAll, setShowAll] = useState(false);
   const visible = limited && !showAll ? all.slice(0, initialCount) : all;
-  const remaining = all.length - initialCount;
+  const remaining = typeof initialCount === "number" ? all.length - initialCount : 0;
 
   return (
     <>
