@@ -220,7 +220,8 @@ function Certifications() {
         <div className="divide-y divide-paper/10 pb-20">
           {certificationsData.map((cert) => {
             const activePageIdx = activePages[cert.id] ?? 0;
-            const activePage = cert.pages[activePageIdx]!;
+            const activePage = cert.pages[activePageIdx] ?? cert.pages[0];
+            if (!activePage) return null;
 
             return (
               <section key={cert.id} className="py-16">

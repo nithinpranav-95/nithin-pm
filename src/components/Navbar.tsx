@@ -42,7 +42,7 @@ export function Navbar() {
             <Link
               key={link.label}
               to={link.to}
-              hash={link.hash}
+              {...(link.hash ? { hash: link.hash } : {})}
               className={cn(
                 "transition-colors hover:text-signal",
                 location.pathname === link.to && !link.hash ? "text-signal" : "text-paper/60"
@@ -81,7 +81,8 @@ export function Navbar() {
                   <Link
                     key={link.label}
                     to={link.to}
-                    hash={link.hash}
+                    {...(link.hash ? { hash: link.hash } : {})}
+                    onClick={() => setIsOpen(false)}
                     className={cn(
                       "group flex min-h-14 items-center justify-between border-b border-paper/10 py-4 font-mono text-base transition-colors hover:text-signal",
                       location.pathname === link.to && !link.hash ? "text-signal" : "text-paper/80"
@@ -95,6 +96,7 @@ export function Navbar() {
                 <div className="mt-8 flex flex-col gap-4">
                    <Link 
                     to="/" 
+                    onClick={() => setIsOpen(false)}
                     className="flex w-full items-center justify-center border border-signal bg-signal/10 px-4 py-3 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink"
                   >
                     BACK TO HOME
