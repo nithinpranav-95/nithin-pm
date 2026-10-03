@@ -80,17 +80,11 @@ export function CaseStudyGrid({ includeHidden = false }: { includeHidden?: boole
             aria-expanded={showAll}
             className="mx-auto flex min-h-11 w-full items-center justify-center gap-2 border border-paper/15 bg-panel px-4 font-mono text-[11px] uppercase tracking-[0.2em] text-paper/70 transition-colors hover:border-signal hover:text-signal"
           >
-            {showAll ? (
-              <>
-                SHOW FEWER
-                <ArrowDown className="h-4 w-4 rotate-180" aria-hidden="true" />
-              </>
-            ) : (
-              <>
-                VIEW 3 MORE CASE STUDIES
-                <ArrowDown className="h-4 w-4" aria-hidden="true" />
-              </>
-            )}
+            <span>{showAll ? "SHOW FEWER" : "VIEW 3 MORE CASE STUDIES"}</span>
+            <ArrowDown
+              className={`h-4 w-4 transition-transform ${showAll ? "rotate-180" : ""}`}
+              aria-hidden="true"
+            />
           </button>
         </div>
       )}
