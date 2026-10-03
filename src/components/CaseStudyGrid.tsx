@@ -87,7 +87,7 @@ export function CaseStudyGrid({ includeHidden = false }: { includeHidden?: boole
               </>
             ) : (
               <>
-                VIEW ALL {String(visible.length).padStart(2, "0")} CASE STUDIES
+                VIEW 3 MORE CASE STUDIES
                 <ArrowDown className="h-4 w-4" aria-hidden="true" />
               </>
             )}
