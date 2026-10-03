@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import { ReceiptText, Ship } from "lucide-react";
+import { Ship } from "lucide-react";
 
 export interface CompanyLogoProps extends ComponentProps<"svg"> {
   slug?: string;
@@ -160,6 +160,24 @@ export function ReonicLogo({ className, ...props }: ComponentProps<"svg">) {
   );
 }
 
+export function TaxfixLogo({ className, ...props }: ComponentProps<"svg">) {
+  return (
+    <svg
+      viewBox="39.24 4.10 30 30"
+      fill="currentColor"
+      aria-hidden="true"
+      className={className}
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M42.655 29.109H51.106C51.2661 29.109 51.4261 29.0289 51.5061 28.9169L66.0393 9.50204C66.1993 9.26196 66.0713 9.1019 65.8472 9.1019H57.3962C57.2362 9.1019 57.0761 9.18193 56.9961 9.29397L42.463 28.7088C42.2869 28.9489 42.4149 29.109 42.655 29.109ZM62.2619 29.6691C64.9509 29.6691 67.1917 27.4284 67.1917 24.7394C67.1917 22.0505 64.9509 19.8097 62.2619 19.8097C59.573 19.8097 57.3802 22.0505 57.3802 24.7394C57.3802 27.4284 59.573 29.6691 62.2619 29.6691ZM46.2243 18.3852C48.9132 18.3852 51.106 16.1444 51.106 13.4554C51.106 10.7665 48.8972 8.5257 46.2243 8.5257C43.5513 8.5257 41.2946 10.7665 41.2946 13.4554C41.2946 16.1444 43.5353 18.3852 46.2243 18.3852Z"
+      />
+    </svg>
+  );
+}
+
 export function CompanyLogo({ slug, className = "h-4 w-4", ...props }: CompanyLogoProps) {
   switch (slug) {
     case "youtube":
@@ -181,8 +199,9 @@ export function CompanyLogo({ slug, className = "h-4 w-4", ...props }: CompanyLo
     case "maritime-ai-agent":
     case "zauber":
       return <ZauberLogo className={className} {...props} />;
+    case "taxfix":
     case "taxfix-year-round":
-      return <ReceiptText className={className} aria-hidden="true" strokeWidth={1.75} {...props} />;
+      return <TaxfixLogo className={className} {...props} />;
     default:
       return null;
   }
