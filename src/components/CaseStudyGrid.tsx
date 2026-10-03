@@ -80,7 +80,7 @@ export function CaseStudyGrid({
           <button
             type="button"
             onClick={() => setShowAll((prev) => !prev)}
-            className="flex min-h-11 items-center gap-2 border border-paper/20 px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.2em] text-paper/70 transition-colors hover:border-signal hover:text-signal"
+            className="flex min-h-11 items-center gap-2 border border-paper/20 px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.2em] text-paper/70 transition-colors hover:border-signal hover:text-signal sm:hidden"
           >
             <span>
               {showAll ? "Show fewer" : `View ${remaining} more case studies`}
