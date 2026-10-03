@@ -116,7 +116,7 @@ function Index() {
             </Link>
           </div>
 
-          <CaseStudyGrid />
+          <CaseStudyGrid initialCount={3} />
         </section>
 
         <div className="border-t border-paper/10" />

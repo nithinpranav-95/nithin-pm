@@ -1,14 +1,27 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { ArrowDown, ArrowUp, ArrowRight } from "lucide-react";
 import { CompanyLogo } from "@/components/CompanyLogos";
 
 import { projects } from "@/lib/projects";
 
-export function CaseStudyGrid({ includeHidden = false }: { includeHidden?: boolean }) {
-  const visible = includeHidden ? projects : projects.filter((project) => !project.hideOnHome);
+export function CaseStudyGrid({
+  includeHidden = false,
+  initialCount,
+}: {
+  includeHidden?: boolean;
+  initialCount?: number;
+}) {
+  const all = includeHidden ? projects : projects.filter((project) => !project.hideOnHome);
+  const limited = typeof initialCount === "number" && initialCount < all.length;
+  const [showAll, setShowAll] = useState(false);
+  const visible = limited && !showAll ? all.slice(0, initialCount) : all;
+  const remaining = typeof initialCount === "number" ? all.length - initialCount : 0;
 
   return (
-    <section className="grid grid-cols-1 gap-5 pb-14 pt-6 sm:grid-cols-2 sm:gap-6 sm:pb-20 sm:pt-10 lg:grid-cols-3">
-      {visible.map((project) => (
+    <>
+      <section className="grid grid-cols-1 gap-5 pb-14 pt-6 sm:grid-cols-2 sm:gap-6 sm:pb-20 sm:pt-10 lg:grid-cols-3">
+        {visible.map((project) => (
         <Link
           key={project.slug}
           to="/work/$slug"
@@ -62,6 +75,32 @@ export function CaseStudyGrid({ includeHidden = false }: { includeHidden?: boole
             </p>
           </Link>
         ))}
-    </section>
+      </section>
+      {limited && (
+        <div className="mb-14 flex flex-col items-center gap-4 sm:mb-20">
+          <button
+            type="button"
+            onClick={() => setShowAll((prev) => !prev)}
+            className="flex min-h-11 items-center gap-2 border border-paper/20 px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.2em] text-paper/70 transition-colors hover:border-signal hover:text-signal"
+          >
+            <span>
+              {showAll ? "Show fewer" : `View ${remaining} more case studies`}
+            </span>
+            {showAll ? (
+              <ArrowUp className="h-3.5 w-3.5" aria-hidden="true" />
+            ) : (
+              <ArrowDown className="h-3.5 w-3.5" aria-hidden="true" />
+            )}
+          </button>
+          <Link
+            to="/case-studies"
+            className="flex min-h-11 items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-signal transition-colors hover:text-paper"
+          >
+            <span>All case studies</span>
+            <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+          </Link>
+        </div>
+      )}
+    </>
   );
 }
