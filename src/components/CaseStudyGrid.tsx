@@ -1,14 +1,27 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { ArrowDown, ArrowUp, ArrowRight } from "lucide-react";
 import { CompanyLogo } from "@/components/CompanyLogos";
 
 import { projects } from "@/lib/projects";
 
-export function CaseStudyGrid({ includeHidden = false }: { includeHidden?: boolean }) {
-  const visible = includeHidden ? projects : projects.filter((project) => !project.hideOnHome);
+export function CaseStudyGrid({
+  includeHidden = false,
+  initialCount,
+}: {
+  includeHidden?: boolean;
+  initialCount?: number;
+}) {
+  const all = includeHidden ? projects : projects.filter((project) => !project.hideOnHome);
+  const limited = typeof initialCount === "number" && initialCount < all.length;
+  const [showAll, setShowAll] = useState(false);
+  const visible = limited && !showAll ? all.slice(0, initialCount) : all;
+  const remaining = all.length - initialCount;
 
   return (
-    <section className="grid grid-cols-1 gap-5 pb-14 pt-6 sm:grid-cols-2 sm:gap-6 sm:pb-20 sm:pt-10 lg:grid-cols-3">
-      {visible.map((project) => (
+    <>
+      <section className="grid grid-cols-1 gap-5 pb-14 pt-6 sm:grid-cols-2 sm:gap-6 sm:pb-20 sm:pt-10 lg:grid-cols-3">
+        {visible.map((project) => (
         <Link
           key={project.slug}
           to="/work/$slug"
