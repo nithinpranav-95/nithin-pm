@@ -66,7 +66,7 @@ function Index() {
                 className="h-full min-h-[300px] w-full object-cover md:min-h-[440px]"
               />
               <figcaption className="px-1 pb-1 pt-3 font-mono text-[10px] text-paper/40">
-                         MOSELLE VALLEY - 2024
+                        MOSELLE VALLEY - 2024
               </figcaption>
             </figure>
             <div className="flex flex-wrap items-center gap-3 [animation-delay:380ms]">
