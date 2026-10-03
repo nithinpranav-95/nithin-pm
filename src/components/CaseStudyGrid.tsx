@@ -8,7 +8,7 @@ export function CaseStudyGrid({ includeHidden = false }: { includeHidden?: boole
 
   return (
     <>
-      <section className="grid grid-cols-1 gap-6 pb-20 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="grid grid-cols-1 gap-5 pb-14 pt-6 sm:grid-cols-2 sm:gap-6 sm:pb-20 sm:pt-10 lg:grid-cols-3">
         {visible.map((project) => (
           <Link
             key={project.slug}
@@ -51,12 +51,12 @@ export function CaseStudyGrid({ includeHidden = false }: { includeHidden?: boole
                 </span>
               </div>
             </div>
-            <div className="flex items-center gap-2.5 px-1 pt-4">
+            <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-2.5 px-1 pt-4">
               <span className="font-mono text-[11px] text-signal">{project.number}</span>
-              <h2 className="font-display text-2xl font-medium transition-colors group-hover:text-signal">
+              <h2 className="min-w-0 text-pretty font-display text-xl font-medium transition-colors group-hover:text-signal sm:text-2xl">
                 {project.title}
               </h2>
-              <span className="ml-auto font-mono text-[10px] text-paper/40">{project.year}</span>
+              <span className="shrink-0 font-mono text-[10px] text-paper/40">{project.year}</span>
             </div>
             <p className="mt-2 px-1 pb-1 text-sm leading-relaxed text-paper/65">
               {project.description}

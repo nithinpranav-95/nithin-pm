@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { Navbar } from "@/components/Navbar";
 import { AskAssistant } from "@/components/AskAssistant";
 import { agentProjects, mlProjects, githubProfile, type SideProject } from "@/lib/side-projects";
 
@@ -32,9 +32,9 @@ function ProjectCard({ project }: { project: SideProject }) {
       rel="noopener noreferrer"
       className="group flex flex-col border border-paper/15 bg-panel p-5 transition-all duration-300 hover:-translate-y-1 hover:border-signal"
     >
-      <div className="flex items-baseline justify-between gap-3">
+      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
         <h3 className="font-display text-xl font-medium">{project.name}</h3>
-        <span className="font-mono text-[10px] text-signal">{project.status}</span>
+        <span className="shrink-0 font-mono text-[10px] text-signal">{project.status}</span>
       </div>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-paper/65">{project.summary}</p>
       <div className="mt-5 flex items-center justify-between border-t border-paper/10 pt-3 font-mono text-[10px] text-paper/45">
@@ -79,43 +79,13 @@ function Section({
 function Projects() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-ink text-paper antialiased">
-      <header className="sticky top-0 z-20 border-b border-paper/10 bg-ink/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-6">
-          <Link
-            to="/"
-            className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal"
-          >
-            NITHIN PRANAV — PRODUCT
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link
-              to="/case-studies"
-              className="font-mono text-[11px] text-paper/60 transition-colors hover:text-signal"
-            >
-              CASE STUDIES
-            </Link>
-            <Link
-              to="/certifications"
-              className="font-mono text-[11px] text-paper/60 transition-colors hover:text-signal"
-            >
-              CERTIFICATIONS
-            </Link>
-            <Link
-              to="/"
-              className="font-mono text-[11px] text-signal transition-colors hover:text-paper"
-            >
-              ← HOME
-            </Link>
-            <ThemeToggle />
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
-      <main className="mx-auto max-w-[1440px] px-5 sm:px-6">
-        <section className="grid grid-cols-12 gap-6 pb-12 pt-14">
+      <main className="mx-auto max-w-[1440px] px-4 sm:px-6">
+        <section className="grid grid-cols-12 gap-6 pb-10 pt-9 sm:pb-12 sm:pt-14">
           <div className="col-span-12 md:col-span-8">
             <p className="font-mono text-[11px] text-signal">(a) — BUILD LOG</p>
-            <h1 className="mt-4 text-balance font-display text-6xl font-semibold leading-[0.9] md:text-8xl">
+            <h1 className="mt-4 text-balance font-display text-5xl font-semibold leading-[0.9] sm:text-6xl md:text-8xl">
               Projects
             </h1>
             <p className="mt-6 max-w-[52ch] text-pretty text-lg font-light leading-snug text-paper/75">

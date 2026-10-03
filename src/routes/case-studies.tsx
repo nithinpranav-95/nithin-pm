@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { Navbar } from "@/components/Navbar";
 import { AskAssistant } from "@/components/AskAssistant";
 
 import { projects } from "@/lib/projects";
@@ -29,43 +29,13 @@ export const Route = createFileRoute("/case-studies")({
 function CaseStudies() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-ink text-paper antialiased">
-      <header className="sticky top-0 z-20 border-b border-paper/10 bg-ink/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-6">
-          <Link
-            to="/"
-            className="font-mono text-[11px] text-paper/70 transition-colors hover:text-signal"
-          >
-            NITHIN PRANAV — PRODUCT
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link
-              to="/projects"
-              className="font-mono text-[11px] text-paper/60 transition-colors hover:text-signal"
-            >
-              PROJECTS
-            </Link>
-            <Link
-              to="/certifications"
-              className="font-mono text-[11px] text-paper/60 transition-colors hover:text-signal"
-            >
-              CERTIFICATIONS
-            </Link>
-            <Link
-              to="/"
-              className="font-mono text-[11px] text-signal transition-colors hover:text-paper"
-            >
-              ← HOME
-            </Link>
-            <ThemeToggle />
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
-      <main className="mx-auto max-w-[1440px] px-5 sm:px-6">
-        <section className="grid grid-cols-12 gap-6 pb-12 pt-14">
+      <main className="mx-auto max-w-[1440px] px-4 sm:px-6">
+        <section className="grid grid-cols-12 gap-6 pb-10 pt-9 sm:pb-12 sm:pt-14">
           <div className="col-span-12 md:col-span-8">
             <p className="font-mono text-[11px] text-signal">(a) — LIBRARY</p>
-            <h1 className="mt-4 text-balance font-display text-6xl font-semibold leading-[0.9] md:text-8xl">
+            <h1 className="mt-4 text-balance font-display text-5xl font-semibold leading-[0.9] sm:text-6xl md:text-8xl">
               Case studies
             </h1>
             <p className="mt-6 max-w-[52ch] text-pretty text-lg font-light leading-snug text-paper/75">

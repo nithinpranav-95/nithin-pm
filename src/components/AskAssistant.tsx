@@ -57,9 +57,9 @@ export function AskAssistant({ variant = "floating" }: { variant?: "floating" | 
               setOpen(true);
               ask(value);
             }}
-            className="group flex w-full items-center gap-2 border-2 border-signal bg-panel p-2 shadow-[0_0_24px_-4px_rgba(235,94,40,0.25)] transition-all duration-300 hover:border-signal hover:shadow-[0_0_32px_-2px_rgba(235,94,40,0.35)] focus-within:border-signal focus-within:shadow-[0_0_36px_-2px_rgba(235,94,40,0.45)]"
+            className="group grid w-full grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-1.5 border-2 border-signal bg-panel p-1.5 shadow-[0_0_24px_-4px_rgba(235,94,40,0.25)] transition-all duration-300 hover:border-signal hover:shadow-[0_0_32px_-2px_rgba(235,94,40,0.35)] focus-within:border-signal focus-within:shadow-[0_0_36px_-2px_rgba(235,94,40,0.45)] sm:gap-2 sm:p-2"
           >
-            <span className="flex items-center gap-1.5 bg-signal px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-ink">
+            <span className="hidden items-center gap-1.5 bg-signal px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-ink min-[380px]:flex">
               ASK AI
             </span>
             <input
@@ -67,11 +67,11 @@ export function AskAssistant({ variant = "floating" }: { variant?: "floating" | 
               onChange={(event) => setBarInput(event.target.value)}
               placeholder="Ask anything about Nithin's work…"
               aria-label="Ask anything about Nithin's work"
-              className="flex-1 bg-transparent px-2 py-2 text-sm font-medium text-paper placeholder:text-paper/60 focus:outline-none"
+              className="min-w-0 bg-transparent px-2 py-2 text-sm font-medium text-paper placeholder:text-paper/60 focus:outline-none"
             />
             <button
               type="submit"
-              className="flex items-center gap-1.5 bg-signal px-3.5 py-2 font-mono text-[11px] font-semibold text-ink transition-all duration-200 hover:scale-[1.03] hover:bg-signal/90 active:scale-[0.97]"
+              className="flex min-h-11 items-center gap-1.5 bg-signal px-3 font-mono text-[11px] font-semibold text-ink transition-all duration-200 hover:scale-[1.03] hover:bg-signal/90 active:scale-[0.97] sm:px-3.5"
               aria-label="Submit question"
             >
               <span>SEND</span>
@@ -88,7 +88,7 @@ export function AskAssistant({ variant = "floating" }: { variant?: "floating" | 
                   setOpen(true);
                   ask(starter);
                 }}
-                className="border border-paper/15 bg-panel/70 px-2 py-0.5 text-paper/70 transition-colors hover:border-signal hover:text-signal"
+                className="min-h-11 border border-paper/15 bg-panel/70 px-3 py-2 text-left text-[10px] leading-snug text-paper/70 transition-colors hover:border-signal hover:text-signal"
               >
                 "{starter}"
               </button>
@@ -99,7 +99,7 @@ export function AskAssistant({ variant = "floating" }: { variant?: "floating" | 
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="fixed bottom-5 right-5 z-40 border border-signal bg-ink px-4 py-3 font-mono text-[11px] text-signal shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-signal hover:text-ink"
+          className="fixed bottom-4 right-4 z-40 min-h-11 border border-signal bg-ink px-3 py-3 font-mono text-[10px] text-signal shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-signal hover:text-ink sm:bottom-5 sm:right-5 sm:px-4 sm:text-[11px]"
         >
           ASK ABOUT NITHIN →
         </button>
