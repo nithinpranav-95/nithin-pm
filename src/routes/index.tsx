@@ -55,18 +55,20 @@ function Index() {
               <AskAssistant variant="bar" />
             </div>
           </div>
-            <div className="rise-in col-span-12 flex flex-col gap-4 [animation-delay:300ms] sm:gap-6 md:col-span-4">
-            <figure className="h-full border border-paper/15 bg-panel p-2">
-              <img
-                src={headshot}
-                alt="Portrait of Nithin Pranav"
-                width={1080}
-                height={1620}
-                loading="lazy"
-                className="h-full min-h-[300px] w-full object-cover md:min-h-[440px]"
-              />
-              <figcaption className="px-1 pb-1 pt-3 font-mono text-[10px] text-paper/40">
-                                      MOSELLE VALLEY - 2024
+          <div className="rise-in col-span-12 flex flex-col gap-4 self-start [animation-delay:300ms] sm:gap-5 md:col-span-4">
+            <figure className="mx-auto w-full max-w-[320px] border border-paper/15 bg-panel p-2 sm:max-w-[340px] md:mx-0 md:max-w-none">
+              <div className="overflow-hidden aspect-[4/5] max-h-[360px] w-full">
+                <img
+                  src={headshot}
+                  alt="Portrait of Nithin Pranav"
+                  width={800}
+                  height={1000}
+                  loading="lazy"
+                  className="h-full w-full object-cover object-center"
+                />
+              </div>
+              <figcaption className="px-1 pb-0.5 pt-2 text-center font-mono text-[10px] tracking-wider text-paper/40">
+                MOSELLE VALLEY — 2024
               </figcaption>
             </figure>
             <div className="flex flex-wrap items-center gap-3 [animation-delay:380ms]">
