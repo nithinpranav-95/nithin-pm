@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Calendar, Linkedin, Download, Award } from "lucide-react";
-import headshot from "@/assets/headshot.jpg.asset.json";
+import headshot from "@/assets/headshot.jpg";
 import certIhkPage1 from "@/assets/cert-ihk-page-1.jpg";
 import certIhkFoundationsPage1 from "@/assets/cert-ihk-foundations-page-1.jpg";
 import certHfAgents from "@/assets/cert-huggingface-agents.png";
@@ -58,7 +58,7 @@ function Index() {
             <div className="rise-in col-span-12 flex flex-col gap-4 [animation-delay:300ms] sm:gap-6 md:col-span-4">
             <figure className="h-full border border-paper/15 bg-panel p-2">
               <img
-                src={headshot.url}
+                src={headshot}
                 alt="Portrait of Nithin Pranav"
                 width={1080}
                 height={1620}
