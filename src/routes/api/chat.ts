@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { convertToModelMessages, streamText, type UIMessage } from "ai";
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
 
 import {
   createLovableAiGatewayProvider,
@@ -20,18 +21,47 @@ export const Route = createFileRoute("/api/chat")({
           return new Response("Messages are required", { status: 400 });
         }
 
-        const key = process.env["LOVABLE_API_KEY"];
-        if (!key) {
-          return new Response("The assistant is not configured yet.", { status: 500 });
+        const geminiKey =
+          process.env["GEMINI_API_KEY"] ||
+          process.env["GOOGLE_GENERATIVE_AI_API_KEY"] ||
+          process.env["GOOGLE_API_KEY"];
+        const lovableKey = process.env["LOVABLE_API_KEY"];
+
+        if (!geminiKey && !lovableKey) {
+          return new Response(
+            "Gemini API key is not configured. Please set GEMINI_API_KEY in your environment variables.",
+            { status: 500 },
+          );
         }
 
+        const modelMessages = await convertToModelMessages(messages as UIMessage[]);
+
+        if (geminiKey) {
+          const google = createGoogleGenerativeAI({
+            apiKey: geminiKey,
+          });
+
+          const modelName = process.env["GEMINI_MODEL"] || "gemini-2.5-flash";
+
+          const result = streamText({
+            model: google(modelName),
+            system: systemPrompt,
+            messages: modelMessages,
+          });
+
+          return result.toUIMessageStreamResponse({
+            originalMessages: messages as UIMessage[],
+          });
+        }
+
+        // Fallback for Lovable AI Gateway if LOVABLE_API_KEY is present
         const initialRunId = getLovableAiGatewayRunId(request);
-        const gateway = createLovableAiGatewayProvider(key, initialRunId);
+        const gateway = createLovableAiGatewayProvider(lovableKey!, initialRunId);
 
         const result = streamText({
-          model: gateway("google/gemini-3.8-flash"),
+          model: gateway("google/gemini-2.5-flash"),
           system: systemPrompt,
-          messages: await convertToModelMessages(messages as UIMessage[]),
+          messages: modelMessages,
         });
 
         const response = result.toUIMessageStreamResponse({
