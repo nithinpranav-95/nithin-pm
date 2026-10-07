@@ -22,12 +22,16 @@ export const Route = createFileRoute("/api/chat")({
             return new Response("Messages are required", { status: 400 });
           }
 
+          const metaEnv = (import.meta as unknown as { env?: Record<string, string> }).env || {};
           const geminiKey = (
             process.env["GEMINI_API_KEY"] ||
             process.env["GOOGLE_GENERATIVE_AI_API_KEY"] ||
-            process.env["GOOGLE_API_KEY"]
+            process.env["GOOGLE_API_KEY"] ||
+            metaEnv["GEMINI_API_KEY"] ||
+            metaEnv["VITE_GEMINI_API_KEY"] ||
+            metaEnv["GOOGLE_GENERATIVE_AI_API_KEY"]
           )?.trim();
-          const lovableKey = process.env["LOVABLE_API_KEY"]?.trim();
+          const lovableKey = (process.env["LOVABLE_API_KEY"] || metaEnv["LOVABLE_API_KEY"])?.trim();
 
           if (!geminiKey && !lovableKey) {
             console.error("[chat] Neither GEMINI_API_KEY nor LOVABLE_API_KEY is configured.");
