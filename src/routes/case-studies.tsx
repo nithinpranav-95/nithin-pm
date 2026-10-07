@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
 import { Navbar } from "@/components/Navbar";
-import { AskAssistant } from "@/components/AskAssistant";
 
 import { projects } from "@/lib/projects";
 
@@ -82,8 +81,6 @@ function CaseStudies() {
           </div>
         </div>
       </footer>
-
-      <AskAssistant />
     </div>
   );
 }

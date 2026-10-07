@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
-import { AskAssistant } from "@/components/AskAssistant";
 import { agentProjects, mlProjects, githubProfile, type SideProject } from "@/lib/side-projects";
 
 export const Route = createFileRoute("/projects")({
@@ -153,8 +152,6 @@ function Projects() {
           </div>
         </div>
       </footer>
-
-      <AskAssistant />
     </div>
   );
 }

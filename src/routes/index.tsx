@@ -7,7 +7,6 @@ import certHfAgents from "@/assets/cert-huggingface-agents.png";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
 import { ExperienceList } from "@/components/ExperienceList";
 import { Navbar } from "@/components/Navbar";
-import { AskAssistant } from "@/components/AskAssistant";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,9 +50,6 @@ function Index() {
               cross-functionally with engineering, design, and business teams to turn ideas into
               impactful products and ship solutions that people actually want to use.
             </p>
-            <div className="rise-in mt-6 max-w-[54ch] [animation-delay:440ms]">
-              <AskAssistant variant="bar" />
-            </div>
           </div>
           <div className="rise-in col-span-12 flex flex-col gap-4 self-start [animation-delay:300ms] sm:gap-5 md:col-span-4">
             <figure className="mx-auto w-full max-w-[320px] border border-paper/15 bg-panel p-2 sm:max-w-[340px] md:mx-0 md:max-w-none">

@@ -10,7 +10,6 @@ import {
   Eye,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
-import { AskAssistant } from "@/components/AskAssistant";
 
 import certIhkPage1 from "@/assets/cert-ihk-page-1.jpg";
 import certIhkPage2 from "@/assets/cert-ihk-page-2.jpg";
@@ -447,8 +446,6 @@ function Certifications() {
           </div>
         </div>
       </footer>
-
-      <AskAssistant />
     </div>
   );
 }
