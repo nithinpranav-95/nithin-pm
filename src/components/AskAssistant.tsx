@@ -184,10 +184,19 @@ export function AskAssistant({ variant = "floating" }: { variant?: "floating" | 
                 ) : null}
 
                 {error ? (
-                  <p className="border border-signal/50 px-3 py-2 text-sm text-signal">
-                    The assistant couldn't answer right now. Please try again in a moment, or email
-                    nithin.pranav@gmail.com.
-                  </p>
+                  <div className="border border-signal/50 bg-panel/90 p-3 text-sm text-signal">
+                    <p>
+                      The assistant couldn't answer right now. Please try again in a moment, or email{" "}
+                      <a href="mailto:nithin.pranav@gmail.com" className="underline hover:text-paper">
+                        nithin.pranav@gmail.com
+                      </a>.
+                    </p>
+                    {error.message && !error.message.includes("Failed to fetch") ? (
+                      <p className="mt-2 rounded border border-signal/20 bg-ink/40 p-2 font-mono text-[10px] text-paper/70">
+                        {error.message}
+                      </p>
+                    ) : null}
+                  </div>
                 ) : null}
               </div>
 
