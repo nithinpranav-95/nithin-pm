@@ -18,12 +18,12 @@ export const agentProjects: SideProject[] = [
     repo: "https://github.com/nithinpranav-95/Aiva",
   },
   {
-    name: "PM Co-pilot",
-    status: "EXPLORATION",
+    name: "TroopConnect",
+    status: "IN PROGRESS",
     summary:
-      "A working assistant for product work: turning messy inputs — tickets, notes, feedback — into structured problem statements and decision-ready summaries.",
-    stack: "LLM · PRODUCT WORKFLOWS",
-    repo: "https://github.com/nithinpranav-95/PM_Co-pilot",
+      "A game score-tracking web app for friend groups to manage live sessions, record rounds, auto-calculate running totals, and view persistent leaderboards across games.",
+    stack: "REACT · TYPESCRIPT · TAILWIND",
+    repo: "https://github.com/nithinpranav-95/TroopConnect",
   },
 ];
 

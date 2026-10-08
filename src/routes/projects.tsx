@@ -108,9 +108,9 @@ function Projects() {
         </section>
 
         <Section
-          label="(01) — AGENTS"
-          title="Agents"
-          blurb="Autonomous and semi-autonomous systems that take a task end to end, with clear limits on what they're allowed to decide."
+          label="(01) — AGENTS & APPS"
+          title="Agents & Apps"
+          blurb="Autonomous agents and web applications built to handle coordination, user workflows, and multi-step tasks end to end."
           items={agentProjects}
         />
 
