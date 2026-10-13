@@ -178,6 +178,24 @@ export function TaxfixLogo({ className, ...props }: ComponentProps<"svg">) {
   );
 }
 
+export function GeneralMindLogo({ className, ...props }: ComponentProps<"svg">) {
+  return (
+    <svg
+      viewBox="0 0 200 200"
+      fill="currentColor"
+      aria-hidden="true"
+      className={className}
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M78 36H121C128 36 133 41 133 48V62C133 69 128 74 121 74H75C70 74 66 78 66 83V116C66 121 70 125 75 125H121C128 125 133 130 133 137V151C133 158 128 163 121 163H78C71 163 66 158 66 151V133C66 128 62 125 57 125H43C36 125 30 119 30 113V86C30 80 36 74 43 74H57C62 74 66 71 66 66V48C66 41 71 36 78 36ZM144 79H155C163 79 169 85 169 93V106C169 114 163 120 155 120H144C136 120 130 114 130 106V93C130 85 136 79 144 79Z"
+      />
+    </svg>
+  );
+}
+
 export function CompanyLogo({ slug, className = "h-4 w-4", ...props }: CompanyLogoProps) {
   switch (slug) {
     case "youtube":
@@ -202,6 +220,8 @@ export function CompanyLogo({ slug, className = "h-4 w-4", ...props }: CompanyLo
     case "taxfix":
     case "taxfix-year-round":
       return <TaxfixLogo className={className} {...props} />;
+    case "generalmind":
+      return <GeneralMindLogo className={className} {...props} />;
     default:
       return null;
   }

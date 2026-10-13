@@ -7,6 +7,7 @@ import caseMaritime from "@/assets/case-maritime.jpg";
 import caseNomerra from "@/assets/case-nomerra.jpg";
 import caseReonic from "@/assets/case-reonic.jpg";
 import caseTaxfix from "@/assets/case-taxfix.jpg";
+import caseGeneralmind from "@/assets/case-generalmind.jpg";
 
 export interface ProjectSection {
   heading: string;
@@ -340,6 +341,37 @@ export const projects: Project[] = [
       {
         heading: "How to read the deck",
         body: "The deck above covers the seasonal engagement problem, user opportunities across the year, proposed initiatives, success measures, and key risks.",
+      },
+    ],
+  },
+  {
+    slug: "generalmind",
+    image: caseGeneralmind,
+    number: "11",
+    title: "GeneralMind — Touchless is Not Accuracy",
+    company: "GeneralMind",
+    year: "2026",
+    description:
+      "A product teardown on enterprise AI invoicing and autonomous actions — moving from blind touchless automation to high-autonomy ERP safety guardrails and eval frameworks.",
+    role: "LEAD PM",
+    outcome: "CASE STUDY",
+    canvaUrl: "https://www.canva.com/design/DAHXgNGMZsk/fqB4_uwZianbhA9eM_dzng/view",
+    sections: [
+      {
+        heading: "Context",
+        body: "Enterprise finance and shared services teams process thousands of invoices each month across legacy ERPs like SAP and Oracle. Traditional automation pushes for 'touchless' processing at all costs, but blind automation leads to high-severity failures: misreading VAT, paying duplicate invoices, or approving fraudulent changes to vendor bank details.",
+      },
+      {
+        heading: "Approach",
+        body: "I mapped the 4 core operational workflows (invoice processing, customer support resolution, CRM/sales ops, and procurement) into an Impact/Confidence matrix. For high-priority failure modes like duplicate payments, I contrasted a risk-averse model (freezing autonomy on every flag) against a high-autonomy model that preserves an 87.5% autopilot rate while enforcing near-zero financial risk.",
+      },
+      {
+        heading: "What I proposed",
+        body: "A multi-factor background hashing and parallel ERP sweep architecture that locks suspected duplicates natively in the ERP without stopping the autopilot line. Backed by deterministic fallback rules, immutable audit logging, and a continuous probabilistic evaluation (eval) framework targeting >95% precision and >99.9% recall on duplicate leakage.",
+      },
+      {
+        heading: "How to read the deck",
+        body: "The deck walks through the failure mode matrix, the dual-path architectural trade-offs, technical workflow guardrails, continuous production eval pipelines, core KPIs, and a 4-phase rollout strategy with a pilot leakage audit.",
       },
     ],
   },
