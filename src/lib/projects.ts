@@ -198,6 +198,7 @@ export const projects: Project[] = [
     role: "PRODUCT MANAGER",
     outcome: "CASE STUDY",
     canvaUrl: "https://www.canva.com/design/DAHSKlPBLSY/kbRvv4ZoBHQiOgROjNf8Pw/view",
+    hideOnHome: true,
     sections: [
       {
         heading: "Context",
@@ -325,6 +326,7 @@ export const projects: Project[] = [
     role: "PRODUCT MANAGER",
     outcome: "CASE STUDY",
     canvaUrl: "https://www.canva.com/design/DAHW3XsXrhI/3ZEYzbZqK3xdqzFbgXxUxg/view",
+    hideOnHome: true,
     sections: [
       {
         heading: "Context",

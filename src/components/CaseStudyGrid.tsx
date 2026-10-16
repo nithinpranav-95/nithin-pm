@@ -12,7 +12,9 @@ export function CaseStudyGrid({
   includeHidden?: boolean;
   mobileInitialCount?: number;
 }) {
-  const all = includeHidden ? projects : projects.filter((project) => !project.hideOnHome);
+  const all = includeHidden
+    ? projects
+    : projects.filter((project) => !project.hideOnHome).slice(0, 6);
   const limited = typeof mobileInitialCount === "number" && mobileInitialCount < all.length;
   const [showAll, setShowAll] = useState(false);
   const remaining = typeof mobileInitialCount === "number" ? all.length - mobileInitialCount : 0;
