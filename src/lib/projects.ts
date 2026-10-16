@@ -93,33 +93,33 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "duolingo",
-    image: caseDuolingo,
+    slug: "taxfix-year-round",
+    image: caseTaxfix,
     number: "03",
-    title: "Duolingo",
-    company: "Duolingo",
+    title: "Taxfix — Make Taxes Year Round",
+    company: "Taxfix",
     year: "2026",
     description:
-      "A case study on habit formation, streak mechanics, and where gamification stops helping learners.",
+      "A product case study on turning tax filing from a seasonal transaction into a useful year-round relationship.",
     role: "PRODUCT MANAGER",
     outcome: "CASE STUDY",
-    canvaUrl: "https://www.canva.com/design/DAHSV92aUo4/8MtMkKE8lbNtcT1mk6IGRA/view",
+    canvaUrl: "https://www.canva.com/design/DAHW3XsXrhI/3ZEYzbZqK3xdqzFbgXxUxg/view",
     sections: [
       {
         heading: "Context",
-        body: "Daily engagement is the headline metric, but the real goal is learning. I examined where those two diverge and what that costs long term.",
+        body: "Tax products are often opened once a year and forgotten. This study examines how Taxfix could create recurring value between filing seasons without manufacturing engagement for its own sake.",
       },
       {
         heading: "Approach",
-        body: "I segmented learners by intent, traced the reward loops each segment responds to, and looked for the point where motivation mechanics start to substitute for progress.",
+        body: "I mapped the annual tax journey, identified moments when timely guidance can reduce uncertainty or preserve useful information, and separated genuine user value from notification-driven activity.",
       },
       {
         heading: "What I proposed",
-        body: "Adjustments to the loop that keep the habit intact while tying rewards more tightly to demonstrated learning, with guardrail metrics so retention isn't traded away blindly.",
+        body: "A set of year-round product initiatives that help people prepare gradually, respond to relevant life events, and reach filing season with less work and greater confidence.",
       },
       {
         heading: "How to read the deck",
-        body: "The deck above sets out the segments, the loop analysis, the proposed changes, and the experiment design.",
+        body: "The deck above covers the seasonal engagement problem, user opportunities across the year, proposed initiatives, success measures, and key risks.",
       },
     ],
   },
@@ -135,7 +135,6 @@ export const projects: Project[] = [
     role: "PRODUCT MANAGER",
     outcome: "CASE STUDY",
     canvaUrl: "https://www.canva.com/design/DAHSS0_o3LI/pFIaYKtaLX7_jCwA4UCyPg/view",
-    hideOnHome: true,
     sections: [
       {
         heading: "Context",
@@ -315,34 +314,34 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "taxfix-year-round",
-    image: caseTaxfix,
+    slug: "duolingo",
+    image: caseDuolingo,
     number: "10",
-    title: "Taxfix — Make Taxes Year Round",
-    company: "Taxfix",
+    title: "Duolingo",
+    company: "Duolingo",
     year: "2026",
     description:
-      "A product case study on turning tax filing from a seasonal transaction into a useful year-round relationship.",
+      "A case study on habit formation, streak mechanics, and where gamification stops helping learners.",
     role: "PRODUCT MANAGER",
     outcome: "CASE STUDY",
-    canvaUrl: "https://www.canva.com/design/DAHW3XsXrhI/3ZEYzbZqK3xdqzFbgXxUxg/view",
+    canvaUrl: "https://www.canva.com/design/DAHSV92aUo4/8MtMkKE8lbNtcT1mk6IGRA/view",
     hideOnHome: true,
     sections: [
       {
         heading: "Context",
-        body: "Tax products are often opened once a year and forgotten. This study examines how Taxfix could create recurring value between filing seasons without manufacturing engagement for its own sake.",
+        body: "Daily engagement is the headline metric, but the real goal is learning. I examined where those two diverge and what that costs long term.",
       },
       {
         heading: "Approach",
-        body: "I mapped the annual tax journey, identified moments when timely guidance can reduce uncertainty or preserve useful information, and separated genuine user value from notification-driven activity.",
+        body: "I segmented learners by intent, traced the reward loops each segment responds to, and looked for the point where motivation mechanics start to substitute for progress.",
       },
       {
         heading: "What I proposed",
-        body: "A set of year-round product initiatives that help people prepare gradually, respond to relevant life events, and reach filing season with less work and greater confidence.",
+        body: "Adjustments to the loop that keep the habit intact while tying rewards more tightly to demonstrated learning, with guardrail metrics so retention isn't traded away blindly.",
       },
       {
         heading: "How to read the deck",
-        body: "The deck above covers the seasonal engagement problem, user opportunities across the year, proposed initiatives, success measures, and key risks.",
+        body: "The deck above sets out the segments, the loop analysis, the proposed changes, and the experiment design.",
       },
     ],
   },
