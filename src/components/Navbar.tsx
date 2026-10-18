@@ -19,6 +19,7 @@ export function Navbar() {
     { to: "/case-studies", label: "CASE STUDIES" },
     { to: "/projects", label: "PROJECTS" },
     { to: "/certifications", label: "CERTIFICATIONS" },
+    { to: "/resume", label: "RESUME" },
     { to: "/", hash: "experience", label: "EXPERIENCE" },
     { to: "/", hash: "contact", label: "CONTACT" },
   ];

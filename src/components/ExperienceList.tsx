@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Download } from "lucide-react";
 import { ModalPortal } from "@/components/ModalPortal";
 import { roles, type Role } from "@/lib/experience";
@@ -46,17 +47,27 @@ export function ExperienceList() {
         <span className="font-mono text-[10px] text-paper/40 sm:text-[11px]">
           COMPLETE WORK HISTORY & SKILLS
         </span>
-        <a
-          href="/nithin-pranav-resume.pdf"
-          download="Nithin-Pranav-Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 font-mono text-[11px] text-signal transition-colors hover:text-paper"
-        >
-          <Download className="h-3.5 w-3.5" />
-          <span>DOWNLOAD RESUME (PDF)</span>
-          <span aria-hidden="true">↓</span>
-        </a>
+        <div className="flex flex-wrap items-center gap-4">
+          <Link
+            to="/resume"
+            className="inline-flex items-center gap-1.5 font-mono text-[11px] text-signal transition-colors hover:text-paper"
+          >
+            <span>VIEW RESUME</span>
+            <span aria-hidden="true">→</span>
+          </Link>
+          <a
+            href="/nithin-pranav-resume.pdf"
+            download="Nithin-Pranav-Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 font-mono text-[11px] text-paper/50 transition-colors hover:text-signal"
+            title="Direct download PDF"
+          >
+            <Download className="h-3 w-3" />
+            <span>PDF</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
       </div>
 
       {active ? (

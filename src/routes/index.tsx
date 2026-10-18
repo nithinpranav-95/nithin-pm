@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Calendar, Linkedin, Download, Award } from "lucide-react";
+import { Calendar, Linkedin, Download, Award, FileText } from "lucide-react";
 import headshot from "@/assets/headshot.jpg";
 import certIhkPage1 from "@/assets/cert-ihk-page-1.jpg";
 import certIhkFoundationsPage1 from "@/assets/cert-ihk-foundations-page-1.jpg";
@@ -123,16 +123,25 @@ function Index() {
             <div>
               <span className="font-mono text-[11px] text-paper/40"></span>
               <h2 className="mt-4 font-display text-4xl font-medium leading-none">Experience</h2>
-              <div className="mt-6">
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <Link
+                  to="/resume"
+                  className="inline-flex items-center gap-2 border border-signal bg-signal/10 px-4 py-2.5 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+                >
+                  <FileText className="h-3.5 w-3.5" />
+                  <span>VIEW RESUME</span>
+                  <span aria-hidden="true">→</span>
+                </Link>
                 <a
                   href="/nithin-pranav-resume.pdf"
                   download="Nithin-Pranav-Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-signal bg-signal/10 px-4 py-2.5 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+                  className="inline-flex items-center gap-1.5 border border-paper/20 bg-panel px-3.5 py-2.5 font-mono text-[11px] tracking-wide text-paper/75 transition-colors hover:border-signal hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+                  title="Direct download PDF"
                 >
                   <Download className="h-3.5 w-3.5" />
-                  <span>DOWNLOAD RESUME</span>
+                  <span>DOWNLOAD (PDF)</span>
                   <span aria-hidden="true">↓</span>
                 </a>
               </div>
@@ -394,8 +403,12 @@ function Index() {
               PROJECTS
             </Link>
             <span className="text-paper/20">·</span>
-            <Link to="/certifications" className="text-signal transition-colors hover:text-paper">
+            <Link to="/certifications" className="transition-colors hover:text-signal">
               CERTIFICATIONS
+            </Link>
+            <span className="text-paper/20">·</span>
+            <Link to="/resume" className="transition-colors hover:text-signal">
+              RESUME
             </Link>
             <span className="text-paper/20">·</span>
             <a
