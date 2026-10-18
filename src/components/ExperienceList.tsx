@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Download } from "lucide-react";
 import { ModalPortal } from "@/components/ModalPortal";
 import { roles, type Role } from "@/lib/experience";
 
@@ -39,6 +40,23 @@ export function ExperienceList() {
             </div>
           </button>
         ))}
+      </div>
+
+      <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-paper/10 pt-5">
+        <span className="font-mono text-[10px] text-paper/40 sm:text-[11px]">
+          COMPLETE WORK HISTORY & SKILLS
+        </span>
+        <a
+          href="/nithin-pranav-resume.pdf"
+          download="Nithin-Pranav-Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 font-mono text-[11px] text-signal transition-colors hover:text-paper"
+        >
+          <Download className="h-3.5 w-3.5" />
+          <span>DOWNLOAD RESUME (PDF)</span>
+          <span aria-hidden="true">↓</span>
+        </a>
       </div>
 
       {active ? (

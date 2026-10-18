@@ -119,9 +119,24 @@ function Index() {
 
         <div className="border-t border-paper/10" />
         <section id="experience" className="grid scroll-mt-16 grid-cols-12 gap-8 py-16">
-          <div className="col-span-12 md:col-span-4">
-            <span className="font-mono text-[11px] text-paper/40"></span>
-            <h2 className="mt-4 font-display text-4xl font-medium leading-none">Experience</h2>
+          <div className="col-span-12 flex flex-col justify-between md:col-span-4">
+            <div>
+              <span className="font-mono text-[11px] text-paper/40"></span>
+              <h2 className="mt-4 font-display text-4xl font-medium leading-none">Experience</h2>
+              <div className="mt-6">
+                <a
+                  href="/nithin-pranav-resume.pdf"
+                  download="Nithin-Pranav-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-signal bg-signal/10 px-4 py-2.5 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+                >
+                  <Download className="h-3.5 w-3.5" />
+                  <span>DOWNLOAD RESUME</span>
+                  <span aria-hidden="true">↓</span>
+                </a>
+              </div>
+            </div>
           </div>
           <div className="col-span-12 md:col-span-8">
             <ExperienceList />
