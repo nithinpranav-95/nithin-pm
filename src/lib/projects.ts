@@ -349,7 +349,7 @@ export const projects: Project[] = [
     slug: "generalmind",
     image: caseGeneralmind,
     number: "11",
-    title: "GeneralMind — Touchless is Not Accuracy",
+    title: "GeneralMind — Improving a Workflow",
     company: "GeneralMind",
     year: "2026",
     description:
@@ -364,15 +364,15 @@ export const projects: Project[] = [
       },
       {
         heading: "Approach",
-        body: "I mapped the 4 core operational workflows (invoice processing, customer support resolution, CRM/sales ops, and procurement) into an Impact/Confidence matrix. For high-priority failure modes like duplicate payments, I contrasted a risk-averse model (freezing autonomy on every flag) against a high-autonomy model that preserves an 87.5% autopilot rate while enforcing near-zero financial risk.",
+        body: "I mapped the 4 core operational workflows (invoice processing, customer support resolution, CRM/sales ops, and procurement) into an Impact/Confidence matrix. For high-priority failure modes like duplicate payments, I contrasted a Manual Checkpoint model (freezing autonomy on every flag) against an Autonomous Recovery model that preserves an 87.5% autopilot rate while enforcing near-zero financial risk.",
       },
       {
         heading: "What I proposed",
-        body: "A multi-factor background hashing and parallel ERP sweep architecture that locks suspected duplicates natively in the ERP without stopping the autopilot line. Backed by deterministic fallback rules, immutable audit logging, and a continuous probabilistic evaluation (eval) framework targeting >95% precision and >99.9% recall on duplicate leakage.",
+        body: "A multi-factor background hashing and parallel ERP sweep architecture that locks suspected duplicates natively in the ERP without stopping the autopilot line. Backed by deterministic fallback rules, immutable audit logging, and a continuous probabilistic evaluation (eval) framework targeting >95% precision and >99.9% recall on duplicate leakage.\n\nI recommended the Autonomous Recovery path: it keeps the 87.5% autopilot rate intact while cutting financial risk to near-zero, versus the Manual Checkpoint path, which is kept only as a fallback when the ERP sweep times out.",
       },
       {
         heading: "How to read the deck",
-        body: "The deck walks through the failure mode matrix, the dual-path architectural trade-offs, technical workflow guardrails, continuous production eval pipelines, core KPIs, and a 4-phase rollout strategy with a pilot leakage audit.",
+        body: "The deck walks through the failure mode matrix, the dual-path architectural trade-offs, technical workflow guardrails, a continuous production eval framework targeting >95% precision and >99.9% recall, core KPIs with explicit deployment gates, and a 4-phase rollout strategy with a pilot leakage audit.",
       },
     ],
   },
