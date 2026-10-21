@@ -100,7 +100,7 @@ function ResumePage() {
                 <span>FIG. 01 — OFFICIAL DOCUMENT</span>
               </div>
               <div className="flex items-center gap-4">
-                <span>FORMAT: PDF (189 KB)</span>
+                <span>FORMAT: PDF (187 KB)</span>
                 <a
                   href="/nithin-pranav-resume.pdf"
                   download="Nithin-Pranav-Resume.pdf"
