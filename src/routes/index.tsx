@@ -7,6 +7,7 @@ import certHfAgents from "@/assets/cert-huggingface-agents.png";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
 import { ExperienceList } from "@/components/ExperienceList";
 import { Navbar } from "@/components/Navbar";
+import { RESUME_CONFIG } from "@/lib/resume";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -133,8 +134,8 @@ function Index() {
                   <span aria-hidden="true">→</span>
                 </Link>
                 <a
-                  href="/nithin-pranav-resume.pdf"
-                  download="Nithin-Pranav-Resume.pdf"
+                  href={RESUME_CONFIG.driveDownloadUrl}
+                  download={RESUME_CONFIG.fileName}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 border border-paper/20 bg-panel px-3.5 py-2.5 font-mono text-[11px] tracking-wide text-paper/75 transition-colors hover:border-signal hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"

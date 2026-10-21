@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Download } from "lucide-react";
 import { ModalPortal } from "@/components/ModalPortal";
 import { roles, type Role } from "@/lib/experience";
+import { RESUME_CONFIG } from "@/lib/resume";
 
 export function ExperienceList() {
   const [active, setActive] = useState<Role | null>(null);
@@ -56,8 +57,8 @@ export function ExperienceList() {
             <span aria-hidden="true">→</span>
           </Link>
           <a
-            href="/nithin-pranav-resume.pdf"
-            download="Nithin-Pranav-Resume.pdf"
+            href={RESUME_CONFIG.driveDownloadUrl}
+            download={RESUME_CONFIG.fileName}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 font-mono text-[11px] text-paper/50 transition-colors hover:text-signal"

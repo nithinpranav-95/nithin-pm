@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Download, ExternalLink, ArrowLeft, FileText, CheckCircle2, Briefcase, GraduationCap, Cpu, Sparkles } from "lucide-react";
+import { Download, ExternalLink, ArrowLeft, Briefcase, GraduationCap, Cpu, Cloud, RefreshCw } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
+import { RESUME_CONFIG } from "@/lib/resume";
 
 export const Route = createFileRoute("/resume")({
   head: () => ({
@@ -58,8 +59,10 @@ function ResumePage() {
             {/* Quick Actions Bar */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
-                href="/nithin-pranav-resume.pdf"
-                download="Nithin-Pranav-Resume.pdf"
+                href={RESUME_CONFIG.driveDownloadUrl}
+                download={RESUME_CONFIG.fileName}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-signal bg-signal/10 px-5 py-3 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
               >
                 <Download className="h-3.5 w-3.5" />
@@ -68,13 +71,13 @@ function ResumePage() {
               </a>
 
               <a
-                href="/nithin-pranav-resume.pdf"
+                href={RESUME_CONFIG.driveViewUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-paper/20 bg-panel px-5 py-3 font-mono text-[11px] tracking-wide text-paper/80 transition-colors hover:border-signal hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
               >
                 <ExternalLink className="h-3.5 w-3.5" />
-                <span>OPEN IN NEW TAB</span>
+                <span>OPEN IN GOOGLE DRIVE</span>
                 <span aria-hidden="true">↗</span>
               </a>
             </div>
@@ -84,7 +87,7 @@ function ResumePage() {
             <span>DOCUMENT — NITHIN PRANAV / RESUME 2026</span>
             <span>LOCATION — BERLIN, GERMANY</span>
             <span>CONTACT — NITHIN.PRANAV@GMAIL.COM</span>
-            <span className="text-signal">STATUS — CURRENT & OPEN TO OPPORTUNITIES</span>
+            <span className="text-signal">STATUS — LIVE CLOUD SYNCED (GOOGLE DRIVE)</span>
           </div>
         </section>
 
@@ -97,13 +100,19 @@ function ResumePage() {
             <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-paper/10 pb-3 font-mono text-[10px] text-paper/40">
               <div className="flex items-center gap-3">
                 <span className="text-signal">+CV-2026</span>
-                <span>FIG. 01 — OFFICIAL DOCUMENT</span>
+                <span>FIG. 01 — OFFICIAL DOCUMENT (CLOUD SYNCED)</span>
               </div>
               <div className="flex items-center gap-4">
-                <span>FORMAT: PDF (187 KB)</span>
+                <span className="inline-flex items-center gap-1.5 text-signal">
+                  <Cloud className="h-3 w-3" />
+                  <span>SYNCED</span>
+                </span>
+                <span>FORMAT: PDF</span>
                 <a
-                  href="/nithin-pranav-resume.pdf"
-                  download="Nithin-Pranav-Resume.pdf"
+                  href={RESUME_CONFIG.driveDownloadUrl}
+                  download={RESUME_CONFIG.fileName}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-1 text-signal hover:underline"
                 >
                   <Download className="h-3 w-3" />
@@ -115,21 +124,24 @@ function ResumePage() {
             {/* Document Frame */}
             <div className="relative aspect-[1/1.414] min-h-[640px] w-full overflow-hidden border border-paper/10 bg-ink sm:min-h-[850px] lg:min-h-[1100px]">
               <iframe
-                src="/nithin-pranav-resume.pdf#toolbar=1&navpanes=0&scrollbar=1"
+                src={RESUME_CONFIG.drivePreviewUrl}
                 title="Nithin Pranav Resume PDF Preview"
                 className="h-full w-full border-0"
+                allow="autoplay"
               />
             </div>
 
             {/* Document Footer helper */}
             <div className="mt-4 flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] text-paper/40">
-              <span>PDF EMBEDDED VIEWER · WORKS ON DESKTOP & MODERN BROWSERS</span>
+              <span>GOOGLE DRIVE CLOUD SYNC · ALWAYS SHOWS LATEST VERSION</span>
               <a
-                href="/nithin-pranav-resume.pdf"
-                download="Nithin-Pranav-Resume.pdf"
+                href={RESUME_CONFIG.driveDownloadUrl}
+                download={RESUME_CONFIG.fileName}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-signal hover:underline"
               >
-                <span>DOWNLOAD FILE IF PREVIEW DOES NOT LOAD AUTOMATICALLY</span>
+                <span>DIRECT DOWNLOAD (PDF)</span>
                 <span aria-hidden="true">↓</span>
               </a>
             </div>
@@ -224,6 +236,73 @@ function ResumePage() {
                   <span><strong>Hugging Face Hub</strong> — Certified in AI Agents Fundamentals (2026).</span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </section>
+
+        <div className="border-t border-paper/10" />
+
+        {/* Cloud Sync & Manage Section */}
+        <section aria-label="Resume Cloud Sync Management" className="py-14 sm:py-16">
+          <div className="border border-paper/15 bg-panel p-6 sm:p-8">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-paper/10 pb-4">
+              <div className="flex items-center gap-2.5">
+                <span className="flex h-2 w-2 rounded-full bg-signal animate-pulse" />
+                <span className="font-mono text-[11px] text-signal font-medium">
+                  LIVE CLOUD SYNC · GOOGLE DRIVE
+                </span>
+              </div>
+              <span className="font-mono text-[10px] text-paper/40">STATUS: CONNECTED & SYNCED</span>
+            </div>
+
+            <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
+              <div className="lg:col-span-8">
+                <h2 className="font-display text-2xl font-medium sm:text-3xl">
+                  Update your resume anytime via Google Drive
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-paper/75">
+                  This portfolio is configured with a live Google Drive cloud sync. Whenever you upload a new version to the file in Google Drive, this page’s viewer and all download links across the website update immediately — without needing to push new code or redeploy.
+                </p>
+
+                <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3 font-mono text-[11px] text-paper/70">
+                  <div className="border border-paper/10 bg-ink/50 p-3">
+                    <span className="text-signal block font-semibold mb-1">01 / OPEN FILE</span>
+                    <span>Click the manage button to open this resume in Google Drive.</span>
+                  </div>
+                  <div className="border border-paper/10 bg-ink/50 p-3">
+                    <span className="text-signal block font-semibold mb-1">02 / MANAGE VERSIONS</span>
+                    <span>Click More actions (⋮) or File info → <strong className="text-paper">Manage versions</strong>.</span>
+                  </div>
+                  <div className="border border-paper/10 bg-ink/50 p-3">
+                    <span className="text-signal block font-semibold mb-1">03 / UPLOAD NEW</span>
+                    <span>Upload your updated PDF. The file ID remains unchanged and the site updates live!</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-3 lg:col-span-4 lg:pl-4">
+                <a
+                  href={RESUME_CONFIG.driveViewUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 border border-signal bg-signal px-5 py-3.5 font-mono text-[11px] font-medium tracking-wide text-ink transition-all hover:bg-signal/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+                >
+                  <ExternalLink className="h-3.5 w-3.5" />
+                  <span>MANAGE IN GOOGLE DRIVE</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+
+                <a
+                  href={RESUME_CONFIG.driveDownloadUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 border border-paper/20 bg-panel px-5 py-3 font-mono text-[11px] tracking-wide text-paper/80 transition-colors hover:border-signal hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+                >
+                  <Download className="h-3.5 w-3.5" />
+                  <span>TEST LIVE CLOUD DOWNLOAD</span>
+                  <span aria-hidden="true">↓</span>
+                </a>
+              </div>
             </div>
           </div>
         </section>
