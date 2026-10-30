@@ -378,7 +378,7 @@ export const projects: Project[] = [
         body: "The deck walks through the failure mode matrix, the dual-path architectural trade-offs, technical workflow guardrails, a continuous production eval framework targeting >95% precision and >99.9% recall, core KPIs with explicit deployment gates, and a 4-phase rollout strategy with a pilot leakage audit.",
       },
     ],
-  },,
+  },
   {
     slug: "weflow",
     image: caseWeflow,
