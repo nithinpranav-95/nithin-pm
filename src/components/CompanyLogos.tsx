@@ -1,8 +1,12 @@
+import logoWeflow from "@/assets/logo-weflow.png";
+import logoNeuronation from "@/assets/logo-neuronation.png";
+import logoSuperchat from "@/assets/logo-superchat.png";
 import type { ComponentProps } from "react";
 import { Ship } from "lucide-react";
 
 export interface CompanyLogoProps extends ComponentProps<"svg"> {
   slug?: string;
+  company?: string;
 }
 
 export function YouTubeLogo({ className, ...props }: ComponentProps<"svg">) {
@@ -196,7 +200,7 @@ export function GeneralMindLogo({ className, ...props }: ComponentProps<"svg">) 
   );
 }
 
-export function CompanyLogo({ slug, className = "h-4 w-4", ...props }: CompanyLogoProps) {
+export function CompanyLogo({ slug, company, className = "h-4 w-4", ...props }: CompanyLogoProps) {
   switch (slug) {
     case "youtube":
       return <YouTubeLogo className={className} {...props} />;
@@ -222,7 +226,56 @@ export function CompanyLogo({ slug, className = "h-4 w-4", ...props }: CompanyLo
       return <TaxfixLogo className={className} {...props} />;
     case "generalmind":
       return <GeneralMindLogo className={className} {...props} />;
-    default:
-      return null;
+    case "weflow":
+      return (
+        <img
+          src={logoWeflow}
+          alt="Weflow logo"
+          className={`${className} object-contain`}
+        />
+      );
+    case "neuronation":
+      return (
+        <img
+          src={logoNeuronation}
+          alt="NeuroNation logo"
+          className={`${className} rounded-full object-cover`}
+        />
+      );
+    case "superchat":
+      return (
+        <img
+          src={logoSuperchat}
+          alt="Superchat logo"
+          className={`${className} object-contain`}
+        />
+      );
+    default: {
+      const label = company ? company.slice(0, 2).toUpperCase() : (slug ? slug.slice(0, 2).toUpperCase() : 'CS');
+      return (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          className={className}
+          {...props}
+        >
+          <rect x="2" y="2" width="20" height="20" rx="2" stroke="currentColor" strokeWidth="1.5" />
+          <text
+            x="12"
+            y="16"
+            textAnchor="middle"
+            fill="currentColor"
+            fontSize="10"
+            fontFamily="monospace"
+            fontWeight="bold"
+            stroke="none"
+          >
+            {label}
+          </text>
+        </svg>
+      );
+    }
   }
 }

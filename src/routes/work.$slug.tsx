@@ -3,10 +3,14 @@ import { CanvaEmbed } from "@/components/CanvaEmbed";
 import { CompanyLogo } from "@/components/CompanyLogos";
 import { Navbar } from "@/components/Navbar";
 import { getProject, projects } from "@/lib/projects";
+import { findProjectBySlug, useAllCaseStudies } from "@/lib/case-studies-sync";
 
 export const Route = createFileRoute("/work/$slug")({
-  loader: ({ params }) => {
-    const project = getProject(params.slug);
+  loader: async ({ params }) => {
+    let project = getProject(params.slug);
+    if (!project) {
+      project = await findProjectBySlug(params.slug);
+    }
     if (!project) throw notFound();
     return { project };
   },
@@ -38,11 +42,14 @@ function CaseStudyNotFound() {
     <div className="flex min-h-screen items-center justify-center bg-ink px-5 text-paper">
       <div className="text-center">
         <h1 className="font-display text-3xl font-medium">Case study not found</h1>
+        <p className="mt-2 font-mono text-xs text-paper/50">
+          This case study may be syncing or not yet published.
+        </p>
         <Link
-          to="/"
+          to="/case-studies"
           className="mt-6 inline-block border-b border-signal pb-1 font-mono text-[11px] text-signal"
         >
-          ← BACK TO WORK
+          ← ALL CASE STUDIES
         </Link>
       </div>
     </div>
@@ -51,7 +58,10 @@ function CaseStudyNotFound() {
 
 function CaseStudy() {
   const { project } = Route.useLoaderData();
-  const others = projects.filter((item) => item.slug !== project.slug);
+  const { allProjects } = useAllCaseStudies();
+  const others = (allProjects && allProjects.length > 0 ? allProjects : projects).filter(
+    (item) => item.slug !== project.slug
+  );
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-ink text-paper antialiased">
@@ -65,7 +75,7 @@ function CaseStudy() {
             </p>
             <div className="mt-4 grid grid-cols-[auto_minmax(0,1fr)] items-center gap-3 sm:gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-paper/20 bg-panel text-signal">
-                <CompanyLogo slug={project.slug} className="h-6 w-6" />
+                <CompanyLogo slug={project.slug} company={project.company} className="h-6 w-6" />
               </div>
               <h1 className="min-w-0 text-balance font-display text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
                 {project.title}
@@ -121,6 +131,7 @@ function CaseStudy() {
                 <span className="font-mono text-[11px] text-signal">{item.number}</span>
                 <CompanyLogo
                   slug={item.slug}
+                  company={item.company}
                   className="h-4 w-4 shrink-0 text-paper/50 transition-colors group-hover:text-signal"
                 />
                 <span className="min-w-0 text-pretty font-display text-lg font-medium transition-colors group-hover:text-signal sm:text-2xl">

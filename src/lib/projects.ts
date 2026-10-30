@@ -8,6 +8,9 @@ import caseNomerra from "@/assets/case-nomerra.jpg";
 import caseReonic from "@/assets/case-reonic.jpg";
 import caseTaxfix from "@/assets/case-taxfix.jpg";
 import caseGeneralmind from "@/assets/case-generalmind.jpg";
+import caseWeflow from "@/assets/case-weflow.jpg";
+import caseNeuronation from "@/assets/case-neuronation.jpg";
+import caseSuperchat from "@/assets/case-superchat.jpg";
 
 export interface ProjectSection {
   heading: string;
@@ -373,6 +376,99 @@ export const projects: Project[] = [
       {
         heading: "How to read the deck",
         body: "The deck walks through the failure mode matrix, the dual-path architectural trade-offs, technical workflow guardrails, a continuous production eval framework targeting >95% precision and >99.9% recall, core KPIs with explicit deployment gates, and a 4-phase rollout strategy with a pilot leakage audit.",
+      },
+    ],
+  },,
+  {
+    slug: "weflow",
+    image: caseWeflow,
+    number: "12",
+    title: "Weflow",
+    company: "Weflow",
+    year: "2026",
+    description:
+      "A product and growth case study on sales pipeline automation, CRM hygiene, and streamlining rep workflows.",
+    role: "PRODUCT MANAGER",
+    outcome: "CASE STUDY",
+    canvaUrl: "https://www.canva.com/design/DAHZaPAFLdE/g2Ars3pwyLIK47Wnl9Fxcw/view",
+    sections: [
+      {
+        heading: "Context",
+        body: "Sales reps spend hours manually updating CRM fields, logging notes, and managing pipeline changes across disjointed tools. Weflow closes that gap by turning pipeline reviews and data entry into a frictionless, keyboard-first workflow.",
+      },
+      {
+        heading: "Approach",
+        body: "I examined the end-to-end sales cycle—from deal updates and pipeline forecasting to Salesforce synchronization—identifying where friction leads to stale CRM data and missed revenue signals.",
+      },
+      {
+        heading: "What I proposed",
+        body: "Automated hygiene guardrails, real-time sync fallbacks, and intelligent deal signals that reduce admin friction while surfacing early deal health warnings for revenue leaders.",
+      },
+      {
+        heading: "How to read the deck",
+        body: "The deck above walks through the complete product teardown, workflow friction points, feature proposals, success metrics, and go-to-market rollout.",
+      },
+    ],
+  },
+  {
+    slug: "neuronation",
+    image: caseNeuronation,
+    number: "13",
+    title: "NeuroNation",
+    company: "NeuroNation",
+    year: "2026",
+    description:
+      "A case study on scientific brain training, cognitive habit loops, personalization, and long-term user retention.",
+    role: "LEAD PM",
+    outcome: "CASE STUDY",
+    canvaUrl: "https://www.canva.com/design/DAHZfoRXyR8/Hfyg0iFR2TR7r5ylXmmT3w/view",
+    sections: [
+      {
+        heading: "Context",
+        body: "Cognitive training apps face high initial drop-off once novel excitement fades. Sustained value requires pairing validated neuropsychological exercises with engaging, habit-forming digital mechanics.",
+      },
+      {
+        heading: "Approach",
+        body: "I evaluated the user journey from initial diagnostic assessment to daily training rituals, segmenting users by intent (focus, memory, healthy aging) and mapping motivation decay over 30 days.",
+      },
+      {
+        heading: "What I proposed",
+        body: "Adaptive exercise progression loops that automatically match cognitive load to learner performance, paired with micro-milestone rewards that reinforce daily consistency without gamifying away scientific rigor.",
+      },
+      {
+        heading: "How to read the deck",
+        body: "The deck above details the behavioral teardown, core user segments, recommended product enhancements, retention guardrail metrics, and experiment frameworks.",
+      },
+    ],
+  },
+  {
+    slug: "superchat",
+    image: caseSuperchat,
+    number: "14",
+    title: "Superchat",
+    company: "Superchat",
+    year: "2026",
+    description:
+      "A case study on omnichannel B2B messaging, WhatsApp business automation, and team communication workflows.",
+    role: "PRODUCT MANAGER",
+    outcome: "CASE STUDY",
+    canvaUrl: "https://www.canva.com/design/DAHZhorBVGw/4SDtvkVfToP9DUk0tVh6bA/view",
+    sections: [
+      {
+        heading: "Context",
+        body: "Modern businesses communicate with prospects and customers across WhatsApp, Instagram, Email, and SMS. Centralizing these channels into a unified inbox with automated routing is crucial to avoid dropped leads.",
+      },
+      {
+        heading: "Approach",
+        body: "I mapped multi-channel agent response times, message triage bottlenecks, and CRM contact synchronization flaws that lead to customer frustration and fragmented support histories.",
+      },
+      {
+        heading: "What I proposed",
+        body: "Smart routing workflows, template-driven WhatsApp automations, and shared inbox collaboration tools that help customer-facing teams respond faster while capturing structured customer data.",
+      },
+      {
+        heading: "How to read the deck",
+        body: "The deck above covers user workflows, channel architecture, proposed automation improvements, KPI impact modeling, and rollout phases.",
       },
     ],
   },
