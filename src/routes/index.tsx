@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Calendar, Linkedin, Download, Award, FileText } from "lucide-react";
+import { Calendar, Linkedin, Download, FileText, Mail, MessageCircle } from "lucide-react";
 import headshot from "@/assets/headshot.jpg";
 import certIhkPage1 from "@/assets/cert-ihk-page-1.jpg";
 import certIhkFoundationsPage1 from "@/assets/cert-ihk-foundations-page-1.jpg";
@@ -90,16 +90,6 @@ function Index() {
                 <span aria-hidden="true">→</span>
               </a>
             </div>
-            <Link
-              to="/certifications"
-              className="grid min-h-11 grid-cols-[minmax(0,1fr)_auto] items-center gap-2 border border-paper/15 bg-panel/70 px-3.5 py-2 font-mono text-[10px] text-paper/75 transition-colors hover:border-signal hover:text-signal sm:text-[11px]"
-            >
-              <span className="flex min-w-0 items-center gap-2">
-                <Award className="h-3.5 w-3.5 shrink-0 text-signal" />
-                <span className="min-w-0">CERTIFIED: IHK DATA SCIENCE & AI · FOUNDATIONS · HF AGENTS</span>
-              </span>
-              <span aria-hidden="true">→</span>
-            </Link>
           </div>
         </section>
 
@@ -360,6 +350,22 @@ function Index() {
                 className="border border-signal px-5 py-3 font-mono text-[11px] text-signal transition-colors hover:bg-signal hover:text-ink"
               >
                 SCHEDULE A CALL →
+              </a>
+              <a
+                href="mailto:nithin.pranav@gmail.com"
+                className="inline-flex items-center justify-center gap-2 border border-paper/25 px-5 py-3 font-mono text-[11px] text-paper/70 transition-colors hover:border-signal hover:text-signal"
+              >
+                <Mail className="h-3.5 w-3.5" />
+                <span>EMAIL</span>
+              </a>
+              <a
+                href="https://wa.me/4917635316685"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 border border-paper/25 px-5 py-3 font-mono text-[11px] text-paper/70 transition-colors hover:border-signal hover:text-signal"
+              >
+                <MessageCircle className="h-3.5 w-3.5" />
+                <span>WHATSAPP</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/nithinpranav/"
