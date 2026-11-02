@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Calendar, Linkedin, Download, FileText, Mail, MessageCircle } from "lucide-react";
+import { Calendar, Linkedin, Download, FileText, MessageCircle } from "lucide-react";
 import headshot from "@/assets/headshot.jpg";
 import certIhkPage1 from "@/assets/cert-ihk-page-1.jpg";
 import certIhkFoundationsPage1 from "@/assets/cert-ihk-foundations-page-1.jpg";
 import certHfAgents from "@/assets/cert-huggingface-agents.png";
 import { CaseStudyGrid } from "@/components/CaseStudyGrid";
+import { EmailButton } from "@/components/EmailButton";
 import { ExperienceList } from "@/components/ExperienceList";
 import { Navbar } from "@/components/Navbar";
 import { RESUME_CONFIG } from "@/lib/resume";
@@ -68,12 +69,12 @@ function Index() {
                 MOSELLE VALLEY — 2024
               </figcaption>
             </figure>
-            <div className="flex flex-wrap items-center gap-3 [animation-delay:380ms]">
+            <div className="grid grid-cols-2 gap-3 [animation-delay:380ms]">
               <a
                 href="https://calendly.com/nithin-pranav/95"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-1 items-center justify-center gap-2 border border-signal bg-signal/10 px-4 py-2.5 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+                className="inline-flex items-center justify-center gap-2 border border-signal bg-signal/10 px-4 py-2.5 font-mono text-[11px] font-medium tracking-wide text-signal transition-colors hover:bg-signal hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
               >
                 <Calendar className="h-3.5 w-3.5" />
                 <span>SCHEDULE A CALL</span>
@@ -83,10 +84,21 @@ function Index() {
                 href="https://www.linkedin.com/in/nithinpranav/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-1 items-center justify-center gap-2 border border-paper/25 bg-panel/60 px-4 py-2.5 font-mono text-[11px] tracking-wide text-paper/80 transition-colors hover:border-signal hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+                className="inline-flex items-center justify-center gap-2 border border-paper/25 bg-panel/60 px-4 py-2.5 font-mono text-[11px] tracking-wide text-paper/80 transition-colors hover:border-signal hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
               >
                 <Linkedin className="h-3.5 w-3.5" />
                 <span>LINKEDIN</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <EmailButton className="inline-flex items-center justify-center gap-2 border border-paper/25 bg-panel/60 px-4 py-2.5 font-mono text-[11px] tracking-wide text-paper/80 transition-colors hover:border-signal hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal" />
+              <a
+                href="https://wa.me/4917635316685"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 border border-paper/25 bg-panel/60 px-4 py-2.5 font-mono text-[11px] tracking-wide text-paper/80 transition-colors hover:border-signal hover:text-signal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+              >
+                <MessageCircle className="h-3.5 w-3.5" />
+                <span>WHATSAPP</span>
                 <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -351,13 +363,7 @@ function Index() {
               >
                 SCHEDULE A CALL →
               </a>
-              <a
-                href="mailto:nithin.pranav@gmail.com"
-                className="inline-flex items-center justify-center gap-2 border border-paper/25 px-5 py-3 font-mono text-[11px] text-paper/70 transition-colors hover:border-signal hover:text-signal"
-              >
-                <Mail className="h-3.5 w-3.5" />
-                <span>EMAIL</span>
-              </a>
+              <EmailButton className="inline-flex items-center justify-center gap-2 border border-paper/25 px-5 py-3 font-mono text-[11px] text-paper/70 transition-colors hover:border-signal hover:text-signal" />
               <a
                 href="https://wa.me/4917635316685"
                 target="_blank"
