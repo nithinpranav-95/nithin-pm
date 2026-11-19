@@ -17,6 +17,7 @@ export interface SupabaseCaseStudyRow {
   approach?: string | null;
   proposed?: string | null;
   how_to_read?: string | null;
+  show_on_home?: boolean | null;
   created_at?: string | null;
 }
 
@@ -62,6 +63,8 @@ export function mapRowToProject(row: SupabaseCaseStudyRow, index: number): Proje
     outcome: (text(row.outcome) || base?.outcome || "CASE STUDY").toUpperCase(),
     canvaUrl: normalizeCanvaUrl(text(row.canva_url)) || base?.canvaUrl || "",
     hideOnHome: base?.hideOnHome,
+    showOnHome:
+      typeof row.show_on_home === "boolean" ? row.show_on_home : base?.showOnHome,
     sections: sections.length ? sections : (base?.sections ?? []),
   };
 }

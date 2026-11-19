@@ -29,6 +29,8 @@ export interface Project {
   outcome: string;
   canvaUrl: string;
   hideOnHome?: boolean;
+  /** Explicit opt-in for the homepage. Falls back to !hideOnHome when unset. */
+  showOnHome?: boolean;
   sections: ProjectSection[];
 }
 

@@ -3,6 +3,19 @@ import { Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowUp, ArrowRight } from "lucide-react";
 import { CompanyLogo } from "@/components/CompanyLogos";
 import { useAllCaseStudies } from "@/lib/case-studies-sync";
+import type { Project } from "@/lib/projects";
+
+/** The homepage never shows more than this many case studies. */
+export const HOME_CASE_STUDY_LIMIT = 6;
+
+/**
+ * Supabase rows set showOnHome explicitly. Case studies coming from the
+ * static fallback have no such flag, so they keep the older hideOnHome
+ * behaviour and the homepage still fills if Supabase is unreachable.
+ */
+function isOnHomePage(project: Project): boolean {
+  return project.showOnHome ?? !project.hideOnHome;
+}
 
 export function CaseStudyGrid({
   includeHidden = false,
@@ -14,7 +27,7 @@ export function CaseStudyGrid({
   const { allProjects } = useAllCaseStudies();
   const all = includeHidden
     ? allProjects
-    : allProjects.filter((project) => !project.hideOnHome).slice(0, 6);
+    : allProjects.filter(isOnHomePage).slice(0, HOME_CASE_STUDY_LIMIT);
   const limited = typeof mobileInitialCount === "number" && mobileInitialCount < all.length;
   const [showAll, setShowAll] = useState(false);
   const remaining = typeof mobileInitialCount === "number" ? all.length - mobileInitialCount : 0;
