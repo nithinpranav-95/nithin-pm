@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { projects as staticProjects, type Project } from "./projects";
+import { fetchSupabaseCaseStudies } from "./case-studies-supabase";
 
 // Default or fallback Google Sheet ID (if user hasn't configured one yet)
 export const DEFAULT_CASE_STUDIES_SHEET_ID = "";
@@ -325,16 +326,21 @@ export function removeLocalCaseStudy(slug: string): void {
  * Async lookup for a project by slug across static, Google Sheet, and local projects.
  */
 export async function findProjectBySlug(slug: string): Promise<Project | undefined> {
-  // 1. Static projects
+  // 1. Supabase projects take precedence, matching useAllCaseStudies()
+  const supabaseProjects = await fetchSupabaseCaseStudies();
+  const supabaseFound = supabaseProjects.find((p) => p.slug === slug);
+  if (supabaseFound) return supabaseFound;
+
+  // 2. Static projects
   const staticFound = staticProjects.find((p) => p.slug === slug);
   if (staticFound) return staticFound;
 
-  // 2. Local storage projects
+  // 3. Local storage projects
   const localList = getLocalCaseStudies();
   const localFound = localList.find((p) => p.slug === slug);
   if (localFound) return localFound;
 
-  // 3. Google Sheet projects
+  // 4. Google Sheet projects
   const sheetProjects = await fetchGoogleSheetCaseStudies();
   return sheetProjects.find((p) => p.slug === slug);
 }
@@ -354,27 +360,26 @@ export function useAllCaseStudies() {
     const currentLocal = getLocalCaseStudies();
     const idToUse = targetSheetId !== undefined ? targetSheetId : getActiveSheetId();
 
-    if (!idToUse) {
-      setDynamicProjects(currentLocal);
-      return;
-    }
-
     setIsLoading(true);
     setError(null);
 
     try {
-      const sheetStudies = await fetchGoogleSheetCaseStudies(idToUse);
-      // Merge sheet studies + local studies, with sheet taking precedence if duplicate slugs
+      const [supabaseStudies, sheetStudies] = await Promise.all([
+        fetchSupabaseCaseStudies(),
+        idToUse ? fetchGoogleSheetCaseStudies(idToUse) : Promise.resolve([]),
+      ]);
+      // Supabase wins over the sheet, which wins over localStorage, on duplicate slugs
       const map = new Map<string, Project>();
-      sheetStudies.forEach((p) => map.set(p.slug, p));
+      supabaseStudies.forEach((p) => map.set(p.slug, p));
+      sheetStudies.forEach((p) => {
+        if (!map.has(p.slug)) map.set(p.slug, p);
+      });
       currentLocal.forEach((p) => {
-        if (!map.has(p.slug)) {
-          map.set(p.slug, p);
-        }
+        if (!map.has(p.slug)) map.set(p.slug, p);
       });
       setDynamicProjects(Array.from(map.values()));
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to load Google Sheet");
+      setError(err instanceof Error ? err.message : "Failed to load case studies");
       setDynamicProjects(currentLocal);
     } finally {
       setIsLoading(false);

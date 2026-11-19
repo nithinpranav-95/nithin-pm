@@ -7,10 +7,9 @@ import { findProjectBySlug, useAllCaseStudies } from "@/lib/case-studies-sync";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: async ({ params }) => {
-    let project = getProject(params.slug);
-    if (!project) {
-      project = await findProjectBySlug(params.slug);
-    }
+    // findProjectBySlug merges Supabase over the built-in list, so it has to
+    // run first: getProject alone would return the un-merged static version.
+    const project = (await findProjectBySlug(params.slug)) ?? getProject(params.slug);
     if (!project) throw notFound();
     return { project };
   },
