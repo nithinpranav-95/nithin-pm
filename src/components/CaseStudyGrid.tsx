@@ -25,9 +25,15 @@ export function CaseStudyGrid({
   mobileInitialCount?: number;
 }) {
   const { allProjects } = useAllCaseStudies();
+  const selectedForHome = allProjects.filter(isOnHomePage);
+  // If nothing is flagged — a half-applied migration, say — show the older
+  // selection rather than leaving the homepage with an empty grid.
+  const homeProjects = selectedForHome.length
+    ? selectedForHome
+    : allProjects.filter((project) => !project.hideOnHome);
   const all = includeHidden
     ? allProjects
-    : allProjects.filter(isOnHomePage).slice(0, HOME_CASE_STUDY_LIMIT);
+    : homeProjects.slice(0, HOME_CASE_STUDY_LIMIT);
   const limited = typeof mobileInitialCount === "number" && mobileInitialCount < all.length;
   const [showAll, setShowAll] = useState(false);
   const remaining = typeof mobileInitialCount === "number" ? all.length - mobileInitialCount : 0;
